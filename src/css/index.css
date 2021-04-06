@@ -1,0 +1,58 @@
+
+
+html {
+  font-family: "Times New Roman", Times, serif;
+}
+#head {
+  background-color: #aa093e;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  background-color: #c41c54;
+}
+#link{
+  border: black 2px solid;
+  width: 100px;
+  margin-left: 10px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  border-radius: 15%;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+#link:hover{
+  color: #aa093e;
+}
+
+
+#logo {
+  max-width: 150px;
+  max-height: 200px;
+  margin-top: -3%;
+  cursor: pointer;
+}
+#navbarCollapse{
+  margin-top: -30px;
+}
+
+hr.new4 {
+  border-top: 1px solid rgb(58, 173, 250);
+}
+hr.new3 {
+  border-top: 1px solid rgb(230, 11, 146);
+  width: 20%;
+}

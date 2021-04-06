@@ -1,0 +1,167 @@
+body {
+    background-image: url('../img/formbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 strong {
+    color: white;
+    margin-left: 280px;
+    margin-top: 50px;
+}
+
+hr {
+    position: relative;
+    border: none;
+    height: 10px;
+    background: rgb(83, 1, 39);
+}
+
+.con {
+    background-color: #e20057;
+    height: 65px;
+}
+
+.con1 {
+    background-color: #1F0C3764;
+    height: 100px;
+}
+
+img {
+    height: 190px;
+    border-radius: 5%;
+    border: 10px solid rgb(224, 15, 85);
+    width:100%;
+}
+
+.title {
+    text-align: center;
+    padding-left: 50px;
+    color:rgb(105, 5, 38);
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 50px;
+   
+}
+
+.company {
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    background-color: hsl(0, 6%, 91%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.comment p,
+.comment span,
+.darker p,
+.darker span {
+    color: black;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.line{
+    border-top: 1px solid rgb(230, 11, 146);
+    
+}
+
+#darker img {
+    margin-right: 15px;
+    position: static;
+}
+
+.previous {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.previous:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #c010a3;
+    color: black;
+}
+
+#post:hover {
+    background-color: antiquewhite;
+}
+
+  #head {
+    background-color: #aa093e;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    background-color: #c41c54;
+  }
+  #link{
+    border: black 2px solid;
+    width: 100px;
+    margin-left: 15px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 15%;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  #link:hover{
+    color: #aa093e;
+  }
+  
+  
+  #logo {
+
+    max-width: 150px;
+    margin-left: 0 ;
+    max-height: 150px;
+    margin-top: -3%;
+    cursor: pointer;
+  }
+  #navbarCollapse{
+    margin-top: -30px;
+  }
+  
+  hr.new4 {
+    border-top: 1px solid rgb(58, 173, 250);
+  }
+  hr.new3 {
+    border-top: 1px solid rgb(230, 11, 146);
+    width: 20%;
+  }
+  #login{
+    border: black 2px solid;
+    margin-left: 15px;
+    height: 45px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 45px;
+    border-radius: 18%;
+    
+  }

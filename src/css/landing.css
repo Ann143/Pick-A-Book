@@ -1,0 +1,110 @@
+
+            #login{
+                border: black 2px solid;
+                margin-left: 15px;
+                height: 45px;
+                font-size: 15px;
+                font-weight: bold;
+                height: 45px;
+                margin-top: 10px;
+                border-radius: 18%;
+                
+              }
+                 .gfg {
+                  
+                    position: relative;
+                    width: 100%;
+                }
+          
+                .first-txt {
+                    position: absolute;
+                    top: 17px;
+                    left: 50px;
+                    font-size: 55px;
+                  
+                }
+          
+                .second-txt {
+                    position: absolute;
+                    top: 190px;
+                    left: 160px;
+                    font-size: 30px;
+
+                }
+                #text3{
+                    position: absolute;
+                    top: 250px;
+                    left: 250px;
+                    font-size: 20px;
+                }
+
+                .row.text-over-image {
+                    /* Step 2 */
+                    width: 204%;
+                }
+                
+                .text {
+                    /* Step 3 */
+                    transform: translateX(-100%);
+                    font-size: 150px;
+                }
+                
+                .kpop {
+                    display: inline-block;
+                }
+                .price{
+                    color: black;
+                }
+
+                
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                
+                .pic {
+                    height: 400px;
+                    width: 100%;
+                }
+                
+                .checked {
+                    color: orange;
+                }
+                
+                h1 {
+                    color: black;
+                    font-size: 12px;
+                }
+                
+                h5 {
+                    color: black;
+                }
+                
+                #nav {
+                    background-color: #e21b67;
+                    color: rgb(0, 0, 0);
+                    padding: 20px;
+                }
+                
+                #btn {
+                    padding: 10px;
+                    border-radius: 20%;
+                    background-color: black;
+                    text-align: center;
+                    align-items: center;
+                    width: 100px;
+                }
+                
+                #right {
+                    float: right;
+                    margin-left: 40%;
+                }
+                
+                li {
+                    padding: 10px;
+                }
+              .active{
+                  color: brown;
+              }
+              
