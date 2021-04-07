@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pick-A-Book</title>
     <link rel="stylesheet" href="../src/css/index.css" />
-    <link rel="stylesheet" href="../src/css/landing.css"/>
+    <link rel="stylesheet" href="../src/css/landing.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
@@ -22,9 +22,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../src/jquery/index.js"></script>
+
+    <!-- <script src="../src/jquery/index.js"></script> -->
     <style>
         .carousel-indicators li {
             background-color: rgb(240, 159, 159);
@@ -35,6 +35,20 @@
             background-color: rgb(212, 14, 130);
         }
     </style>
+    <script>
+        $(document).ready(function () {
+
+            $('.nav-item').on('click', function () {
+                alert('hi');
+                //Remove any previous active classes
+                $('#link').removeClass('active');
+
+                //Add active class to the clicked item
+                $(this).addClass('active');
+            })
+
+        })
+    </script>
 </head>
 
 <body>
@@ -51,13 +65,13 @@
                 <br /><br /><br />
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
-                        <li clas="navbar-item">
+                        <li class="navbar-item">
                             <a id="link" href="../public/index.html" class="nav-link active">Home</a>
                         </li>
-                        <li clas="navbar-item">
+                        <li class="navbar-item">
                             <a id="link" href="../src/html/about.html" class="nav-link">About</a>
                         </li>
-                        <li clas="navbar-item">
+                        <li class="navbar-item">
                             <a id="link" href="../src/html/contact.html" class="nav-link">Contacts</a>
                         </li>
                         <a href="../src/html/login.html"><button class="btn btn-primary" id="login">Log In</button></a>
@@ -66,26 +80,26 @@
             </nav>
         </div>
     </div><br><br><br><br><br><br>
-<div>
+    <div>
 
-    <div class="gfg">
-        <img src="../src/img/bg.PNG" style="background-size: cover;">
-        <p class="first-txt">Increase Your Knowledge<br> By Getting Your Books Here</p>
-        <p class="second-txt">Your Online E-Book Store</p>
-        <a href="../src/html/login.html"><button class="btn btn-primary " role="button " id="text3">Shop
-                Now!</button></a>
+        <div class="gfg">
+            <img src="../src/img/bg.PNG" style="background-size: cover;">
+            <p class="first-txt">Increase Your Knowledge<br> By Getting Your Books Here</p>
+            <p class="second-txt">Your Online E-Book Store</p>
+            <a href="../src/html/login.html"><button class="btn btn-primary " role="button " id="text3">Shop
+                    Now!</button></a>
+        </div>
     </div>
-    </div>
 
 
-    
+
     <div class="container text-white text-center mt-2 "
         style=" background-color: hsl(0, 6%, 91%);padding:4px; margin-bottom: 20px;width: 100% ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <div class="container mt-3 ">
             <hr class="new3">
             <h3 style="color: black;">TRENDING ITEMS</h3>
             <hr class="new3">
-            <div id="demo " class="carousel slide " data-ride="carousel " >
+            <div id="demo " class="carousel slide " data-ride="carousel ">
                 <!-- Indicators -->
                 <div class="card-body">
                     <ul class="carousel-indicators">
@@ -113,7 +127,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
 
                         <div class="kpop ">
                             <div class="card h-25 ">
@@ -238,7 +252,7 @@
 
                 <!-- Left and right controls -->
 
-             
+
             </div>
         </div>
     </div>
@@ -248,7 +262,8 @@
         <div class="row ">
             <div class="col-sm-4 ">
                 <div class="card " style="background-color: #e2548f; ">
-                    <a class=" "><img src="../src/img/partner.png " style="width: 20%; border-radius: 50%;height: 70px; margin-top: 10px;  ">
+                    <a class=" "><img src="../src/img/partner.png "
+                            style="width: 20%; border-radius: 50%;height: 70px; margin-top: 10px;  ">
                         <h5 style="color: black; padding-top: 10px; ">Independent Sellers</h5>
                         <p>We are only selling E-books but if you want to have a hard copy with it, we have a partnered
                             bookstore that will cater with your needs.</p>
@@ -258,18 +273,21 @@
             </div>
             <div class="col-sm-4 ">
                 <div class="card " style="background-color: #e2548f; ">
-                    <a class=" "><img src="../src/img/ebook.png " style="width: 20%;border-radius: 50%;  height: 70px; margin-top: 10px; ">
+                    <a class=" "><img src="../src/img/ebook.png "
+                            style="width: 20%;border-radius: 50%;  height: 70px; margin-top: 10px; ">
                         <h5 style="color:black;padding-top: 10px; ">Not Just E-books</h5>
                         <p>We sell not just novel, rare, and used e-books but also the informative and collectibles e-
                             books</p>
                     </a>
-                    <a class=" btn btn-primary " href="../src/html/collective.html " role="button ">Collective E-books</a>
+                    <a class=" btn btn-primary " href="../src/html/collective.html " role="button ">Collective
+                        E-books</a>
                 </div>
             </div>
 
             <div class="col-sm-4 ">
                 <div class="card " style="background-color: #e2548f; ">
-                    <a class=" "><img src="../src/img/customer's feedback.jpg" style="width: 20%;;border-radius: 50%; height: 70px; margin-top: 10px;">
+                    <a class=" "><img src="../src/img/customer's feedback.jpg"
+                            style="width: 20%;;border-radius: 50%; height: 70px; margin-top: 10px;">
                         <h5 style="color:black;padding-top: 10px; ">Feel the Love</h5>
                         <p>We asked customers to tell us why they love shopping on Pick-A-Book and we were overwhelmed
                             their kind words</p>
@@ -312,7 +330,8 @@
             <h6>All Rights Reserved &copy; 2021</h6>
         </div>
     </footer>
-</div>
+    </div>
 
 </body>
+
 </html>
