@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/account.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="container main-secction">
+                <center>
+                    <h1 id="edit">Edit Profile</h1>
+                </center>
+                <div class="row" id="upload">
+                    <!-- left column -->
+                    <div class="col-md-3">
+                        <div id="frame" class="text-center border border-dark rounded main-secction">
+                            <img id="image" class="img-fluid border border-dark rounded-circle" src="../img/acc.jpg"
+                                class="avatar img-circle" alt="avatar">
+                            <h6>Upload a different photo...</h6>
+
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- edit form column -->
+                    <div id="info" class="col-md-7 personal-info border border-dark rounded float-center main-secction">
+               
+                        <center>
+                            <h3>Personal Information</h3>
+                        </center>
+
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">First name:</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Last name:</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Company:</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Email:</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" placeholder="example2000@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Time Zone:</label>
+                                <div class="col-md-12">
+                                    <div class="ui-select">
+                                        <select id="user_time_zone" class="form-control">
+                                            <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                            <option value="Alaska">(GMT-09:00) Alaska</option>
+                                            <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US
+                                                &amp;
+                                                Canada)</option>
+                                            <option value="Arizona">(GMT-07:00) Arizona</option>
+                                            <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time
+                                                (US &amp;
+                                                Canada)</option>
+                                            <option value="Central Time (US &amp; Canada)" selected="selected">
+                                                (GMT-06:00)
+                                                Central Time (US &amp; Canada)</option>
+                                            <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US
+                                                &amp;
+                                                Canada)</option>
+                                            <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Username:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" value="janeuser">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Password:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="password" value="11111122333">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Confirm password:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="password" value="11111122333">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <input type="button" class="btn btn-primary" value="Save Changes">
+                                    <span></span>
+                                    <input type="reset" class="btn btn-default" value="Cancel">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>
