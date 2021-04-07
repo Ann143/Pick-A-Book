@@ -14,6 +14,10 @@
     background-color: blueviolet;
 
 }
+
+/* #basicInfo,#frame {
+    background-color: #cc00ff;
+} */
 #image {
     height: 180px;
     width: 80%;
@@ -27,6 +31,11 @@
     background: linear-gradient(to bottom, #ffffff 0%, #660033 100%);
 }
 
+.viewInfo {
+    box-shadow: 15px 15px 15px;
+    background: linear-gradient(to bottom right, #ffffff -26%, #ff99cc 100%);
+}
+
 h6 {
     color: white;
 }
@@ -37,7 +46,6 @@ h6 {
 #email {
     max-width: 450px;
 }
-
 
 
 body{
