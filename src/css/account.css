@@ -1,0 +1,32 @@
+#edit {
+
+    padding: 10px;
+    margin-top: 10px;
+
+}
+#upload{
+    padding-left: 120px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+#info {
+    padding: 30px;
+    background-color: blueviolet;
+
+}
+#image {
+    height: 180px;
+    width: 80%;
+}
+
+#frame {
+    padding: 10px;
+}
+.main-secction {
+    box-shadow: 15px 15px 15px;
+    background: linear-gradient(to bottom, #ffffff 0%, #660033 100%);
+}
+
+h6 {
+    color: white;
+}
