@@ -2,221 +2,91 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/index.css">
-  <style>
-    body {
-      background: #f3dfc6;
-      background: -webkit-linear-gradient(to right, #f1d4ae, #ff9ec8);
-      background: linear-gradient(to right, #ebd0ae, #c2105d);
-      min-height: 100vh;
-    }
-
-    #shoppingCart {
-      background-color: rgb(100, 96, 97);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
 </head>
 
 <body>
-  <div id="head">
-    <div id="nav-logo">
-        <button class="float-right" id="login"><a href="../html/login.html">Log In</a></button>
-      <form action="" class="search-bar float-right">
-       
-        <input type="search" name="search" pattern=".*\S.*" required />
-        <button class="search-btn" type="submit">
-          <span>Search</span>
-        </button>
-        <a href="../html/cart.html"
-        ><img class="rounded-circle" src="../img/cart.png" alt="" id="cart"
-      /></a>
-      </form>
+    <div class="main-cart-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 120px;">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Select all</label>
+                        </div>
+                    </th>
+                    <th scope="col" class="product-cart">Product</th>
+                    
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col" class="action">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form action="">
+                    <tr>
+                        <th scope="row">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            </div>
+                        </th>
+                        <td class="product-cart d-flex p-2" >
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                            <div>Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel <br>
+                                <span class="product-genre"> Genre: <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a href="#">Shounin</a> </span>
+                            </div>
+                        </td>
+                        
+                        <td><li> Light Novel</li></td>
+                        <td><span class="product-price">Php.546.00</span></td>
+                        <td class="action">
+                            <a href="#" class="btn btn-danger">Remove</a>
+                            <a href="#" class="btn btn-success">Purchase</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            </div>
+                        </th>
+                        <td class="product-cart d-flex p-2" >
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                            <div>Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel <br>
+                                <span class="product-genre"> Genre: <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a href="#">Shounin</a> </span>
+                            </div>
+                        </td>
+                        
+                        <td><li> Light Novel</li></td>
+                        <td><span class="product-price">Php.546.00</span></td>
+                        <td class="action">
+                            <a href="#" class="btn btn-danger">Remove</a>
+                            <a href="#" class="btn btn-success">Purchase</a>
+                        </td>
+                    </tr>
+                    
+                </form>
+    
+            </tbody>
+        </table>
     </div>
-    <br /><br />
-    <div>
-      <nav class="navbar navbar-light navbar-expand-lg">
-        <img
-          id="logo"
-          class="float-left rounded-circle"
-          src="../img/logo1.PNG"
-          alt="Logo"
-        />
-
-        <!-- <a href="#" class="navbar-brand">PickABook_Logo</a> -->
-        <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-        >
-          <span
-            id="btn"
-            class="navbar-toggler-icon"
-            style="display: block; top: 112px;"
-          ></span>
-        </button>
-        <br /><br /><br />
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ml-auto">
-            <li clas="navbar-item">
-              <a id="link" href="../public/index.html" class="nav-link">Home</a>
-            </li>
-            <li clas="navbar-item">
-              <a id="link" href="#" class="nav-link">Categories</a>
-            </li>
-            <li clas="navbar-item">
-              <a id="link" href="../html/books.html" class="nav-link">Books</a>
-            </li>
-            <li clas="navbar-item">
-              <a id="link" href="" class="nav-link">About</a>
-            </li>
-            <li clas="navbar-item">
-              <a id="link" href="../html/contact.html" class="nav-link">Contacts</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-
-  <div class="px-4 px-lg-0">
-    <div class="pb-5">
-      <section class="pt-5 pb-5 ">
-        <div class="container">
-          <div class="row w-100">
-            <div class="col-lg-12 col-md-12 col-12 ">
-              <h3 class="display-5 mb-2 text-center">My Shopping Cart</h3>
-              <p class="mb-5 text-center">
-                <i class="text-info font-weight-bold">3</i> items in your cart
-              </p>
-              <table id="shoppingCart" class="table table-condensed table-responsive">
-                <thead>
-                  <tr>
-                    <th style="width:60%">Product</th>
-                    <th style="width:12%">Price</th>
-                    <th style="width:10%">Quantity</th>
-                    <th style="width:10%">Action</th>
-                    <th style="width:16%"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-th="Product">
-                      <div class="row">
-                        <div class="col-md-3 text-left">
-                          <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt=""
-                            class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                        </div>
-                        <div class="col-md-9 text-left mt-sm-2">
-                          <h4>Product Name</h4>
-                          <p class="font-weight-light">Category: Name</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td data-th="Price">$49.00</td>
-                    <td data-th="Quantity">
-                      <input type="number" class="form-control form-control-lg text-center" value="1">
-                    </td>
-                    <td class="actions" data-th="">
-                      <div class="text-right">
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-sync"></i>
-                        </button>
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-th="Product">
-                      <div class="row">
-                        <div class="col-md-3 text-left">
-                          <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt=""
-                            class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                        </div>
-                        <div class="col-md-9 text-left mt-sm-2">
-                          <h4>Product Name</h4>
-                          <p class="font-weight-light">Category: Name</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td data-th="Price">$49.00</td>
-                    <td data-th="Quantity">
-                      <input type="number" class="form-control form-control-lg text-center" value="1">
-                    </td>
-                    <td class="actions" data-th="">
-                      <div class="text-right">
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-sync"></i>
-                        </button>
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-th="Product">
-                      <div class="row">
-                        <div class="col-md-3 text-left">
-                          <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt=""
-                            class="img-fluid d-none d-md-block rounded mb-2 shadow ">
-                        </div>
-                        <div class="col-md-9 text-left mt-sm-2">
-                          <h4>Product Name</h4>
-                          <p class="font-weight-light">Category: Name</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td data-th="Price">$49.00</td>
-                    <td data-th="Quantity">
-                      <input type="number" class="form-control form-control-lg text-center" value="1">
-                    </td>
-                    <td class="actions" data-th="">
-                      <div class="text-right">
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-sync"></i>
-                        </button>
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="float-right text-right">
-                <h4>Subtotal:</h4>
-                <h1>$99.00</h1>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-4 d-flex align-items-center">
-            <div class="col-sm-6 order-md-2 text-right">
-              <a href="catalog.html" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
-            </div>
-            <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-              <a href="catalog.html">
-                <i class="fas fa-arrow-left mr-2"></i> Continue Shopping</a>
-            </div>
-          </div>
-        </div>
-      </section>
+    
 </body>
 
 </html>

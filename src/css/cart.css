@@ -1,0 +1,25 @@
+.product-cart{
+    width: 300px;
+}
+
+.product-cart div{
+    width: fit-content;
+}
+
+.product-cart img{
+    max-height: 100px;
+    padding-left: 2px;
+    padding-right: 5px;
+}
+
+
+.main-cart-table{
+    border: black 1px solid;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.action{
+    text-align: center;
+    border-left: solid 1px rgb(200, 200, 200);
+}
