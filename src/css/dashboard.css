@@ -16,7 +16,7 @@ body {
 }
 
 .sidenav-iconed a div{
-	border: black 1px solid;
+	border: rgb(200, 70, 70) 1px solid;
 	border-radius: 50%;
 	width: 100%;
 	padding: 10% 10% 10% 10%;
