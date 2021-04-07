@@ -4,6 +4,35 @@ body {
 }
 
 
+.sidenav-iconed{
+	margin-left: 1%;
+	margin-top: 10%;
+	width: 50px;
+	position: fixed;
+}
+
+.sidenav-iconed a{
+	border-radius: 50% !important;
+}
+
+.sidenav-iconed a div{
+	border: black 1px solid;
+	border-radius: 50%;
+	width: 100%;
+	padding: 10% 10% 10% 10%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	transition: 0.5s;
+}
+
+.sidenav-iconed a div:hover{
+	background-color: rgb(200, 70, 70);
+}
+
+.sidenav-iconed a div img{
+	width: 100%;
+}
+
 
 .sidenav {
   height: 100%;
