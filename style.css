@@ -1,0 +1,167 @@
+.search-bar{
+    width: 100%;
+    padding: 5% 0 2% 0;    
+}
+
+.search-bar * {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 55%;
+  background: #f1f1f1;
+  margin-left: 20%;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 5%;
+  padding: 10px;
+  background: rgb(200, 90, 200);
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.browse-main {
+  display: flex;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+/* sidebar */
+.sidebar {
+  /* border: black 1px solid; */
+  width: 18%;
+  padding-top: 3%;
+  background-color: rgb(253, 253, 253);
+}
+
+.sidebar div {
+  cursor: pointer;
+  width: 95%;
+  padding: 5% 0% 5% 5%;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.sidebar div svg {
+  color: grey;
+  max-width: 20px;
+  right: -1px;
+  vertical-align: middle;
+  margin-left: 2%;
+  transform: rotate(180deg);
+}
+
+.tag-list{
+    margin-left: 10%;
+}
+
+.price-list{
+    margin-left: 10%;
+}
+
+.price-list input{
+    width: 42%;
+    height: 10%;
+    text-align: center;
+}
+
+.price-list button{
+    border-style:none
+}
+
+.price-list button svg{
+    transform: rotate(90deg);
+}
+
+.rating-list{
+    padding-left: 10%;
+}
+
+.date-list{
+    padding-left: 10%;
+}
+
+/* products */
+
+.main {
+  /* border: 1px solid black; */
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2%;
+  padding-left: 4%;
+  background-color: rgb(240, 240, 240);
+
+}
+
+.product {
+  /* cursor: pointer; */
+  /* border: 1px solid black; */
+  max-width: 15%;
+  margin: 1% 1% 1% 1%;
+  height: fit-content;
+  border-radius: 2.5px;
+  background-color: rgb(250, 250, 250);
+  padding: 1%;
+}
+
+.product-name{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product-price{
+    font-weight: bold;
+}
+
+.product-genre a{
+    color: rgb(50, 50, 50);
+}
+
+.product img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.product svg{
+    width: 20%;
+    height: 20%;
+    vertical-align: middle;
+    background-color: rgb(200, 90, 200);
+    color: white;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.product svg:hover{
+    background-color: violet;
+}
+
+.product:hover {
+    box-shadow: 5px 5px rgb(200, 200, 200);
+}
+
+
