@@ -19,111 +19,113 @@
 
 <body>
     <div class="container">
-        <div class="container">
-            <div class="container main-secction">
-                <center>
-                    <h1 id="edit">Edit Profile</h1>
-                </center>
-                <div class="row" id="upload">
-                    <!-- left column -->
-                    <div class="col-md-3">
-                        <div id="frame" class="text-center border border-dark rounded main-secction">
-                            <img id="image" class="img-fluid border border-dark rounded-circle" src="../img/acc.jpg"
-                                class="avatar img-circle" alt="avatar">
-                            <h6>Upload a different photo...</h6>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                                <div class="image-container">
+                                    <img src="../img/acc.jpg" id="imgProfile" style="width: 150px; height: 150px"
+                                        class="img-thumbnail" />
 
-                            <input type="file" class="form-control">
+                                </div>
+                                <div class="userData ml-3">
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">djBra</h2>
+                                    <p class="text-white">Joined Pick-A-Book on</p>
+                                    <p class="text-white">April 1(7 days ago)</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard"
+                                        value="Discard Changes" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- edit form column -->
-                    <div id="info" class="col-md-7 personal-info border border-dark rounded float-center main-secction">
-               
-                        <center>
-                            <h3>Personal Information</h3>
-                        </center>
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab"
+                                            href="#basicInfo" role="tab" aria-controls="basicInfo"
+                                            aria-selected="true">Basic Info</a>
+                                    </li>
 
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">First name:</label>
-                                <div class="col-md-12">
-                                    <input class="form-control" type="text" placeholder="First Name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Last name:</label>
-                                <div class="col-md-12">
-                                    <input class="form-control" type="text" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Company:</label>
-                                <div class="col-md-12">
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Email:</label>
-                                <div class="col-md-12">
-                                    <input class="form-control" type="text" placeholder="example2000@gmail.com">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Time Zone:</label>
-                                <div class="col-md-12">
-                                    <div class="ui-select">
-                                        <select id="user_time_zone" class="form-control">
-                                            <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                                            <option value="Alaska">(GMT-09:00) Alaska</option>
-                                            <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US
-                                                &amp;
-                                                Canada)</option>
-                                            <option value="Arizona">(GMT-07:00) Arizona</option>
-                                            <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time
-                                                (US &amp;
-                                                Canada)</option>
-                                            <option value="Central Time (US &amp; Canada)" selected="selected">
-                                                (GMT-06:00)
-                                                Central Time (US &amp; Canada)</option>
-                                            <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US
-                                                &amp;
-                                                Canada)</option>
-                                            <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                                        </select>
+                                </ul>
+                                <div class="tab-content ml-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel"
+                                        aria-labelledby="basicInfo-tab">
+
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Full Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Bryan B. Ebarita
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <!-- <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Username</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                djBra
+                                            </div>
+                                        </div>
+                                        <hr /> -->
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Birth Date</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                March 22, 1994
+                                            </div>
+                                        </div>
+                                        <hr />
+
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Email</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                ebaritabryan@gmail.com
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Password</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Not Set
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <!-- <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr /> -->
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Username:</label>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="text" value="janeuser">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Password:</label>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="password" value="11111122333">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Confirm password:</label>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="password" value="11111122333">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label"></label>
-                                <div class="col-md-8">
-                                    <input type="button" class="btn btn-primary" value="Save Changes">
-                                    <span></span>
-                                    <input type="reset" class="btn btn-default" value="Cancel">
-                                </div>
-                            </div>
-                        </form>
+                        </div>
+
+
                     </div>
+
                 </div>
             </div>
-            <hr>
         </div>
     </div>
 </body>
