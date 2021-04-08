@@ -15,11 +15,15 @@ body {
 .topnav div{
 	width: fit-content;
 	height: 100%;
-	border: 1px solid blue;
 	margin-right: 1%;
 	width: fit-content;
 	padding: 10px 10px 10px 10px;
-	border-radius: 50%;
+	cursor: pointer;
+	transition: 0.1ms;
+}
+
+.topnav div:hover{
+	border-bottom: 1px solid green;
 }
 
 .topnav div img{
