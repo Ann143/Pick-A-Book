@@ -1,16 +1,15 @@
 
-            #login{
-                border: black 2px solid;
-                margin-left: 15px;
-                height: 45px;
-                font-size: 15px;
-                font-weight: bold;
-                height: 45px;
-                margin-top: 10px;
-                border-radius: 18%;
-                
-              }
-              
+      #login{
+        border: black 2px solid;
+        margin-left: 18px;
+        height: 45px;
+        font-size: 15px;
+        font-weight: bold;
+        height: 45px;
+        margin-top: 10px;
+        border-radius: 18%;
+        
+      }
                  .gfg {
                   
                     position: relative;
@@ -66,9 +65,14 @@
                     object-fit: cover;
                 }
                 
-                .pic {
+                /* .pic {
                     height: 400px;
                     width: 100%;
+                } */
+                #design{
+                    width: 20rem;
+                    color: black;
+                     height:auto;
                 }
                 
                 .checked {

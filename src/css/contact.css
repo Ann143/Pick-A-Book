@@ -2,11 +2,12 @@
 
 #login{
   border: black 2px solid;
-  margin-left: 25px;
+  margin-left: 27px;
   height: 45px;
   font-size: 15px;
   font-weight: bold;
   height: 45px;
+  margin-top: -2px;
   border-radius: 18%;
             
 }
@@ -35,7 +36,7 @@ html {
 #link{
   border: black 2px solid;
   width: 100px;
-  margin-left: 20px;
+  margin-left: 28px;
   text-align: center;
   color: white;
   background-color: black;

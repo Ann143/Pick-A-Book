@@ -34,7 +34,6 @@
         .carousel-indicators .active {
             background-color: rgb(212, 14, 130);
         }
-
     </style>
     <script>
         $(document).ready(function () {
@@ -65,7 +64,7 @@
 
 <body>
     <div id="head">
-        <div id="nav-logo">
+        <div id="nav-logo"> 
         </div>
         <br /><br />
         <div>
@@ -74,7 +73,7 @@
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span id="btn" class="navbar-toggler-icon" style="display: block; top: 112px;"></span>
                 </button>
-                <br /><br /><br />
+                <br><br><br>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="navbar-item">
@@ -101,176 +100,261 @@
             <a href="../src/html/login.html"><button class="btn btn-primary " role="button " id="text3">Shop
                     Now!</button></a>
         </div>
-    </div>
-
-
-
-    <div class="container text-white text-center mt-2 "
-        style=" background-color: hsl(0, 6%, 91%);padding:4px; margin-bottom: 20px;width: 100% ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-        <div class="container mt-3 ">
-            <hr class="new3">
-            <h3 style="color: black;">TRENDING ITEMS</h3>
-            <hr class="new3">
-            <div id="demo " class="carousel slide " data-ride="carousel ">
-                <!-- Indicators -->
-                <div class="card-body">
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo " data-slide-to="0 " class="active"></li>
-                        <li data-target="#demo " data-slide-to="1 "></li>
-                        <li data-target="#demo " data-slide-to="2 "></li>
-                    </ul>
+    <div class="container mt-2 " style="background-color:hsl(0, 6%, 91%);box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
+        <br><hr class="new3"> 
+        <h3 class="text-center">TRENDING ITEMS</h3>
+        <hr class="new3">
+        <br>
+       
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/rom3.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="#">The Invitations</a></h6>
+                                        <h6 class="price">Php 300.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/rom2.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html">Roommate</a></h6>
+                                        <h6 class="price">Php 350.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm h-100" style="height: 100px;">
+                                <div class="card" style="width: 12rem; box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/thriller1.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">The Hiding Place</a></h6>
+                                        <h6 class="price">Php 200.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem; box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/rom4.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html">Not My Match</a></h6>
+                                        <h6 class="price">Php 100.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/thriller3.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">The Missing Girl</a></h6>
+                                        <h6 class="price">Php 140.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
                 </div>
-
-
-                <!-- The slideshow -->
-                <div class="carousel-inner " style="height:600px; ">
-                    <div class="carousel-item active" style="background-color:hsl(0, 6%, 91%) ;">
-                        <div class=" kpop ">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img class="pic " src="../src/img/a.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price">Php 100.00</h5>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/bio1.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html">Unfinished</a></h6>
+                                        <h6 class="price">Php 90.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/bio2.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">A Promised Land</a></h6>
+                                        <h6 class="price">Php 50.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm h-100" style="height: 100px;">
+                                <div class="card" style="width: 12rem; box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/fan2.jpg"alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">The Ever After</a></h6>
+                                        <h6 class="price">Php 180.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem; box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/bio4.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Finding My Father</a></h6>
+                                        <h6 class="price">Php 150.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/bio5.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Radio Girl</a></h6>
+                                        <h6 class="price">Php 240.00</h>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="kpop ">
-                            <div class="card h-25 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/b.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3>
-                                        <a href="# ">Hot Blooded</a>
-                                    </h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/c.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Choose To Die</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item ">
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/d.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/e.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/f.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item ">
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/g.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/g.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kpop ">
-                            <div class="card h-100 ">
-                                <div class="card-body ">
-                                    <img class="pic " src="../src/img/g.jpg ">
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <span class="fa fa-star checked "></span>
-                                    <h3><a href="# ">Absolute Fear</a></h3>
-                                    <h5 class="price ">Php 100.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div><br><br>
                 </div>
-
-                <!-- Left and right controls -->
-
-
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/crime1.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Maniac</a></h6>
+                                        <h6 class="price">Php 190.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/crime2.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Last Call</a></h6>
+                                        <h6 class="price">Php 120.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm h-100" style="height: 100px;">
+                                <div class="card" style="width: 12rem; box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/crime3.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Guilty Admissions</a></h6>
+                                        <h6 class="price">Php 220.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem; box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/crime4.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Small Time</a></h6>
+                                        <h6 class="price">Php 160.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card" style="width: 12rem;box-shadow: 0 3px 6px 0 rgba(248, 28, 28, 0.2), 0 6px 20px 0 rgba(253, 4, 4, 0.19);">
+                                    <img class="card-img-top" src="../src/img/crime5.jpg" alt="Card image cap">
+                                    <div class="card-body text-center" style="height: 100px;">
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <span class="fa fa-star checked "></span>
+                                        <h6><a href="../src/html/login.html ">Bad Medicine</a></h6>
+                                        <h6 class="price">Php 295.00</h>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
             </div>
+            <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                <span class="sr-only ">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a> 
         </div>
     </div>
 
-    <div class="container p-3 mb-2 mt-2 text-white text-center "
-        style=" background-color: #dbbac7;padding:4px; height:300px ">
+    <div class="container p-3 mb-2 mt-3 text-white text-center "
+        style=" background-color: #dbbac7;padding:4px;">
         <div class="row ">
             <div class="col-sm-4 ">
                 <div class="card " style="background-color: #e2548f; ">
