@@ -10,11 +10,10 @@ $(document).ready(function(){
 		});
 	  });
 	$(".side-icon-container").on("mouseleave", function(){
-		$("span").css("display","none");
+		$(this).children("#side-link").css("display","none");
 	});
 
 	$(".side-icon-container").on("mouseover", function(){
-		$(this).children("span").css("display","unset");
+		$(this).children("#side-link").css("display","unset");
 	});
 });	
-
