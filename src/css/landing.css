@@ -66,9 +66,14 @@
                     object-fit: cover;
                 }
                 
-                .pic {
+                /* .pic {
                     height: 400px;
                     width: 100%;
+                } */
+                #design{
+                    width: 20rem;
+                    color: black;
+                     height:auto;
                 }
                 
                 .checked {
