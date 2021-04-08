@@ -10,12 +10,15 @@
                 border-radius: 18%;
                 
               }
+              
                  .gfg {
                   
                     position: relative;
                     width: 100%;
                 }
-          
+                .carousel-item{
+                    background-color:hsl(0, 6%, 91%);
+                }
                 .first-txt {
                     position: absolute;
                     top: 17px;
@@ -104,7 +107,5 @@
                 li {
                     padding: 10px;
                 }
-              .active{
-                  color: brown;
-              }
+              
               

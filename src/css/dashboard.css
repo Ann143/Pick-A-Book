@@ -37,6 +37,7 @@ body {
 
 .sidenav-iconed a{
 	border-radius: 50% !important;
+	text-decoration: none;
 	
 }
 
@@ -52,7 +53,7 @@ body {
 }
 
 .sidenav-iconed a .side-icon-container:hover{
-	background-color: rgb(200, 70, 70);
+	background-color: rgb(233, 38, 129);
 }
 
 .sidenav-iconed a div img{

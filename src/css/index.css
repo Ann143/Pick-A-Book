@@ -37,6 +37,10 @@ html {
 #link:hover{
   color: #aa093e;
 }
+.active, .nav-link:hover {
+  background-color: #666;
+  color: white;
+}
 
 
 #logo {
