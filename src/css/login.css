@@ -1,11 +1,12 @@
 #log{
-    border: black 2px solid;
-    margin-left: 15px;
-    height: 45px;
-    font-size: 15px;
-    font-weight: bold;
-    height: 45px;
-    border-radius: 18%;
+  border: black 2px solid;
+  margin-left: 27px;
+  height: 45px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 45px;
+  margin-top: -2px;
+  border-radius: 18%;
     
   }
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Lato');
@@ -136,7 +137,7 @@ a .mainbox{
   #link{
     border: black 2px solid;
     width: 100px;
-    margin-left: 15px;
+    margin-left: 30px;
     text-align: center;
     color: white;
     background-color: black;
@@ -169,14 +170,4 @@ a .mainbox{
   hr.new3 {
     border-top: 1px solid rgb(230, 11, 146);
     width: 20%;
-  }
-  #login{
-    border: black 2px solid;
-    margin-left: 8;
-    height: 45px;
-    font-size: 15px;
-    font-weight: bold;
-    height: 45px;
-    border-radius: 18%;
-    
   }
