@@ -1,12 +1,5 @@
 body {
-    background-color: rgb(105, 105, 105);
-}
-
-#edit {
-
-    padding: 10px;
-    margin-top: 10px;
-
+    background-color: rgb(231, 225, 225);
 }
 #upload1{
    padding-left: 50px;
@@ -43,12 +36,12 @@ body {
 }
 .main-secction {
     box-shadow: 15px 15px 15px;
-    background: linear-gradient(to bottom, #ffffff 0%, #660033 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ee3f88 100%);
 }
 
 .viewInfo {
     box-shadow: 15px 15px 15px;
-    background: linear-gradient(to bottom right, #ffffff -26%, #ff99cc 100%);
+    background: linear-gradient(to bottom right, #ffffff -26%, #ee3f88 100%);
 }
 
 h6 {
