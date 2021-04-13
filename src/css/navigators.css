@@ -1,0 +1,71 @@
+.top-nav{
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    position: fixed;
+    height: 10%;
+    left: 0;
+    right: 0;
+}
+
+.top-nav .top-nav-logo{
+    background-color: deeppink;
+    width: 20%;
+    height: 100%;
+}
+
+.top-nav .side-nav-btn{
+    height: 50%;
+    /* width: 2.4%;  if position is absulute */
+    /* width: 12%; if position is static/default*/
+    background-color: blueviolet;
+    width: 2.4%;
+    border-radius: 50%;
+    margin-left: -1.2%;
+
+}
+
+.top-nav .side-nav-btn img{
+    margin: 10% 10% 10% 10%;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+}
+
+.top-nav .top-nav-drop-downs{
+    height: 50%;
+    width: 10%;
+    margin-left: 1%;
+}
+
+.top-nav .top-nav-drop-downs div{
+    height: 100%;
+    width: 25%;
+    margin-left: 20%;
+    background-color: rgb(220, 220, 220);
+    border-radius: 50%;
+}
+
+.top-nav .top-nav-drop-downs div img{
+    margin: 20% 20% 20% 20%;
+    height: 60%;
+    width: 60%;
+}
+
+.top-nav .top-nav-drop-down-privacy{
+    height: 50%;
+    width: 65%;
+}
+
+.top-nav .top-nav-drop-down-privacy div{
+    height: 100%;
+    width: 3.8%;
+    margin-left: 2%;
+    background-color: rgb(220, 220, 220);
+    border-radius: 50%;
+}
+
+.top-nav .top-nav-drop-down-privacy div img{
+    margin: 20% 20% 20% 20%;
+    height: 60%;
+    width: 60%;
+}

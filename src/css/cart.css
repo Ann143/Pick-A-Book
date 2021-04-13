@@ -21,5 +21,13 @@
 
 .action{
     text-align: center;
-    border-left: solid 1px rgb(200, 200, 200);
+    border-left: solid 1px rgb(150, 145, 145);
+}
+
+hr.new1 {
+    border-top: 1px solid rgb(192, 8, 94);
+}
+hr.new2 {
+    border-top: 1px solid rgb(192, 8, 94);
+    width: 40px;
 }
