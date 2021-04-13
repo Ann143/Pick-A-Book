@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bestSold.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap4.min.js"></script> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css"> -->
+
+    <!-- <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script> -->
+</head>
+
+
+<body >
+    <div class="container">
+        <center>
+            <h2>Inventory List</h2>
+        </center>
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Book Title <span id="sort">↑</span></th>
+                    <th>Book Category</th>
+                    <th>Seller</th>
+                    <th>Price</th>
+                    <th>Total Sold</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>The Invitation</td>
+                    <td>Romance Novel</td>
+                    <td>Vi Keeland</td>
+                    <td>Php 300.00</td>
+                    <td>1245 pc(s)</td>
+                    <td>Php 373,500.00</td>
+                </tr>
+                <tr>
+                    <td>A Promised Land</td>
+                    <td>Biography, Autobiography</td>
+                    <td>Barack Obama</td>
+                    <td>Php 50.00</td>
+                    <td>1230 pc(s)</td>
+                    <td>Php 61,500.00</td>
+                </tr>
+                <tr>
+                    <td>Not My Match</td>
+                    <td>Contemporary, Funny, New Adult, Romance, Sports</td>
+                    <td>Ilsa Madden-Mills</td>
+                    <td>Php 100.00</td>
+                    <td>1651 pc(s)</td>
+                    <td>Php 165,100.00</td>
+                </tr>
+                <tr>
+                    <td>The Invitation</td>
+                    <td>Romance Novel</td>
+                    <td>Vi Keeland</td>
+                    <td>Php 300.00</td>
+                    <td>1245 pc(s)</td>
+                    <td>Php 373,500.00</td>
+                </tr>
+                <tr>
+                    <td>A Promised Land</td>
+                    <td>Biography, Autobiography</td>
+                    <td>Barack Obama</td>
+                    <td>Php 50.00</td>
+                    <td>1230 pc(s)</td>
+                    <td>Php 61,500.00</td>
+                </tr>
+                <tr>
+                    <td>Not My Match</td>
+                    <td>Contemporary, Funny, New Adult, Romance, Sports</td>
+                    <td>Ilsa Madden-Mills</td>
+                    <td>Php 100.00</td>
+                    <td>1651 pc(s)</td>
+                    <td>Php 165,100.00</td>
+                </tr>
+                <tr>
+                    <td>The Invitation</td>
+                    <td>Romance Novel</td>
+                    <td>Vi Keeland</td>
+                    <td>Php 300.00</td>
+                    <td>1245 pc(s)</td>
+                    <td>Php 373,500.00</td>
+                </tr>
+                <tr>
+                    <td>A Promised Land</td>
+                    <td>Biography, Autobiography</td>
+                    <td>Barack Obama</td>
+                    <td>Php 50.00</td>
+                    <td>1230 pc(s)</td>
+                    <td>Php 61,500.00</td>
+                </tr>
+                <tr>
+                    <td>Not My Match</td>
+                    <td>Contemporary, Funny, New Adult, Romance, Sports</td>
+                    <td>Ilsa Madden-Mills</td>
+                    <td>Php 100.00</td>
+                    <td>1651 pc(s)</td>
+                    <td>Php 165,100.00</td>
+                </tr>
+
+            </tbody>
+            <!-- <tfoot class="thead-dark">
+                <tr>
+                    <th>Book Title</th>
+                    <th>Book Category</th>
+                    <th>Seller</th>
+                    <th>Price</th>
+                    <th>Total Sold</th>
+                    <th>Total Amount</th>
+                </tr>
+            </tfoot> -->
+        </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+</body>
+
+</html>
