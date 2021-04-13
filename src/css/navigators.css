@@ -1,6 +1,5 @@
 .top-nav{
-
-    border: 1px solid black;
+    background-color: rgb(250, 250, 250);
     width: 100%;
     position: fixed;
     height: 10%;
