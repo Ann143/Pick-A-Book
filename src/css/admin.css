@@ -25,11 +25,11 @@ body {
   }
   
   .sidenav a:hover {
-	background-color: #112ecf;
+	background-color: rgb(248, 138, 175);
   }
 
   .sidenav a.active{
-	  background-color: rgb(240, 66, 124);
+	  background-color: rgb(248, 138, 175);
 	  color: black;
   }
   
