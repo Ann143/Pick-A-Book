@@ -78,3 +78,19 @@ body {
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
+
+  .fa-stack[data-count]:after{
+	position:absolute;
+	top:33%;
+	content: attr(data-count);
+	font-size:25%;
+	padding:.2em;
+	border-radius:999px;
+	line-height:.75em;
+	color: white;
+	background:rgba(255,0,0,.85);
+	text-align:center;
+	min-width:2em;
+	font-weight:bold;
+	margin-left: 565px;
+  }
