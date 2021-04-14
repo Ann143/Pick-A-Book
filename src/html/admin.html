@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/admin.css">
     <script src="../jquery/admin.js"></script>
-  <title>Document</title>
+  <title>Admin</title>
 </head>
 
 <body>
@@ -33,29 +33,30 @@
     <div style="background-color: rgb(194, 12, 67);  height: 27%;margin-top: -25px;">
       <img class="float-left rounded-circle w-75 mt-3 ml-4" src="../img/logo1.PNG" alt="Logo" height="140px" />
     </div>
+    <div>
     <a href="#about" class="active" >Dashboard</a>
     <a href="#services">Users</a>
     <a href="#clients">Products</a>
     <a href="#contact">Categories</a>
-    <button class="dropdown-btn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    
   </div>
+  </div>
+
   <nav class="navbar navbar-light w" style="background-color: rgb(150, 4, 65);">
     <span class="navbar-brand mb-0 h1">Navbar</span>
     <span class="fa-stack fa-3x" data-count="28">
-      <i class="fa fa-bell fa-stack-1x fa-inverse h-5 w-10"style="height: 10px;"></i>
+      <i class="fa fa-bell fa-stack fa-inverse" style="font-size: 20px; margin-left: 560px;"></i>
     </span>
-    <img id="logo" class="float-right rounded-circle " src="../img/minion.jpg" alt="Logo" height="40px" width="40px" />
+    <div class="dropdown">
+    <img  onclick="myFunction()"  class="dropbtn float-right rounded-circle" src="../img/minion.jpg" height="40px" width="40px" style="margin-right:30px;" />
+    
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Profile</a>
+        <a href="#about">Logout</a>
+      </div>
+    </div>
   </nav>
   <nav class="navbar navbar-light w" style="background-color: rgb(241, 44, 126);">
-    <span class="navbar-brand mb-0 h1" style="margin-left: 200px;" >Dashboard</span>
+    <span class="navbar-brand mb-0 h1" style="margin-left: 200px;" >Admin / Dashboard</span>
   </nav>
 <br>
   <div class="main">
@@ -67,30 +68,71 @@
           <div class="row mt-2">
             <div class="col-sm">
               <div class="card" style="width: 14rem;">
-                
                 <img src="../img/minion.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-center">Seller</p>
-                </div>
+                <p class="card-text text-center"style="font-size: 20px;" href="#">Seller</p>
               </div>
             </div>
             <div class="col-sm">
               <div class="card" style="width: 14rem;">
                 <img src="../img/minion.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-center">Customer</p>
-                </div>
+                <p class="card-text text-center" style="font-size: 20px;">Customer</p>
               </div>
             </div>
           </div><br>
         </div>
         </div>
         <div class="col-sm">
-         
-
+          <div class="container" style="box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);"><br> 
+            <h5 class="mt-10">Product Management</h5>
+            <div class="row mt-2">
+              <div class="col-sm">
+                <div class="card" style="width: 14rem;">
+                  <img src="../img/minion.jpg" class="card-img-top" alt="...">
+                  <p class="card-text text-center" style="font-size: 20px;">Product</p>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card" style="width: 14rem;">
+                  <img src="../img/minion.jpg" class="card-img-top" alt="...">
+                  <p class="card-text text-center" style="font-size: 20px;">Orders</p>
+                </div>
+              </div>
+            </div><br>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <div class="container" >
+      <div class="row">
+        <div class="col-sm">
+         <div class="container" style="box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);"><br> 
+          <h5 class="mt-10">Categories Management</h5>
+          <div class="row mt-2">
+            <div class="col-sm">
+              <div class="card" style="width: 14rem;">
+                <img src="../img/minion.jpg" class="card-img-top" alt="...">
+                <p class="card-text text-center">Seller</p>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card" style="width: 14rem;">
+                <img src="../img/minion.jpg" class="card-img-top" alt="...">
+                <p class="card-text text-center">Customer</p>
+              </div>
+            </div>
+          </div><br>
+        </div>
+        </div>
+        <div class="col-sm">
+          <div class="container" ><br> 
+      
+            
+          </div>
         </div>
       </div>
     </div>
+
+
   </div>
 <br><br>
   <div style="background-color: rgb(241, 44, 126); height: 170px;">
