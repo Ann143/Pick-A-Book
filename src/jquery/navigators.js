@@ -9,14 +9,20 @@ $(document).ready(function () {
     var togglespan = false;
 
     $(".side-nav-btn").click(function () {
-        $(".slide-show-btn").each(function () {
-            $("#toggle-span").toggle();
+        $(".side-nav").each(function () {
+            if (togglespan == false){
+                $(".slide-show-btn #toggle-span").removeClass("hide-display").addClass("d-flex");
+                $(".side-nav").removeClass("expand-side-nav").addClass("unexpand-side-nav");
+                togglespan = true;
+            }else{
+                $(".slide-show-btn #toggle-span").removeClass("d-flex").addClass("hide-display");
+                $(".side-nav").addClass("expand-side-nav").removeClass("expand-side-nav");
+                togglespan = false;
+            }
         });
     });
 
-    // $(".side-nav-btn").click(function(){
-    //     $(".slide-show-btn").each(function(){
-    //         $(".btn-name").toggle();
-    //     })
-    // });
+    $(".my-account").click(function(){
+        $(".drop-nav-profile").toggle();
+    });
 });
