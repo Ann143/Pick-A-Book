@@ -1,5 +1,5 @@
-body {
-    background-color: rgb(231, 225, 225);
+body{
+    background-color: rgb(250, 250, 248);
 }
 #upload1{
    padding-left: 50px;
@@ -15,13 +15,8 @@ body {
     background-color: blueviolet;
 }
 
-#exampleModal {
-    max-width: 200%;
-}
-/* 
-#basicInfo,#frame {
-    margin: 10px;
-} */
+
+
 #image1 {
     max-height: 200px;
     max-width: 100%;
@@ -36,30 +31,18 @@ body {
 }
 .main-secction {
     box-shadow: 15px 15px 15px;
-    background: linear-gradient(to bottom, #ffffff 0%, #ee3f88 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #fdeef4 100%);
 }
 
 .viewInfo {
     box-shadow: 15px 15px 15px;
-    background: linear-gradient(to bottom right, #ffffff -26%, #ee3f88 100%);
+    background: linear-gradient(to bottom right, #ffffff -26%, #ffdcea 100%);
 }
 
 h6 {
     color: white;
 }
-/* #formGroup{
-    margin-left: 15px;
-} */
-/* 
-#email {
-    max-width: 450px;
-} */
 
-
-body{
-    padding-top: 68px;
-    padding-bottom: 50px;
-}
         .image-container {
             position: relative;
         }
