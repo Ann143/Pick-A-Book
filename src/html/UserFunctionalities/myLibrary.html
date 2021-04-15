@@ -15,184 +15,98 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </head>
-<<<<<<< HEAD
 <style>
-    #images {
-        margin: 10px;
+    #modalImage,{
+        max-width:100%;
+        max-height: 80%;
     }
+
+    #imageDiv {
+        margin: 5px;
+    }
+
+
+    h4 {
+        font-family: 'Open Sans';
+        margin: 0;
+    }
+
+ 
+
 </style>
-=======
->>>>>>> c84a639a5ed9245d0ed49030aa9841411568a292
 
 <body>
-    <div class="container-fluid">
-        <div class="container">
-<<<<<<< HEAD
-            <!-- <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
-=======
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
->>>>>>> c84a639a5ed9245d0ed49030aa9841411568a292
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-<<<<<<< HEAD
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt=""> -->
+    <div class="container mt-4">
+        <div class="row">
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/bio5.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
 
+            </div>
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/acc.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
 
-            <div class="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
-                <div id="images" class="container border border-secondary col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/acc.jpg" alt="First slide">
+            </div>
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/crime2.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
+
+            </div>
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/bio2.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog"
+            tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body mb-0 p-0">
+                        <img src="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg" alt="" style="width:100%">
+                    </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary w-100" data-target="#carouselExample"
-                            data-slide-to="0">Read</button>
-                    </div>
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/acc.jpg" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="1">
-
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/acc.jpg" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="2">
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/acc.jpg" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="3">
-                </div>
-
-                <div id="images" class="container border border-secondary col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="0">
-                    <hr>
-                    <button>Read</button>
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="1">
-
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="2">
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="3">
-                </div>
-            </div>
-            <!-- <hr>
-            <div class="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
-                <div id="images" class="container border border-secondary col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="0">
-                    <hr>
-                    <button>Read</button>
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="1">
-
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="2">
-                </div>
-                <div id="images" class="container col-12 col-sm-6 col-lg-3">
-                    <img class="w-100" src="../../img/penguin.png" alt="First slide" data-target="#carouselExample"
-                        data-slide-to="3">
-                </div>
-            </div>
-            <hr> -->
-
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                        <div><a href="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg"
+                                target="_blank">Download</a>
                         </div>
-                        <div class="modal-body">
-                            <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                                <!-- <ol class="carousel-indicators">
-                                    <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselExample" data-slide-to="1"></li>
-                                    <li data-target="#carouselExample" data-slide-to="2"></li>
-                                    <li data-target="#carouselExample" data-slide-to="3"></li>
-                                </ol> -->
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="../../img/acc.jpg" alt="First slide">
-
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="../../img/products.png" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="../../img/rated.jpg" alt="Third slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="../../img/rom3.jpg" alt="Fourth slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExample" role="button"
-                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExample" role="button"
-                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                        <button class="btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Close</button>
                     </div>
                 </div>
             </div>
-
-
-            <!-- Custom Styling Toggle. For demo purposes only. -->
-            <div class="switch-wrap">
-                <label class="switch">
-                    <input type="checkbox" id="styleSwitch" onclick="switchStyle();">
-                    <span class="slider round"></span>
-                </label>
-                <span class="switch-text">Toggle between <em>Bootstrap defaults</em> and <em>custom styling</em>.</span>
-            </div>
         </div>
-    </div>
-</body>
-<!-- <script>
-    function switchStyle() {
-        if (document.getElementById('styleSwitch').checked) {
-            document.getElementById('gallery').classList.add("custom");
-            document.getElementById('exampleModal').classList.add("custom");
-        } else {
-            document.getElementById('gallery').classList.remove("custom");
-            document.getElementById('exampleModal').classList.remove("custom");
-        }
-    }
-</script> -->
-=======
 
-
-        </div>
-    </div>
 </body>
->>>>>>> c84a639a5ed9245d0ed49030aa9841411568a292
 
 </html>
