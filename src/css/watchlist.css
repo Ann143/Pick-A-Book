@@ -8,21 +8,20 @@
     background-color: rgb(250, 250, 250);
     padding: 1%;
     transition: 0.2s;
+}
 
-  }
-
-.product-name{
+.product-name {
     font-weight: bold;
     cursor: pointer;
 }
 
-.product-genre a{
+.product-genre a {
     color: rgb(50, 50, 50);
 }
 
 .product img {
-  width: 100%;
-  cursor: pointer;
+    width: 100%;
+    cursor: pointer;
 }
 
 .product:hover {
@@ -30,6 +29,8 @@
     transition: 0.2s;
 }
 
-#most-recent, #weeks-ago, #months-ago{
-  flex-wrap: wrap;
+#most-recent,
+#weeks-ago,
+#months-ago {
+    flex-wrap: wrap;
 }
