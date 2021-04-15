@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div class="sidenav">
+    <div class="sidenav" >
         <div style="background-color: rgb(194, 12, 67);  height: 27%;margin-top: -20px;">
             <img class="float-left rounded-circle w-75 mt-3 ml-4" src="../../img/logo1.PNG" alt="Logo" height="130px" />
         </div>
@@ -65,24 +65,23 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-light w" style="background-color: rgb(150, 4, 65);">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
+    <nav class="navbar " style="background-color: rgb(150, 4, 65);height: 100px; position: fixed; z-index: 2;width: 100%;">
         <span class="fa-stack fa-3x" data-count="28">
-      <i class="fa fa-bell fa-stack fa-inverse" style="font-size: 20px; margin-left: 560px;"></i>
+      <i class="fa fa-bell fa-stack fa-inverse" style="font-size: 15px; margin-left: 1180px;"></i>
     </span>
-        <div class="dropdown">
-            <img onclick="myFunction()" class="dropbtn float-right rounded-circle" src="../../img/minion.jpg" height="40px" width="40px" style="margin-right:30px;" />
+        <div class="drop">
+            <img onclick="myFunction()" class="dropbutton float-right rounded-circle" src="../../img/minion.jpg" height="40px" width="40px" style="margin-right:45px;" />
 
-            <div id="myDropdown" class="dropdown-content">
+            <div id="DropDown" class="dropdown-content">
                 <a href="#home">Profile</a>
                 <a href="#about">Logout</a>
             </div>
         </div>
-    </nav>
+    </nav><br><br><br><br>
     <nav class="navbar navbar-light w" style="background-color: rgb(241, 44, 126);">
         <span class="navbar-brand mb-0 h1" style="margin-left: 200px;">Admin / Dashboard</span>
     </nav>
-    <br>
+    <br><br>
 
     <div class="main">
         <div class="container">
@@ -97,15 +96,19 @@
                         <div class="row mt-2">
                             <div class="col-sm">
                                 <div class="card">
-                                    <img src="../../img/seller.png " class="card-img-top " style="width:200px;" alt="... ">
-                                    <a href="../adminFunctionalities/sellers.html " class="card-text text-center " style="font-size: 20px;color: black; ">Seller </a>
-                                </div>
+                                    <img src="../../img/seller.png" class="card-img-top "  alt="Seller" style="height: 160px; background-color: rgb(240, 155, 183);">
+                                    <div class="card-body"> 
+                                      <a href="../adminFunctionalities/sellers.html " class="card-text text-center " > <p style="font-size: 20px;color: black; ">Seller</p></a>
+                                    </div>
+                                  </div>
                             </div>
                             <div class="col-sm ">
                                 <div class="card ">
-                                    <img src="../../img/customer.png " class="card-img-top " style=" height:200px; " alt="... ">
-                                    <a href="../adminFunctionalities/customers.html " class="card-text text-center " style="font-size: 20px;color: black; ">Customers </a>
-                                </div>
+                                    <img src="../../img/customer.png " class="card-img-top "  alt="Customer" style="height: 160px; background-color: rgb(240, 155, 183);">
+                                    <div class="card-body">
+                                      <a href="../adminFunctionalities/sellers.html " class="card-text text-center " > <p style="font-size: 20px;color: black; ">Customer</p></a>
+                                    </div>
+                                  </div>
                             </div>
                         </div><br>
                     </div>
@@ -121,15 +124,19 @@
                         <div class="row mt-2 ">
                             <div class="col-sm ">
                                 <div class="card " style="width: 14rem; ">
-                                    <img src="../../img/products.png " class="card-img-top " style=" height:200px; " alt="... ">
-                                    <a href="../adminFunctionalities/products.html " class="card-text text-center " style="font-size: 20px;color: black; ">Products</a>
-                                </div>
+                                    <img src="../../img/productBook.png" class="card-img-top "  alt="Product" style="height: 160px; background-color: rgb(240, 155, 183);">
+                                    <div class="card-body">
+                                      <a href="../adminFunctionalities/sellers.html " class="card-text text-center " > <p style="font-size: 20px;color: black; ">Product</p></a>
+                                    </div>
+                                  </div>
                             </div>
                             <div class="col-sm ">
                                 <div class="card " style="width: 14rem; ">
-                                    <img src="../../img/order.png " class="card-img-top " style=" height:200px; " alt="... ">
-                                    <a href="../adminFunctionalities/orders.html " class="card-text text-center " style="font-size: 20px;color: black; ">Orders</a>
-                                </div>
+                                    <img src="../../img/order.png" class="card-img-top "  alt="Order" style="height: 160px; background-color: rgb(240, 155, 183);">
+                                    <div class="card-body">
+                                      <a href="../adminFunctionalities/sellers.html " class="card-text text-center " > <p style="font-size: 20px;color: black; ">Order</p></a>
+                                    </div>
+                                  </div>
                             </div>
                         </div><br>
                     </div>
@@ -148,15 +155,19 @@
                         <div class="row mt-2 ">
                             <div class="col-sm ">
                                 <div class="card " style="width: 14rem; ">
-                                    <img src="../../img/rated.jpg " class="card-img-top " style=" height:200px; " alt="... ">
-                                    <a href="../adminFunctionalities/sellers.html " class="card-text text-center " style="font-size: 20px;color: black; ">Most Rated Books</a>
-                                </div>
+                                    <img src="../../img/rated.png " class="card-img-top " alt="Rated Books" style="height: 160px; background-color: rgb(240, 155, 183);margin-top: 5;">
+                                    <div class="card-body">
+                                      <a href="../adminFunctionalities/sellers.html " class="card-text text-center " > <p style="font-size: 20px;color: black; ">Most Rated Books</p></a>
+                                    </div>
+                                  </div>
                             </div>
                             <div class="col-sm ">
                                 <div class="card " style="width: 14rem; ">
-                                    <img src="../../img/bestSold.png " class="card-img-top " style=" height:200px; " alt="... ">
-                                    <a href="../adminFunctionalities/best_sold_items.html " class="card-text text-center " style="font-size: 20px;color: black; ">Best Sold Books </a>
-                                </div>
+                                    <img src="../../img/sold.png" class="card-img-top "  alt="Best Sold" style="height: 160px; background-color: rgb(240, 155, 183);">
+                                    <div class="card-body">
+                                      <a href="../adminFunctionalities/sellers.html " class="card-text text-center " > <p style="font-size: 20px;color: black; ">Best Sold Books</p></a>
+                                    </div>
+                                  </div>
                             </div>
                         </div><br>
                     </div>
