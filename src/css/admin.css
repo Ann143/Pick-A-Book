@@ -6,11 +6,10 @@ body {
     height: 100%;
     width: 210px;
     position: fixed;
-    z-index: 1;
+    z-index: 6;
     top: 0;
     left: 0;
     background-color: rgb(219, 207, 207);
-    overflow-x: hidden;
     padding-top: 20px;
     overflow-y: scroll;
 }
@@ -62,9 +61,11 @@ body {
     background-color: #2980B9;
 }
 
-.dropdown {
-    position: relative;
+.drop{
+    position: absolute;
     display: inline-block;
+    z-index:1;
+    right:0
 }
 
 .dropdown-content {
@@ -92,6 +93,9 @@ body {
     display: block;
 }
 
+#DropDown a:hover{
+    background-color: rgb(248, 138, 175);
+}
 .fa-stack[data-count]:after {
     position: absolute;
     top: 33%;
