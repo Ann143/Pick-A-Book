@@ -64,7 +64,7 @@ body {
 .drop{
     position: absolute;
     display: inline-block;
-    z-index:2;
+    z-index:1;
     right:0
 }
 
