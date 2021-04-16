@@ -15,25 +15,98 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </head>
+<style>
+    #modalImage{
+        max-width:100%;
+        max-height: 80%;
+    }
+
+    #imageDiv {
+        margin: 5px;
+    }
+
+
+    h4 {
+        font-family: 'Open Sans';
+        margin: 0;
+    }
+
+ 
+
+</style>
 
 <body>
-    <div class="container-fluid">
-        <div class="container">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
-            <img width="800px" height="800px" class="img-thumbnail d-inline-block bg-warning" src="../img/acc.jpg" alt="">
+    <div class="container mt-4">
+        <div class="row">
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/bio5.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
 
+            </div>
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/acc.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
+
+            </div>
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/crime2.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
+
+            </div>
+            <div id="imageDiv" class="col-md-2 border border-secondary">
+                <div class="ba-0">
+                    <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/bio2.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">GoPro HERO6: This Is the Moment in 4K
+                        </h4>
+                        <a
+                            class="btn btn-primary w-100" data-target="#modalIMG" data-toggle="modal" href="#">View Image</a>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-    </div>
+
+        <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog"
+            tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body mb-0 p-0">
+                        <img src="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a href="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg"
+                                target="_blank">Download</a>
+                        </div>
+                        <button class="btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </body>
 
 </html>
