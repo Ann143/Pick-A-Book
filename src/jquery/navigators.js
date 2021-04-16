@@ -13,10 +13,12 @@ $(document).ready(function () {
             if (togglespan == false){
                 $(".slide-show-btn #toggle-span").removeClass("hide-display").addClass("d-flex");
                 $(".side-nav").removeClass("expand-side-nav").addClass("unexpand-side-nav");
+                $("#main").addClass("compress-main");
                 togglespan = true;
             }else{
                 $(".slide-show-btn #toggle-span").removeClass("d-flex").addClass("hide-display");
                 $(".side-nav").addClass("expand-side-nav").removeClass("expand-side-nav");
+                $("#main").removeClass("compress-main");
                 togglespan = false;
             }
         });
