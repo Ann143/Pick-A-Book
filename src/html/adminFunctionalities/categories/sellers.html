@@ -2,25 +2,79 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <title>SELLERS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../../css/sellers.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Sellers Management</h1>
-    </div>
 
+
+
+    <nav class="navbar navbar-light w" style="background-color: rgb(241, 44, 126);">
+        <span class="navbar-brand mb-0 h1" style="margin-left: 200px;">SELLERS</span>
+    </nav><br>
+
+
+    <div class="container" style="margin-left:100px;">
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sellers Name<span id="sort">↑</span></th>
+                    <th>Book Category</th>
+                    <th>Book Author</th>
+                    <th> Book Title</th>
+                    <th>Total Sold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mery-an Telez</td>
+                    <td>Suspense <br>Thriller</td>
+                    <td>Lisa Jackson</td>
+                    <td>Left To Die <br> You Dont Want To Know <br>Unspoken <br> Running Scared
+                        <br> Choosen To Die
+                        <br> Born To Die </td>
+                    <td>1245 pc(s)</td>
+                </tr>
+                <tr>
+                    <td>Christine Joy Ditchon</td>
+                    <td>Biography
+                        </b> Autobiography</td>
+                    <td>dshfhdskd</td>
+                    <td></td>
+                    <td>1230 pc(s)</td>
+                </tr>
+                <tr>
+                    <td>David Bryan Pael</td>
+                    <td>Contemporary,Romance, Sports</td>
+                    <td>Ilsa Madden-Mills</td>
+                    <td></td>
+                    <td>1651 pc(s)</td>
+                </tr>
+                <tr>
+                    <td>Dexter Tampioc</td>
+                    <td>Romance Novel</td>
+                    <td>Vi Keeland</td>
+                    <td></td>
+                    <td>1245 pc(s)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script><br><br>
+    <div style="background-color: rgb(241, 44, 126); height: 170px;">
+
+
+    </div>
+    <div style="background-color: rgb(150, 4, 65);height: 55px;">
 </body>
 
-</html>
+</htm>
