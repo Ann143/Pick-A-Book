@@ -10,159 +10,150 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/watchlist.css">
+    <link rel="stylesheet" href="../../css/watchlist.css">
+
+    <script src="../../jquery/navigators.js"></script>
+    <link rel="stylesheet" href="../../css/navigators.css">
 </head>
 
 <body>
-    <div style="width: 60%; margin-left: 20%; background-color: aliceblue;">
-        <span>Most Recent</span>
-        <div id="most-recent" class="d-flex flex-row">
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
-                    <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
-
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
-                </div>
-
+    <div class="top-nav d-flex align-items-center">
+        <div class="top-nav-logo ">
+            
+        </div>
+        <div class="side-nav-btn cursor-pointer">
+            <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=Menu>
+        </div>
+        
+        <div class="top-nav-drop-downs d-flex">
+            <div class="drop-down notifications cursor-pointer">
+                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
             </div>
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
-                    <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
-
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
-                </div>
-
-            </div>
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
-                    <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
-
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
-                </div>
+            <div onclick="window.location = './cart.html'" class="drop-down cart  cursor-pointer">
+                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
             </div>
         </div>
-        <hr>
-        <span>Weeks Ago:</span>
-        <div id="weeks-ago" class="d-flex flex-row">
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
+        <div class="top-nav-drop-down-privacy d-flex justify-content-end">
+            <div class="drop-down my-account cursor-pointer">
+                <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
+                <div class="drop-nav-profile container">
+                    <a href="#" style="color: black;text-decoration: none;">My Account</a>
                     <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
-
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
+                    <a href="#" style="color: black;text-decoration: none;">Logout</a>
                 </div>
-
             </div>
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
-                    <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
-
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
-                </div>
+            <div class="drop-down settings cursor-pointer">
+                <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png" alt="Settings">
             </div>
         </div>
-        <hr>
-        <span>Months Ago:</span>
-        <div id="weeks-ago" class="d-flex flex-row">
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
-                    <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
-
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
-                </div>
-
+    </div>
+    <div class="side-nav">
+        <div onclick="window.location ='./userDashboard.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+            <div class="slide-show-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
             </div>
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
-                <br>
-                <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
-                <br>
-                <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
-                        href="#">Shounin</a> </span>
-                <br>
-                <center>
-                    <span>Chapters:</span>
-                    <br>
-                    <span>01/80</span>
-                    <br>
-                </center>
+            <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
+        </div>
+        <div onclick="window.location = './myLibrary.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">My Library</span>
+        </div>
+        <div onclick="window.location = './bookmarks.html'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
+            <div class="slide-show-icon">
+                <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png" alt="Watchlist">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">
+                Bookmark
+            </span>
+        </div>
+        <div onclick="window.location = './books.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+            <div class="slide-show-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">Sell</span>
+        </div>
+        <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">My Products</span>
+        </div>
+    </div>
 
-                <div class=" d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary">Read</button>
+
+
+<!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+
+
+
+    <div id="main">
+        <div  style="margin-top: 6%; width: 60%; margin-left: 20%; background-color: aliceblue;">
+            <span>Most Recent</span>
+            <div id="most-recent" class="d-flex flex-row">
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                    <br>
+                    <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                    <br>
+                    <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                            href="#">Shounin</a> </span>
+                    <br>
+                    <center>
+                        <span>Chapters:</span>
+                        <br>
+                        <span>01/80</span>
+                        <br>
+                    </center>
+    
+                    <div class=" d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary">Read</button>
+                    </div>
+    
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                    <br>
+                    <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                    <br>
+                    <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                            href="#">Shounin</a> </span>
+                    <br>
+                    <center>
+                        <span>Chapters:</span>
+                        <br>
+                        <span>01/80</span>
+                        <br>
+                    </center>
+    
+                    <div class=" d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary">Read</button>
+                    </div>
+    
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                    <br>
+                    <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                    <br>
+                    <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                            href="#">Shounin</a> </span>
+                    <br>
+                    <center>
+                        <span>Chapters:</span>
+                        <br>
+                        <span>01/80</span>
+                        <br>
+                    </center>
+    
+                    <div class=" d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary">Read</button>
+                    </div>
                 </div>
             </div>
-
+            <hr>
+            <span>Weeks Ago:</span>
             <div id="weeks-ago" class="d-flex flex-row">
                 <div class="product">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
@@ -178,11 +169,11 @@
                         <span>01/80</span>
                         <br>
                     </center>
-
+    
                     <div class=" d-flex justify-content-center">
                         <button type="button" class="btn btn-outline-primary">Read</button>
                     </div>
-
+    
                 </div>
                 <div class="product">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
@@ -198,14 +189,100 @@
                         <span>01/80</span>
                         <br>
                     </center>
-
+    
                     <div class=" d-flex justify-content-center">
                         <button type="button" class="btn btn-outline-primary">Read</button>
                     </div>
                 </div>
             </div>
-
-        </div>
+            <hr>
+            <span>Months Ago:</span>
+            <div id="weeks-ago" class="d-flex flex-row">
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                    <br>
+                    <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                    <br>
+                    <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                            href="#">Shounin</a> </span>
+                    <br>
+                    <center>
+                        <span>Chapters:</span>
+                        <br>
+                        <span>01/80</span>
+                        <br>
+                    </center>
+    
+                    <div class=" d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary">Read</button>
+                    </div>
+    
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                    <br>
+                    <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                    <br>
+                    <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                            href="#">Shounin</a> </span>
+                    <br>
+                    <center>
+                        <span>Chapters:</span>
+                        <br>
+                        <span>01/80</span>
+                        <br>
+                    </center>
+    
+                    <div class=" d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary">Read</button>
+                    </div>
+                </div>
+    
+                <div id="weeks-ago" class="d-flex flex-row">
+                    <div class="product">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                        <br>
+                        <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                        <br>
+                        <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                                href="#">Shounin</a> </span>
+                        <br>
+                        <center>
+                            <span>Chapters:</span>
+                            <br>
+                            <span>01/80</span>
+                            <br>
+                        </center>
+    
+                        <div class=" d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-primary">Read</button>
+                        </div>
+    
+                    </div>
+                    <div class="product">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO9gxtqIzikxDKjO-430K6DKjMCaSufQ1aw&usqp=CAU" alt="" class="product-img">
+                        <br>
+                        <span class="product-name">Mushoku Tensei: Jobless Reincarnation, Vol. 4, Light Novel </span>
+                        <br>
+                        <span class="product-genre"> <a href="#">Isekai</a>, <a href="#">Action</a>, <a href="#">Ecchi</a>, <a
+                                href="#">Shounin</a> </span>
+                        <br>
+                        <center>
+                            <span>Chapters:</span>
+                            <br>
+                            <span>01/80</span>
+                            <br>
+                        </center>
+    
+                        <div class=" d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-primary">Read</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    </div>
+    
 
 </body>
 
