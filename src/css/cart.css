@@ -24,6 +24,10 @@
     border-left: solid 1px rgb(150, 145, 145);
 }
 
+.action i{
+    cursor: pointer !important;
+}
+
 hr.new1 {
     border-top: 1px solid rgb(192, 8, 94);
 }
