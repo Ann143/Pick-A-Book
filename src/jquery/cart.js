@@ -3,6 +3,9 @@ $(document).ready(function() {
     $(".price-tag").each(function(){
         total_payment += parseFloat($(this).text());
     })
-
-    $(".total-payment").text("Php "+ total_payment.toFixed(2));
+    
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    }
+    $(".total-payment").text("Php "+ numberWithCommas(total_payment.toFixed(2)));
 });
