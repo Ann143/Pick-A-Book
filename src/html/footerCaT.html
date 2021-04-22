@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
     <style>
         #title {
             transition: transform .75s;
         }
-
+        
         #title:hover {
             background-color: rgb(0, 0, 0, .8);
             color: white;
             transform: scale(1.5);
             cursor: pointer;
         }
-
-        #image {
-            transition: transform .75s;
-        }
-
-        #image:hover {
+        
+        img:hover {
             background-color: rgb(0, 0, 0, .8);
             color: white;
             transform: scale(5);
@@ -33,43 +32,40 @@
             border-radius: 10px;
             cursor: pointer;
         }
-
-
+        
         #image {
             max-width: 100px;
-            /* padding-top: 20px; */
         }
-
+        
         footer .main-footer {
             background-color: white;
         }
-
+        
         footer ul {
             list-style: none;
         }
-
         /* Copy Right Footer */
-
+        
         .footer-copyright {
             background: #222;
             padding: 5px 0;
         }
-
+        
         .footer-copyright .logo {
             display: inherit;
         }
-
+        
         .footer-copyright nav {
             float: right;
             margin-top: 5px;
         }
-
+        
         .footer-copyright nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-
+        
         .footer-copyright nav ul li {
             border-left: 1px solid #505050;
             display: inline-block;
@@ -77,63 +73,68 @@
             margin: 0;
             padding: 0 8px;
         }
-
+        
         .footer-copyright nav ul li a {
             color: #969696;
         }
-
+        
         .footer-copyright nav ul li:first-child {
             border: medium none;
             padding-left: 0;
         }
-
+        
         .footer-copyright p {
             color: #969696;
             margin: 2px 0 0;
         }
-
         /* Footer Top */
-
+        
         .footer-top {
             background: #252525;
             padding-bottom: 30px;
             margin-bottom: 30px;
             border-bottom: 3px solid #222;
         }
-
         /* Footer transparent */
-
+        
         footer.transparent .footer-top,
         footer.transparent .main-footer {
             background: transparent;
         }
-
+        
         footer.transparent .footer-copyright {
             background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
         }
-
         /* Footer light */
-
+        
         footer.light .footer-top {
             background: #f9f9f9;
         }
-
+        
         footer.light .main-footer {
             background: #f9f9f9;
         }
-
+        
         footer.light .footer-copyright {
             background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
         }
-
         /* Footer 4 */
-
+        
         .footer- .logo {
             display: inline-block;
         }
-
+        
         .widget-title {
             margin-bottom: 20px;
+        }
+        
+        img {
+            width: 20%;
+            height: 100px;
+        }
+        
+        .card-title {
+            font-size: 15px;
         }
     </style>
 </head>
@@ -141,183 +142,362 @@
 <body>
     <div class="container-fluid">
         <div class="row justify-content-around">
-            <div class="col-2 border border-primary m-2 p-2">
+            <div class="col-2 ">
                 <center>
-                    <h5 class=" col text-truncate border border-danger p-3">Categories</h5>
+                    <h5 class=" col text-truncate border border-danger p-3 mt-2 mt-2">ROMANCE</h5>
                 </center>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2" style="margin-left: -16px;" style="margin-left: -16px;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="card-img " src="../img/1.jpg " alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br><br> Sandman
+                                </h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/10.jpg " alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="card-body-right ">
+                                <h4 class="card-title "><br>Not Pretending Anymore</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/11.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br><br>Bossy Grump</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/13.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br><br>Ruthless Monarch
+                                    <h4>
+                                        <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/14.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br>An Invincible Summer</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
             </div>
-            <div class="col-2 border border-primary m-2 p-2 justify-content-center">
+            <div class="col-2 ">
                 <center>
-                    <h5 class="border border-danger p-3">Categories</h5>
+                    <h5 class="border border-danger p-3 mt-2 mt-2 ">HORROR</h5>
                 </center>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/0.jpg " alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br>Watcher</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/16.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="card-body-right ">
+                                <h4 class="card-title "><br>I Pucking Love You</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/17.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br>Replay</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/18.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br><br>Our Finest Hour</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/19.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">Vanishing Girls</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
             </div>
-            <div class="col-2 border border-primary m-2 p-2 justify-content-center">
+            <div class="col-2 ">
                 <center>
-                    <h5 class="border border-danger p-3">Categories</h5>
+                    <h5 class="border border-danger p-3 mt-2 ">SUSPENSE</h5>
                 </center>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/20.jpg " alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br>The Next Wife</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/2.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="card-body-right ">
+                                <h4 class="card-title "><br>The Stand</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/33.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br><br>Deadlocked</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/21.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br>The Last Sister</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/22.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br>A Deadly Influence</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
             </div>
-            <div class="col-2 border border-primary m-2 p-2 justify-content-center">
+            <div class="col-2 ">
                 <center>
-                    <h5 class="border border-danger p-3">Categories</h5>
+                    <h5 class="border border-danger p-3 mt-2 ">THRILLER</h5>
                 </center>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/23.jpg " alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title "><br> The Moonlight Child</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/24.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="card-body-right ">
+                                <h4 class="card-title "><br>The Wrong Family</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/34.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/26.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/27.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
             </div>
-            <div class="col-2 border border-primary m-2 p-2 justify-content-center">
+            <div class="col-2 ">
                 <center>
-                    <h5 class="border border-danger p-3">Categories</h5>
+                    <h5 class="border border-danger p-3 mt-2 ">FANTASY</h5>
                 </center>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/28.jpg " alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/29.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/30.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/3.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <img class="img-thumbnail w-100" id="image" src="../img/1.jpg" alt="">
+                <div class="container mb-2 " style="margin-left: -16px; ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <img class="card-img " src="../img/31.jpg" alt="Card image " />
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class=" card-body-right ">
+                                <h4 class="card-title ">titleeeeeeee</h4>
+                                <!-- <p class="card-text ">Some example text some example text. John Doe is an architect and engineer</p> -->
+                            </div>
+                        </div>
                     </div>
-                    <p id="title" class="col mt-5 text-truncate">A Primosed Landfgadsfghdafhsdthest</p>
                 </div>
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>
