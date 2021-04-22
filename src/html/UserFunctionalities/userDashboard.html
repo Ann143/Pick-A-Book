@@ -14,16 +14,16 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-    <script src="../../jquery/navigators.js"></script>
-    <link rel="stylesheet" href="../../css/navigators.css">
-
     <script src="../../jquery/dashboard.js"></script>
     <link rel="stylesheet" href="../../css/dashboard.css">
+    <script src="../../jquery/navigators.js"></script>
+    <link rel="stylesheet" href="../../css/navigators.css">
 </head>
+
 <body>
     <div class="top-nav d-flex align-items-center">
         <div class="top-nav-logo ">
-            <h2 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Pick-A-Book</h2> 
+            
         </div>
         <div class="side-nav-btn cursor-pointer">
             <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=Menu>
@@ -33,7 +33,7 @@
             <div class="drop-down notifications cursor-pointer">
                 <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
             </div>
-            <div class="drop-down cart  cursor-pointer">
+            <div onclick="window.location = './cart.html'" class="drop-down cart  cursor-pointer">
                 <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
             </div>
         </div>
@@ -58,13 +58,13 @@
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
         </div>
-        <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+        <div onclick="window.location = './myLibrary.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div class="slide-show-icon">
                 <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-        <div class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
+        <div onclick="window.location = './bookmarks.html'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
             <div class="slide-show-icon">
                 <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png" alt="Watchlist">
             </div>
@@ -72,7 +72,7 @@
                 Bookmark
             </span>
         </div>
-        <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+        <div onclick="window.location = './books.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
             </div>
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-<!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+    <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
     <div id="main" class="container-xl">
         <div class="row">
             <div  style="margin-top: 10%;" class="banner">
