@@ -9,6 +9,12 @@ $(document).ready(function(){
 function showCategory(){
     $(".category-list").toggle();
 }
+function showFiction(){
+    $(".Fiction-list").toggle();
+}
+function showNonFiction(){
+    $(".NonFiction-list").toggle();
+}
 function showtag(){
     $(".tag-list").toggle();
 }
