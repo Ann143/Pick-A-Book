@@ -152,8 +152,8 @@
                     width: 120%;
                     height: 97%;
                 }
-              
-                body{
+                
+                body {
                     background-image: url('../img/formbg.jpg');
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -178,70 +178,72 @@
                 #post:hover {
                     background-color: antiquewhite;
                 }
-
                 
-  #head {
-    background-color: #aa093e;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-  }
-  .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    background-color: #c41c54;
-  }
-  #link{
-    border: black 2px solid;
-    width: 100px;
-    margin-left: 15px;
-    text-align: center;
-    color: white;
-    background-color: black;
-    border-radius: 15%;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  #link:hover{
-    color: #aa093e;
-  }
-  
-  
-  #logo {
-
-    max-width: 150px;
-    margin-left: 0 ;
-    max-height: 150px;
-    margin-top: -3%;
-    cursor: pointer;
-  }
-  #navbarCollapse{
-    margin-top: -30px;
-  }
-  
-  hr.new4 {
-    border-top: 1px solid rgb(58, 173, 250);
-  }
-  hr.new3 {
-    border-top: 1px solid rgb(230, 11, 146);
-    width: 20%;
-  }
-  #login{
-    border: black 2px solid;
-    margin-left: 15px;
-    height: 45px;
-    font-size: 15px;
-    font-weight: bold;
-    height: 45px;
-    border-radius: 18%;
-    
-  }
+                #head {
+                    background-color: #aa093e;
+                    position: fixed;
+                    width: 100%;
+                    z-index: 100;
+                    height: 106px;
+                }
+                
+                .has-search .form-control-feedback {
+                    position: absolute;
+                    z-index: 2;
+                    display: block;
+                    width: 2.375rem;
+                    height: 2.375rem;
+                    line-height: 2.375rem;
+                    text-align: center;
+                    pointer-events: none;
+                    color: #aaa;
+                    background-color: #c41c54;
+                }
+                
+                #link {
+                    border: black 2px solid;
+                    width: 100px;
+                    margin-left: 27px;
+                    text-align: center;
+                    color: white;
+                    background-color: black;
+                    border-radius: 15%;
+                    font-family: "Times New Roman", Times, serif;
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+                
+                #link:hover {
+                    color: #aa093e;
+                }
+                
+                #logo {
+                    max-width: 110px;
+                    max-height: 106px;
+                    margin-top: -6%;
+                    cursor: pointer;
+                }
+                
+                #navbarCollapse {
+                    margin-top: -30px;
+                }
+                
+                hr.new4 {
+                    border-top: 1px solid rgb(58, 173, 250);
+                }
+                
+                hr.new3 {
+                    border-top: 1px solid rgb(230, 11, 146);
+                    width: 20%;
+                }
+                
+                #login {
+                    border: black 2px solid;
+                    margin-left: 26px;
+                    height: 45px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    height: 45px;
+                    border-radius: 18%;
+                }
