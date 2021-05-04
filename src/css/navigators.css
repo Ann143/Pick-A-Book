@@ -93,6 +93,7 @@
     background-color: rgb(30, 30, 30);
     max-width: 20%;
     top: 0;
+    animation-duration: 4s;
 }
 
 .side-nav .slide-show-btn{
