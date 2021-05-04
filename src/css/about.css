@@ -1,4 +1,4 @@
-#login{
+#login {
     border: black 2px solid;
     margin-left: 25px;
     height: 45px;
@@ -6,18 +6,21 @@
     font-weight: bold;
     height: 45px;
     border-radius: 18%;
-    
-  }
+}
+
 html {
     font-family: "Times New Roman", Times, serif;
-  }
-  #head {
+}
+
+#head {
     background-color: #aa093e;
     position: fixed;
     width: 100%;
-    z-index: 1;
-  }
-  .has-search .form-control-feedback {
+    z-index: 100;
+    height: 106px;
+}
+
+.has-search .form-control-feedback {
     position: absolute;
     z-index: 2;
     display: block;
@@ -28,8 +31,9 @@ html {
     pointer-events: none;
     color: #aaa;
     background-color: #c41c54;
-  }
-  #link{
+}
+
+#link {
     border: black 2px solid;
     width: 100px;
     margin-left: 30px;
@@ -40,114 +44,106 @@ html {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 5px;
-  }
-  #link:hover{
+}
+
+#link:hover {
     color: #aa093e;
-  }
-  
-  
-  #logo {
-    max-width: 150px;
-    max-height: 200px;
-    margin-top: -3%;
+}
+
+#logo {
+    max-width: 110px;
+    max-height: 110px;
+    margin-top: -6%;
     cursor: pointer;
-    margin-right:650px;
-  }
-  #navbarCollapse{
-    margin-top: -30px;
-  }
-  
-  hr.new4 {
+    margin-right: 650px;
+}
+
+hr.new4 {
     border-top: 1px solid rgb(0, 204, 255);
-  }
-  
-
-
-
-
+}
 
 @import url('https://fonts.googleapis.com/css?family=Exo+2:700');
 * {
-  margin: 0 auto;
-  padding: 0;
+    margin: 0 auto;
+    padding: 0;
 }
 
 body {
-  background: url("https://image.ibb.co/mJ9tLa/image.png");
-  background-color: #212121;
-  background-blend-mode: overlay;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
+    background: url("https://image.ibb.co/mJ9tLa/image.png");
+    background-color: #212121;
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
 }
 
 h1 {
-  color: whitesmoke;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 46px;
-  font-weight: 900;
-  text-transform: uppercase;
+    color: whitesmoke;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 p {
-  max-width: 700px;
-  min-height: 200px;
-  padding: 0;
-  color: whitesmoke;
-  font-family: OpenSans;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
+    max-width: 700px;
+    min-height: 200px;
+    padding: 0;
+    color: whitesmoke;
+    font-family: OpenSans;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
 }
 
 .square {
-  height: 60px;
-  width: 60px;
-  border: 1px dashed white;
-  margin: 0 0 0 55px;
-  /*   padding: 1px; resize squares */
-  background-color: rgba(255, 255, 255, 0.2);
-  display: inline-block;
-  transform: rotateZ(44deg);
+    height: 60px;
+    width: 60px;
+    border: 1px dashed white;
+    margin: 0 0 0 55px;
+    /*   padding: 1px; resize squares */
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    transform: rotateZ(44deg);
 }
 
 .square:hover {
-  background-color: rgba(27, 182, 239, 0.2);
-  transition: ease 0.2s;
-  cursor: pointer;
+    background-color: rgba(27, 182, 239, 0.2);
+    transition: ease 0.2s;
+    cursor: pointer;
 }
 
 .square .icons {
-  position: absolute;
-  transform: rotateZ(-44deg);
-  margin: 20px 0 0px 21px;
+    position: absolute;
+    transform: rotateZ(-44deg);
+    margin: 20px 0 0px 21px;
 }
 
 .fa-facebook,
 .fa-twitter,
 .fa-youtube,
 .fa-linkedin {
-  width: 11px;
-  height: 22px;
-  color: white;
-  font-family: FontAwesome;
-  font-size: 23px;
-  font-weight: 400;
-  text-transform: uppercase;
+    width: 11px;
+    height: 22px;
+    color: white;
+    font-family: FontAwesome;
+    font-size: 23px;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .square:hover .fa-facebook {
-  color: rgba(59, 89, 152, 1)
+    color: rgba(59, 89, 152, 1)
 }
 
 .square:hover .fa-twitter {
-  color: rgba(27, 182, 239, 1)
+    color: rgba(27, 182, 239, 1)
 }
 
-.square:hover .fa-linkedin{
-  color: rgb(17, 141, 199)
+.square:hover .fa-linkedin {
+    color: rgb(17, 141, 199)
 }
 
 .square:hover .fa-youtube {
-  color: rgb(229, 39, 134)
+    color: rgb(229, 39, 134)
 }

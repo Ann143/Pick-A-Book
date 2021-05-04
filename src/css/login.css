@@ -1,90 +1,102 @@
-#login{
-  border: black 2px solid;
-  margin-left: 27px;
-  height: 45px;
-  font-size: 15px;
-  font-weight: bold;
-  height: 45px;
-  margin-top: -2px;
-  border-radius: 18%;
-    
-  }
+#login {
+    border: black 2px solid;
+    margin-left: 27px;
+    height: 45px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 45px;
+    margin-top: -2px;
+    border-radius: 18%;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Lato');
-:root{
-    --primaryred:#eb2772;
-    --secondaryred:#e61f6b;
-    --lightblack:#222b31;
-    --darkblack:#191c1f;
-    --mainfont:'Dancing Script', cursive;
+:root {
+    --primaryred: #eb2772;
+    --secondaryred: #e61f6b;
+    --lightblack: #222b31;
+    --darkblack: #191c1f;
+    --mainfont: 'Dancing Script', cursive;
     --secondfont: 'Lato', sans-serif;
 }
 
-*,*:before,*:after{
-	box-sizing: border-box;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
-img{
-	max-width: 100%;
-	height: auto;
+
+img {
+    max-width: 100%;
+    height: auto;
 }
-.fullcontent{
-    width:100%;
+
+.fullcontent {
+    width: 100%;
     min-height: 100vh;
     height: auto;
-    padding:6% 10% 5% 10%;
+    padding: 6% 10% 5% 10%;
     background-image: url(img/b.jpg);
-    background:linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),url(https://raw.githubusercontent.com/Poojavpatel/BookStoreApp/master/img/b.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url(https://raw.githubusercontent.com/Poojavpatel/BookStoreApp/master/img/b.jpg);
     background-size: cover;
     background-position: 50% 50%;
     display: flex;
     flex-direction: row;
 }
-.headings{
-     /* background:red;  */
+
+.headings {
+    /* background:red;  */
     flex-basis: 65%;
     margin-right: 5%;
 }
-.headings h1{
+
+.headings h1 {
     font-size: 4rem;
-    font-family:var(--mainfont);
-    color:white;
-    margin:3% 0% 3% 0%;
+    font-family: var(--mainfont);
+    color: white;
+    margin: 3% 0% 3% 0%;
 }
-.headings h2{
-     font-size: 54px;
+
+.headings h2 {
+    font-size: 54px;
     text-align: center;
     color: #dd5589;
-	  font-size:1.2rem;
-    font-family:var(--mainfont);
-   
+    font-size: 1.2rem;
+    font-family: var(--mainfont);
 }
-.headings h3{
-  text-align: center;
-  color: #dd5589;
-  font-size: 30px;
-  font-family:var(--mainfont);
+
+.headings h3 {
+    text-align: center;
+    color: #dd5589;
+    font-size: 30px;
+    font-family: var(--mainfont);
 }
-.formbox{
-    background:rgb(34,43,49,0.7);
-    color:white;
+
+.formbox {
+    background: rgb(34, 43, 49, 0.7);
+    color: white;
     flex-basis: 35%;
     border-top: 10px solid var(--secondaryred);
-    padding:2% 3%;
+    padding: 2% 3%;
 }
-.formbox *{
+
+.formbox * {
     margin: 0;
 }
-.formbox h3{
+
+.formbox h3 {
     font-family: var(--mainfont);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-.formbox form label{
+
+.formbox form label {
     color: rgba(255, 255, 255, 0.8);
     display: inline-block;
     max-width: 100%;
     margin-bottom: 0.3rem;
 }
-.formbox form .asd{
+
+.formbox form .asd {
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: none;
     background: transparent;
@@ -94,7 +106,8 @@ img{
     border-radius: 4px;
     margin-bottom: 1rem;
 }
-form .mainbox{
+
+form .mainbox {
     color: white;
     box-shadow: none;
     background: var(--secondaryred);
@@ -107,12 +120,14 @@ form .mainbox{
     text-decoration: none;
     border: none;
 }
-a .mainbox{
+
+a .mainbox {
     margin: 0;
     margin-bottom: -6px;
     padding: 2%;
 }
-.asd{
+
+.asd {
     color: aliceblue;
 }
 
@@ -120,9 +135,11 @@ a .mainbox{
     background-color: #aa093e;
     position: fixed;
     width: 100%;
-    z-index: 1;
-  }
-  .has-search .form-control-feedback {
+    z-index: 100;
+    height: 106px;
+}
+
+.has-search .form-control-feedback {
     position: absolute;
     z-index: 2;
     display: block;
@@ -133,8 +150,9 @@ a .mainbox{
     pointer-events: none;
     color: #aaa;
     background-color: #c41c54;
-  }
-  #link{
+}
+
+#link {
     border: black 2px solid;
     width: 100px;
     margin-left: 30px;
@@ -146,28 +164,28 @@ a .mainbox{
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 5px;
-  }
-  #link:hover{
-    color: #aa093e;
-  }
-  
-  
-  #logo {
+}
 
-    max-width: 150px;
-    margin-left: 0 ;
-    max-height: 150px;
-    margin-top: -3%;
+#link:hover {
+    color: #aa093e;
+}
+
+#logo {
+    max-width: 110px;
+    max-height: 114px;
+    margin-top: -4%;
     cursor: pointer;
-  }
-  #navbarCollapse{
+}
+
+#navbarCollapse {
     margin-top: -30px;
-  }
-  
-  hr.new4 {
+}
+
+hr.new4 {
     border-top: 1px solid rgb(58, 173, 250);
-  }
-  hr.new3 {
+}
+
+hr.new3 {
     border-top: 1px solid rgb(230, 11, 146);
     width: 20%;
-  }
+}
