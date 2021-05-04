@@ -32,18 +32,17 @@ img {
     height: 190px;
     border-radius: 5%;
     border: 10px solid rgb(224, 15, 85);
-    width:100%;
+    width: 100%;
 }
 
 .title {
     text-align: center;
     padding-left: 50px;
-    color:rgb(105, 5, 38);
+    color: rgb(105, 5, 38);
     font-family: cursive;
     font-weight: bold;
     font-size: 25px;
     padding-top: 50px;
-   
 }
 
 .company {
@@ -56,7 +55,6 @@ img {
     margin-top: 50px;
     background-color: hsl(0, 6%, 91%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .comment p,
@@ -70,9 +68,9 @@ h4 {
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
-.line{
+
+.line {
     border-top: 1px solid rgb(230, 11, 146);
-    
 }
 
 #darker img {
@@ -100,13 +98,15 @@ h4 {
     background-color: antiquewhite;
 }
 
-  #head {
+#head {
     background-color: #aa093e;
     position: fixed;
     width: 100%;
-    z-index: 1;
-  }
-  .has-search .form-control-feedback {
+    z-index: 100;
+    height: 106px;
+}
+
+.has-search .form-control-feedback {
     position: absolute;
     z-index: 2;
     display: block;
@@ -117,8 +117,9 @@ h4 {
     pointer-events: none;
     color: #aaa;
     background-color: #c41c54;
-  }
-  #link{
+}
+
+#link {
     border: black 2px solid;
     width: 100px;
     margin-left: 15px;
@@ -130,32 +131,34 @@ h4 {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 5px;
-  }
-  #link:hover{
-    color: #aa093e;
-  }
-  
-  
-  #logo {
+}
 
-    max-width: 150px;
-    margin-left: 0 ;
-    max-height: 150px;
-    margin-top: -3%;
+#link:hover {
+    color: #aa093e;
+}
+
+#logo {
+    max-width: 110px;
+    margin-left: 0;
+    max-height: 100px;
+    margin-top: -6%;
     cursor: pointer;
-  }
-  #navbarCollapse{
+}
+
+#navbarCollapse {
     margin-top: -30px;
-  }
-  
-  hr.new4 {
+}
+
+hr.new4 {
     border-top: 1px solid rgb(58, 173, 250);
-  }
-  hr.new3 {
+}
+
+hr.new3 {
     border-top: 1px solid rgb(230, 11, 146);
     width: 20%;
-  }
-  #login{
+}
+
+#login {
     border: black 2px solid;
     margin-left: 15px;
     height: 45px;
@@ -163,5 +166,4 @@ h4 {
     font-weight: bold;
     height: 45px;
     border-radius: 18%;
-    
-  }
+}
