@@ -15,14 +15,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../../css/login.css">
-    <link rel="stylesheet" href="../../css/index.css">
-</head>
 
+</head>
 <style>
-    #link {
+    .nav-link {
         border: black 2px solid;
         width: 100px;
-        margin-left: 29px;
+        margin-left: 30px;
         text-align: center;
         color: white;
         background-color: black;
@@ -32,13 +31,31 @@
         font-size: 18px;
         margin-bottom: 5px;
     }
+    
+    #head {
+        background-color: #aa093e;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        height: 106px;
+    }
+    
+    link:hover {
+        color: #aa093e;
+    }
+    
+    #logo {
+        max-width: 110px;
+        max-height: 114px;
+        margin-top: -4%;
+        cursor: pointer;
+    }
 </style>
+
 
 <body>
     <div id="head">
         <div id="nav-logo">
-
-            <!-- <a class="float-right" id="login" href=""><h4>Log In</h4></a> -->
         </div>
         <br /><br />
         <div>
@@ -50,16 +67,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto" style="margin-top:-4%">
                         <li class="navbar-item">
-                            <a id="link" href="../../../public/index.html " class=" nav-link active ">Home</a>
+                            <a href="../../../public/index.html " class=" nav-link active " style="color: white;">Home</a>
                         </li>
                         <li class="navbar-item ">
-                            <a id="link " href="../IndexFunctionallities/about.html" class=" nav-link ">About</a>
+                            <a href="../IndexFunctionallities/about.html" class=" nav-link " style="color: white;">About</a>
                         </li>
                         <li class="navbar-item ">
-                            <a id="link " href="../IndexFunctionallities/contact.html " class="nav-link ">Contacts</a>
+                            <a href="../IndexFunctionallities/contact.html " class="nav-link " style="color: white;">Contacts</a>
                         </li>
                         <a href="../IndexFunctionallities/login.html"><button class=" btn btn-primary "
-                                id="login ">Log In</button></a>
+                                class="log " style="margin-left: 25px;  font-weight: bold;border-radius: 18%;   height: 45px;border: black 2px solid;">Log In</button></a>
                     </ul>
                 </div>
         </div>
