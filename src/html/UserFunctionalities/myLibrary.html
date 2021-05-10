@@ -35,16 +35,14 @@
     }
     
     #imageDiv {
-        box-shadow: 0 12px 12px 0 rgb(178, 64, 206);
+        box-shadow: 0 5px 5px 0 rgb(218, 28, 75);
         padding: 10px;
         margin-left: 30px;
         margin-bottom: 40px;
-        transition: transform .75s;
+        transition: transform .90s;
     }
     
     #imageDiv:hover {
-        background-color: rgb(0, 0, 0, .8);
-        color: white;
         transform: scale(1.1);
         padding-right: 10px;
         padding-left: 10px;
@@ -116,10 +114,10 @@
             <span id="toggle-span" class="hide-display align-items-center">Sell</span>
         </div>
         <div onclick="window.location = './orders.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
-                <div class="slide-show-icon">
-                    <img src="https://cdn3.iconfinder.com/data/icons/e-commerce-308/32/document_hourglass_order_history-256.png" alt="Orders">
-                </div>
-                <span id="toggle-span" class="hide-display align-items-center">Orders</span>
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/e-commerce-308/32/document_hourglass_order_history-256.png" alt="Orders">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">Orders</span>
         </div>
     </div>
 
@@ -134,14 +132,16 @@
             <center>
                 <h1 id="myLib">My Library</h1>
             </center>
+
+            <br><br>
             <div class="row">
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/bio5.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Radio Girl</h4>
-                            <div class="contianer d-flex justify-content-around">
-                                <button type="button" class="btn btn-primary">
+                            <h6 class="card-title">Radio Girl</h><br><br>
+                                <div class="contianer d-flex justify-content-around">
+                                    <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-book" viewBox="0 0 16 16">
                                         <path
@@ -149,7 +149,7 @@
                                         </path>
                                     </svg>
                                 </button>
-                                <button type="button" class="btn btn-danger">
+                                    <button type="button" class="btn btn-danger">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-bookmark-fill" viewBox="0 0 16 16">
                                         <path
@@ -157,17 +157,17 @@
                                         </path>
                                     </svg>
                                 </button>
-                            </div>
+                                </div>
                         </div>
                     </div>
-
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/11.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Boosy Grump
-                            </h4>
+                            <h6 class="card-title">Boosy Grump
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -190,12 +190,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/crime2.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Small Time
-                            </h4>
+                            <h6 class="card-title">Small Time
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -218,12 +218,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/14.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">An Invincible Summer
-                            </h4>
+                            <h6 class="card-title">An Invincible Summer
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -246,12 +246,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/22.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">A Deadly Influence
-                            </h4>
+                            <h6 class="card-title">A Deadly Influence
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -278,11 +278,11 @@
 
 
             <div class="row">
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/bio5.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Radio Girl</h4>
+                            <h6 class="card-title">Radio Girl</h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -305,12 +305,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/11.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Bossy Grump
-                            </h4>
+                            <h6 class="card-title">Bossy Grump
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -333,12 +333,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/crime2.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Small Time
-                            </h4>
+                            <h6 class="card-title">Small Time
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -361,12 +361,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/bio2.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">A Promised Land
-                            </h4>
+                            <h6 class="card-title">A Promised Land
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -389,12 +389,12 @@
                     </div>
 
                 </div>
-                <div id="imageDiv" class="col border border-secondary">
+                <div id="imageDiv" class="col border border-secondary" style="height: 405px;">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/18.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Our Finest Hour
-                            </h4>
+                            <h6 class="card-title">Our Finest Hour
+                            </h6>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
