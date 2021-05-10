@@ -1,0 +1,31 @@
+.div-table {
+    display: table;
+    width: 85%;
+    background-color: rgb(253, 228, 228);
+    border: 2px solid #000;
+    border-spacing: 5px;
+    box-shadow: 15px 15px 15px;
+    margin-left: 85px;
+}
+
+.tr {
+    display: table-row;
+}
+
+.tc {
+    background-color: rgb(255, 255, 255);
+    display: table-cell;
+    vertical-align: top;
+    padding: 5px 10px;
+    color: black;
+}
+
+.tc1 {
+    width: 240px;
+}
+
+.tc4,
+.tc5,
+.tc6 {
+    width: 80px;
+}
