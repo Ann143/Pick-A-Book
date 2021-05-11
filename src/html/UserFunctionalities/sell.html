@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sell</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="../../jquery/navigators.js"></script>
+    <link rel="stylesheet" href="../../css/navigators.css">
+
+</head>
+<style>
+    .file {
+        visibility: hidden;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div class="top-nav d-flex align-items-center">
+        <div class="top-nav-logo ">
+
+        </div>
+        <div class="side-nav-btn cursor-pointer">
+            <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=Menu>
+        </div>
+
+        <div class="top-nav-drop-downs d-flex">
+            <div class="drop-down notifications cursor-pointer">
+                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
+            </div>
+            <div onclick="window.location = './cart.html'" class="drop-down cart  cursor-pointer">
+                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
+            </div>
+        </div>
+        <div class="top-nav-drop-down-privacy d-flex justify-content-end">
+            <div class="drop-down my-account cursor-pointer">
+                <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
+                <div class="drop-nav-profile container">
+                    <a href="#" style="color: black;text-decoration: none;">My Account</a>
+                    <br>
+                    <a href="#" style="color: black;text-decoration: none;">Logout</a>
+                </div>
+            </div>
+            <div class="drop-down settings cursor-pointer">
+                <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png" alt="Settings">
+            </div>
+        </div>
+    </div>
+    <div class="side-nav">
+        <div onclick="window.location ='./userDashboard.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+            <div class="slide-show-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
+        </div>
+        <div onclick="window.location = './myLibrary.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">My Library</span>
+        </div>
+        <div onclick="window.location = './bookmarks.html'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
+            <div class="slide-show-icon">
+                <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png" alt="Watchlist">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">
+                Bookmark
+            </span>
+        </div>
+        <div onclick="window.location = './sell.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+            <div class="slide-show-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">Sell</span>
+        </div>
+        <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">My Products</span>
+        </div>
+    </div>
+
+    <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+
+
+
+    <div id="main" style="margin-top: 10%;">
+        <div class="p-3 mt-5">
+            <div class="row d-flex justify-content-around">
+                <div class="col-sm-5">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputAddress">Seller:</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Book Title:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Book Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputState">Book Category:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Fiction
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    Non-Fiction
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Book Picture:</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-4">
+                    <div class="pt-3 pb-3">
+                        <img class="img-thumbnail" id="preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).on("click", ".browse", function() {
+                var file = $(this).parents().find(".file");
+                file.trigger("click");
+            });
+            $('input[type="file"]').change(function(e) {
+                var fileName = e.target.files[0].name;
+                $("#file").val(fileName);
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    // get loaded data and render thumbnail.
+                    document.getElementById("preview").src = e.target.result;
+                };
+                // read the image file as a data URL.
+                reader.readAsDataURL(this.files[0]);
+            });
+        </script>
+    </div>
+</body>
+
+</html>
