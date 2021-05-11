@@ -3,20 +3,13 @@
 
 <head>
     <title>My Library</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <script src="../../jquery/navigators.js"></script>
-        <link rel="stylesheet" href="../../css/navigators.css">
+    <script src="../../jquery/navigators.js"></script>
+    <link rel="stylesheet" href="../../css/navigators.css">
 
 </head>
 <style>
@@ -24,12 +17,12 @@
         padding-top: 15px;
         max-width: 100%;
     }
-
+    
     h4 {
         font-family: 'Open Sans';
         margin: 0;
     }
-
+    
     #myLib {
         box-shadow: 0 12px 12px 0 rgb(17, 17, 17);
         margin-bottom: 30px;
@@ -38,97 +31,98 @@
         margin-top: 10px;
         background-color: #e20057;
     }
-
+    
     #imageDiv {
         box-shadow: 0 12px 12px 0 rgb(178, 64, 206);
         padding: 10px;
         margin-left: 30px;
         margin-bottom: 40px;
         transition: transform .75s;
+        height: 430px;
     }
-
+    
     #imageDiv:hover {
         background-color: rgb(0, 0, 0, .8);
         color: white;
-        transform: scale(1.2);
+        transform: scale(1.1);
         padding-right: 10px;
         padding-left: 10px;
         border-radius: 20px;
         cursor: pointer;
     }
-
+    
     .card-title {
         text-align: center;
     }
 </style>
 
 <body>
-<div class="top-nav d-flex align-items-center">
-    <div class="top-nav-logo ">
-        
-    </div>
-    <div class="side-nav-btn cursor-pointer">
-        <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=Menu>
-    </div>
-    
-    <div class="top-nav-drop-downs d-flex">
-        <div class="drop-down notifications cursor-pointer">
-            <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
+    <div class="top-nav d-flex align-items-center">
+        <div class="top-nav-logo ">
+
         </div>
-        <div onclick="window.location = './cart.html'" class="drop-down cart  cursor-pointer">
-            <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
+        <div class="side-nav-btn cursor-pointer">
+            <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=Menu>
         </div>
-    </div>
-    <div class="top-nav-drop-down-privacy d-flex justify-content-end">
-        <div class="drop-down my-account cursor-pointer">
-            <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
-            <div class="drop-nav-profile container">
-                <a href="#" style="color: black;text-decoration: none;">My Account</a>
-                <br>
-                <a href="#" style="color: black;text-decoration: none;">Logout</a>
+
+        <div class="top-nav-drop-downs d-flex">
+            <div class="drop-down notifications cursor-pointer">
+                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
+            </div>
+            <div onclick="window.location = './cart.html'" class="drop-down cart  cursor-pointer">
+                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
             </div>
         </div>
-        <div class="drop-down settings cursor-pointer">
-            <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png" alt="Settings">
+        <div class="top-nav-drop-down-privacy d-flex justify-content-end">
+            <div class="drop-down my-account cursor-pointer">
+                <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
+                <div class="drop-nav-profile container">
+                    <a href="#" style="color: black;text-decoration: none;">My Account</a>
+                    <br>
+                    <a href="#" style="color: black;text-decoration: none;">Logout</a>
+                </div>
+            </div>
+            <div class="drop-down settings cursor-pointer">
+                <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png" alt="Settings">
+            </div>
         </div>
     </div>
-</div>
-<div class="side-nav">
-    <div onclick="window.location ='./userDashboard.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
-        <div class="slide-show-icon">
-            <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
+    <div class="side-nav">
+        <div onclick="window.location ='./userDashboard.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+            <div class="slide-show-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
         </div>
-        <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
-    </div>
-    <div onclick="window.location = './myLibrary.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
-        <div class="slide-show-icon">
-            <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+        <div onclick="window.location = './myLibrary.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-        <span id="toggle-span" class="hide-display align-items-center">My Library</span>
-    </div>
-    <div onclick="window.location = './bookmarks.html'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
-        <div class="slide-show-icon">
-            <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png" alt="Watchlist">
-        </div>
-        <span id="toggle-span" class="hide-display align-items-center">
+        <div onclick="window.location = './bookmarks.html'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
+            <div class="slide-show-icon">
+                <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png" alt="Watchlist">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">
             Bookmark
         </span>
-    </div>
-    <div onclick="window.location = './sell.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
-        <div class="slide-show-icon">
-            <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
         </div>
-        <span id="toggle-span" class="hide-display align-items-center">Sell</span>
-    </div>
-    <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
-        <div class="slide-show-icon">
-            <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+        <div onclick="window.location = './sell.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+            <div class="slide-show-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">Sell</span>
         </div>
-        <span id="toggle-span" class="hide-display align-items-center">My Products</span>
+        <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+            <div class="slide-show-icon">
+                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
+            </div>
+            <span id="toggle-span" class="hide-display align-items-center">My Products</span>
+        </div>
     </div>
-</div>
 
-<!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+    <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
 
 
 
@@ -144,7 +138,7 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/bio5.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Radio Girl</h4>
+                            <h5 class="card-title">Radio Girl</h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -171,8 +165,8 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/11.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Boosy Grump
-                            </h4>
+                            <h5 class="card-title">Boosy Grump
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -199,8 +193,8 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/crime2.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Small Time
-                            </h4>
+                            <h5 class="card-title">Small Time
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -227,8 +221,8 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/14.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">An Invincible Summer
-                            </h4>
+                            <h5 class="card-title">An Invincible Summer
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -249,14 +243,13 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div id="imageDiv" class="col border border-secondary">
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/22.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">A Deadly Influence
-                            </h4>
+                            <h5 class="card-title">A Deadly Influence
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -277,7 +270,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -287,7 +279,7 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/bio5.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Radio Girl</h4>
+                            <h5 class="card-title">Radio Girl</h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -314,8 +306,8 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top" src="../../img/11.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Bossy Grump
-                            </h4>
+                            <h5 class="card-title">Boosy Grump
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -342,8 +334,8 @@
                     <div class="ba-0">
                         <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/crime2.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Small Time
-                            </h4>
+                            <h5 class="card-title">Small Time
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -368,10 +360,10 @@
                 </div>
                 <div id="imageDiv" class="col border border-secondary">
                     <div class="ba-0">
-                        <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/bio2.jpg">
+                        <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/14.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">A Promised Land
-                            </h4>
+                            <h5 class="card-title">An Invincible Summer
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -392,14 +384,13 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div id="imageDiv" class="col border border-secondary">
                     <div class="ba-0">
-                        <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/18.jpg">
+                        <img id="modalImage" alt="Card image cap" class="card-img-top w-100" src="../../img/22.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Our Finest Hour
-                            </h4>
+                            <h5 class="card-title">A Deadly Influence
+                            </h5>
                             <div class="contianer d-flex justify-content-around">
                                 <button type="button" class="btn btn-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -420,25 +411,19 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
 
-            <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog"
-                tabindex="-1">
+            <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog" tabindex="-1">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-body mb-0 p-0">
                             <img src="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg" alt="" style="width:100%">
                         </div>
                         <div class="modal-footer">
-                            <div><a href="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg"
-                                    target="_blank">Download</a>
+                            <div><a href="https://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg" target="_blank">Download</a>
                             </div>
-                            <button class="btn btn-outline-primary btn-rounded btn-md ml-4 text-center"
-                                data-dismiss="modal" type="button">Close</button>
+                            <button class="btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal" type="button">Close</button>
                         </div>
                     </div>
                 </div>
