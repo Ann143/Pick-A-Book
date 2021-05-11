@@ -1,26 +1,18 @@
-body{
-    background-color: rgb(250, 250, 248);
-}
-#upload1{
-   padding-left: 50px;
+#upload1 {
+    padding-left: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
-#upload{
+
+#upload {
     padding-left: 30px;
     padding-bottom: 40px;
 }
-#info {
-    padding: 30px;
-    background-color: blueviolet;
-}
-
-
 
 #image1 {
     max-height: 200px;
-    max-width: 100%;
 }
+
 #image {
     max-height: 150px;
     max-width: 100%;
@@ -29,6 +21,7 @@ body{
 #frame {
     padding: 10px;
 }
+
 .main-secction {
     box-shadow: 15px 15px 15px;
     background: linear-gradient(to bottom, #ffffff 0%, #fdeef4 100%);
@@ -36,41 +29,42 @@ body{
 
 .viewInfo {
     box-shadow: 15px 15px 15px;
-    background: linear-gradient(to bottom right, #ffffff -26%, #ffdcea 100%);
+    background: linear-gradient(to bottom right, #ffffff -26%, #ffdcea);
+    width: ;
 }
 
 h6 {
     color: white;
 }
 
-        .image-container {
-            position: relative;
-        }
+.image-container {
+    position: relative;
+}
 
-        .image {
-            opacity: 1;
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: .5s ease;
-            backface-visibility: hidden;
-        }
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
 
-        .middle {
-            transition: .5s ease;
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            text-align: center;
-        }
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
 
-        .image-container:hover .image {
-            opacity: 0.3;
-        }
+.image-container:hover .image {
+    opacity: 0.3;
+}
 
-        .image-container:hover .middle {
-            opacity: 1;
-        }
+.image-container:hover .middle {
+    opacity: 1;
+}
