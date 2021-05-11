@@ -3,8 +3,6 @@
 
 <head>
 
-<<<<<<< HEAD
-=======
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +10,7 @@
     <meta name="author" content="">
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
->>>>>>> 2d2994fee2cf2d17b508eaeda7da07bc8ad6865b
+    <link rel="stylesheet" href="../../css/account.css">
 
     <title>Best Sold Book</title>
 
@@ -41,6 +39,7 @@
 
             <hr style="border: 1px solid rgb(238, 46, 222); width: 50%;">
 
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
@@ -59,8 +58,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/Seller.html">Sellers</a>
-                        <a class="collapse-item" href="../Admin/customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.html">Sellers</a>
+                        <a class="collapse-item" href="customer.html">Customers</a>
                     </div>
                 </div>
             </li>
@@ -73,8 +72,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/product.html">Products</a>
-                        <a class="collapse-item" href="../Admin/order.html">Orders</a>
+                        <a class="collapse-item" href="product.html">Products</a>
+                        <a class="collapse-item" href="order.html">Orders</a>
 
                     </div>
                 </div>
@@ -88,13 +87,11 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="../Admin/bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
                     </div>
                 </div>
             </li>
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -237,80 +234,165 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h5 class="h3 mb-0 text-gray-800">Best Sold Books</h5>
-                </div>
 
-                <div class="container">
-                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
-                        <thead style="background-color: black;color: white;">
-                            <tr>
-                                <th>Book Title <span id="sort">↑</span></th>
-                                <th>Book Category</th>
-                                <th>Seller</th>
-                                <th>Price</th>
-                                <th>Total Sold</th>
-                                <th>Total Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody style="color: black;">
-                            <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>5 pc(s)</td>
-                                <td>Php 2000.00</td>
-                            </tr>
-                            <tr>
-                                <td>A Promised Land</td>
-                                <td>Biography, Autobiography</td>
-                                <td>Barack Obama</td>
-                                <td>Php 50.00</td>
-                                <td>6 6pc(s)</td>
-                                <td>Php 2400.00</td>
-                            </tr>
-                            <tr>
-                                <td>Not My Match</td>
-                                <td>Contemporary, Funny, New Adult, Romance, Sports</td>
-                                <td>Ilsa Madden-Mills</td>
-                                <td>Php 100.00</td>
-                                <td> pc(s)</td>
-                                <td>Php 2400.00</td>
-                            </tr>
-                            <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>7pc(s)</td>
-                                <td>Php 2500.00</td>
-                            </tr>
+                <div style="width: 100% !important;">
+                    <div style="margin-top: 3%;margin-right: 8%;">
+                        <div id="viewInfo" class="container col-md-8 viewInfo" style="margin-right:7rem ;">
+                            <div class="row" id="upload1">
+                                <div class="col-md-4">
+                                    <div id="frame" class="text-center border border-dark rounded viewInfo">
+                                        <img id="image1" class="img-fluid border border-dark rounded-circle w-100" src="../../img/FB_IMG_16157132375310788.jpg" class="avatar img-circle" alt="avatar">
+                                        <div class="container">
+                                            <h5>Ann</h5>
+                                            <p>Joined Pick-A-Book on</p>
+                                            <p>April 1(7 days ago)</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="basicInfo" class="col-md-7 personal-info border border-dark rounded float-center viewInfo">
+                                    <h4>Profile</h4>
+                                    <p>Your Personal Information</p>
+
+                                    <div class="card rounded">
+                                        <div class="card-header">
+                                            Basic Information
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-3 col-5">
+                                                    <label style="font-weight:bold;">Full Name</label>
+                                                </div>
+                                                <div class="col-md-8 col-6">
+                                                    Mery-an Telez
+                                                </div>
+                                            </div>
+                                            <hr />
+
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label style="font-weight:bold;">Birth Date</label>
+                                                </div>
+                                                <div class="col-md-8 col-">
+                                                    March 22, 1994
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label style="font-weight:bold;">Address</label>
+                                                </div>
+                                                <div class="col-md-8 col-">
+                                                    Nasipit Talamban, Cebu City
+                                                </div>
+                                            </div>
+                                            <hr />
 
 
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-3 col-5">
+                                                    <label style="font-weight:bold;">Email</label>
+                                                </div>
+                                                <div class="col-md-8 col-6">
+                                                    ebaritabryan@gmail.com
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-3 col-5">
+                                                    <label style="font-weight:bold;">Password</label>
+                                                </div>
+                                                <div class="col-md-8 col-6">
+                                                    Not Set
+                                                </div>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                    </div>
 
-                        </tbody>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit
+                                            Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="edit">Edit Profile</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body main-secction rounded">
+                                        <div class="row" id="upload">
+                                            <div class="col-md-3">
+                                                <div id="frame" class="text-center border border-dark rounded main-secction">
+                                                    <img id="image" class="img-fluid border border-dark rounded-circle w-100" src="../../img/FB_IMG_16157132375310788.jpg" class="avatar img-circle" alt="avatar">
+                                                    <p>Upload a different photo...</p>
 
-                    </table>
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div id="info" class="col-md-8 personal-info border border-dark rounded float-center main-secction">
+                                                <center>
+                                                    <h5>Personal Information</h5>
+                                                </center>
+                                                <form class="form-inline" action="/action_page.php">
+                                                    <label for="fname">First name:</label>&nbsp;&nbsp;
+                                                    <input type="text" id="fn" class="form-control" value=" Mery-an" name="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <label for="lname">Last name:</label>&nbsp;&nbsp;&nbsp;<br><br><br><br>
+                                                    <input type="text" id="ln" value="Telez" class="form-control" name="lname">
+                                                    <label for="birthdate">Birthdate:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="text" id="birth" id="datepicker" class="form-control" value="July 31, 1999" name="birth">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <label for="address">Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+                                                    <input type="text" id="add" class="form-control" value="Nasipit Talamban, Cebu City" name="add">
+
+                                                    <label for="username">Username:</label>&nbsp;&nbsp;<br><br><br><br>
+                                                    <input type="text" id="add" class="form-control" value="Ann" name="username">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="email" id="add" class="form-control" value="mtelez138@gmail.com" name="pass">&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <label for="password">Password:</label>&nbsp;&nbsp;
+                                                    <input type="password" id="add" class="form-control" value="Ann" name="username"><br>&nbsp;&nbsp;&nbsp;
+                                                    <label for="newpass">New Password:</label>
+                                                    <input type="password" id="add" class="form-control" value="" name="newpass">&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                </form>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" id="save" class="btn btn-primary ">Save
+                                                        Changes</button>
+                                                </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
 
 
             </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Pick-A-Book 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -351,5 +433,18 @@
 
 
 </body>
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Pick-A-Book 2021</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+
+
 
 </html>
