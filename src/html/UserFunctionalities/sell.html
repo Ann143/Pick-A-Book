@@ -4,6 +4,7 @@
 <head>
     <title>Sell</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -89,39 +90,55 @@
 
 
 
-    <div id="main" style="margin-top: 10%;">
+    <div id="main" style="margin-top: 7%;margin-left: 90px;">
         <div class="p-3 mt-5">
             <div class="row d-flex justify-content-around">
-                <div class="col-sm-5 border p-5">
+                <div class="col-sm-5 border p-4" style="margin-left: 70px;">
                     <form action="post">
                         <div class="form-group">
-                            <label for="inputAddress">Seller:</label>
-                            <div class="container">
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Full Name">
+                            <label style="margin-left: 15px;">Seller</label>
+                            <div class="col-sm-12 my-1">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-user" style="color: #e32467;"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Full Name">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress2">Book Title:</label>
-                            <div class="container">
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Book Title">
+                            <label style="margin-left: 15px;">Book Title</label>
+                            <div class="col-sm-12 my-1">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-book" style="color: #e32467;"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Title">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress2">Book Price:</label>
-                            <div class="container">
-                                <input type="text" value="Php " class="form-control" id="inputAddress2" placeholder="Price">
+                            <label style="margin-left: 15px;">Book Price</label>
+                            <div class="col-sm-12 my-1">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-money" style="color: #e32467;"></i></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Price">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputState">Book Category:</label>
+                            <label style="margin-left: 15px;">Book Category:</label>
                             <div class="container">
-                                <div class="form-check">
+                                <div class="form-check" style="margin-left: 20px;">
                                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Fiction
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check" style="margin-left: 20px;">
                                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
                                     <label class="form-check-label" for="defaultCheck2">
                                         Non-Fiction
@@ -130,17 +147,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Book Picture:</label>
-                            <div class="container">
+                            <label for="exampleFormControlFile1" style="margin-left: 15px;">Book Picture:</label>
+                            <div class="container" style="margin-left: 20px;">
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                         </div>
-                        <button class="btn btn-primary d-flex float-right">Add Book</button>
+                        <button class="btn btn-primary" style="margin-left: 300px;">Publish</button>
+                        <button class="btn btn-danger">Cancel</button>
+
                     </form>
                 </div>
-                <div class="col-sm-4 border border-danger">
+                <div class="col-sm-4 border" style="height: 430px;margin-right: 70px;">
                     <div class="pt-3 pb-3">
-                        <img width="400" height="530" id="preview" src="https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg">
+                        <img width="100%" height="400px" id="preview" src="https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg">
                     </div>
                 </div>
             </div>
