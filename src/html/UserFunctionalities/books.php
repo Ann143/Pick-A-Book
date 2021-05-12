@@ -39,9 +39,9 @@
             <div class="drop-down my-account cursor-pointer">
                 <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
                 <div class="drop-nav-profile container">
-                    <a href="#" style="color: black;text-decoration: none;">My Account</a>
+                    <a href="./newAccount.php" style="color: black;text-decoration: none;">My Account</a>
                     <br>
-                    <a href="#" style="color: black;text-decoration: none;">Logout</a>
+                    <a href=" ../IndexFunctionallities/login.php" style="color: black;text-decoration: none;">Logout</a>
                 </div>
             </div>
             <div class="drop-down settings cursor-pointer">
@@ -51,14 +51,14 @@
         </div>
     </div>
     <div class="side-nav">
-        <div onclick="window.location ='./userDashboard.html'"
+        <div onclick="window.location ='./userDashboard.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
         </div>
-        <div onclick="window.location = './myLibrary.html'"
+        <div onclick="window.location = './myLibrary.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div class="slide-show-icon">
                 <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png"
@@ -66,7 +66,7 @@
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-        <div onclick="window.location = './bookmarks.html'"
+        <div onclick="window.location = './bookmarks.php'"
             class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
             <div class="slide-show-icon">
                 <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png"
@@ -76,19 +76,18 @@
                 Bookmark
             </span>
         </div>
-        <div onclick="window.location = './sell.html'"
+        <div onclick="window.location = './sell.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Sell</span>
         </div>
-        <div class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+        <div onclick="window.location = './orders.php'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div class="slide-show-icon">
-                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png"
-                    alt="Books">
+                <img src="https://cdn3.iconfinder.com/data/icons/e-commerce-308/32/document_hourglass_order_history-256.png" alt="Orders">
             </div>
-            <span id="toggle-span" class="hide-display align-items-center">My Products</span>
+            <span id="toggle-span" class="hide-display align-items-center">Orders</span>
         </div>
     </div>
 

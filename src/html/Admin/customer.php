@@ -3,8 +3,6 @@
 
 <head>
 
-<<<<<<< HEAD
-=======
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +10,8 @@
     <meta name="author" content="">
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
->>>>>>> 2d2994fee2cf2d17b508eaeda7da07bc8ad6865b
 
-    <title>Best Sold Book</title>
+    <title>Customer</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -35,15 +32,16 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    Pick-A-Book</h4>
+                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Pick-A-Book</h4>
+
             </a>
 
             <hr style="border: 1px solid rgb(238, 46, 222); width: 50%;">
 
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,8 +57,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/Seller.html">Sellers</a>
-                        <a class="collapse-item" href="../Admin/customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -73,8 +71,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/product.html">Products</a>
-                        <a class="collapse-item" href="../Admin/order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -88,8 +86,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="../Admin/bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
@@ -237,61 +235,71 @@
                 </nav>
                 <!-- End of Topbar -->
 
+
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h5 class="h3 mb-0 text-gray-800">Best Sold Books</h5>
+                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Customers</h5>
                 </div>
 
                 <div class="container">
-                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
-                        <thead style="background-color: black;color: white;">
+                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
+                        <thead style="background-color: black; color: white;">
                             <tr>
-                                <th>Book Title <span id="sort">↑</span></th>
-                                <th>Book Category</th>
-                                <th>Seller</th>
-                                <th>Price</th>
-                                <th>Total Sold</th>
-                                <th>Total Amount</th>
+                                <th>Customer's Name</th>
+                                <th>Birthdate</th>
+                                <th>Address</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
                             </tr>
                         </thead>
                         <tbody style="color: black;">
                             <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>5 pc(s)</td>
-                                <td>Php 2000.00</td>
+                                <td>Mery-an Telez</td>
+                                <td>July 31,1999</td>
+                                <td>Talamban</td>
+                                <td>Ann</td>
+                                <td>mtelez138@gmail.com</td>
+                                <td>telez</td>
+                                <td>Active</td>
+                                <td>
+                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
+                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
+
+                                </td>
                             </tr>
                             <tr>
-                                <td>A Promised Land</td>
-                                <td>Biography, Autobiography</td>
-                                <td>Barack Obama</td>
-                                <td>Php 50.00</td>
-                                <td>6 6pc(s)</td>
-                                <td>Php 2400.00</td>
+                                <td>Mery-an Telez</td>
+                                <td>July 31,1999</td>
+                                <td>Talamban</td>
+                                <td>Ann</td>
+                                <td>mtelez138@gmail.com</td>
+                                <td>telez</td>
+                                <td>Active</td>
+                                <td>
+                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
+                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
+
+                                </td>
                             </tr>
                             <tr>
-                                <td>Not My Match</td>
-                                <td>Contemporary, Funny, New Adult, Romance, Sports</td>
-                                <td>Ilsa Madden-Mills</td>
-                                <td>Php 100.00</td>
-                                <td> pc(s)</td>
-                                <td>Php 2400.00</td>
+                                <td>Mery-an Telez</td>
+                                <td>July 31,1999</td>
+                                <td>Talamban</td>
+                                <td>Ann</td>
+                                <td>mtelez138@gmail.com</td>
+                                <td>telez</td>
+                                <td>Active</td>
+                                <td>
+                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
+                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
+
+                                </td>
                             </tr>
-                            <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>7pc(s)</td>
-                                <td>Php 2500.00</td>
-                            </tr>
-
-
-
                         </tbody>
-
                     </table>
                 </div>
 

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <title>Register</title>
+
+    <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -17,41 +18,6 @@
     <link rel="stylesheet" href="../../css/login.css">
 
 </head>
-<style>
-    .nav-link {
-        border: black 2px solid;
-        width: 100px;
-        margin-left: 30px;
-        text-align: center;
-        color: white;
-        background-color: black;
-        border-radius: 15%;
-        font-family: "Times New Roman", Times, serif;
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-    
-    #head {
-        background-color: #aa093e;
-        position: fixed;
-        width: 100%;
-        z-index: 100;
-        height: 106px;
-    }
-    
-    link:hover {
-        color: #aa093e;
-    }
-    
-    #logo {
-        max-width: 110px;
-        max-height: 114px;
-        margin-top: -4%;
-        cursor: pointer;
-    }
-</style>
-
 
 <body>
     <div id="head">
@@ -67,41 +33,39 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto" style="margin-top:-4%">
                         <li class="navbar-item">
-                            <a href="../../../public/index.html " class=" nav-link active " style="color: white;">Home</a>
+                            <a id="link" href="../../../public/index.php" class="nav-link active">Home</a>
                         </li>
-                        <li class="navbar-item ">
-                            <a href="../IndexFunctionallities/about.html" class=" nav-link " style="color: white;">About</a>
+                        <li class="navbar-item">
+                            <a id="link" href="../../html/Public/about.php" class="nav-link">About</a>
                         </li>
-                        <li class="navbar-item ">
-                            <a href="../IndexFunctionallities/contact.html " class="nav-link " style="color: white;">Contacts</a>
+                        <li class="navbar-item">
+                            <a id="link" href="../Public/contact.php" class="nav-link">Contacts</a>
                         </li>
-                        <a href="../IndexFunctionallities/login.html"><button class=" btn btn-primary "
-                                class="log " style="margin-left: 25px;  font-weight: bold;border-radius: 18%;   height: 45px;border: black 2px solid;">Log In</button></a>
+                        <a href="../Public/userDashboard.php"><button class="btn btn-primary"  id="login">Login</button></a></button>
+                        </a>
+
                     </ul>
                 </div>
+            </nav>
         </div>
     </div><br><br>
 
-    <div class="fullcontent ">
-        <div class="headings ">
-            <h1 style="font-size: 90px; ">Pick-A-Book</h1>
-            <h2 style="font-size: 35px; text-align: center; ">Your Online E-Book Store</h2>
-            <h3 style="font-size: 30px;color: #dd5589; ">A great place to be stranded!</h3>
+    <div class="fullcontent">
+        <div class="headings">
+            <h1 style="font-size: 90px;">Pick-A-Book</h1>
+            <h2 style="font-size: 40px; text-align: center;">Your Online E-Book Store</h2>
+            <h3 style="font-size: 40px;color: #dd5589;">A collection you will love!</h3>
         </div>
-        <div class="formbox ">
-            <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Register</h3>
-            <form id="form " action=" " method="post ">
-                <label for=" ">Firstname</label>
-                <input type="text " name="fname " class="asd " />
-                <label for=" ">Lastname</label>
-                <input type="text " name="lname " class="asd " />
-                <label for=" ">Email</label>
-                <input type="email " name="email " class="asd " />
-                <label for=" ">Password</label>
-                <input type="password " id=" " name="password " class="asd " />
-                <input id="btn " type="submit " name="submit " value="Submit " class="mainbox ">
-                <label for=" ">Already have an account?</label>
-                <a href="../IndexFunctionallities/login.html " class="mainbox ">Log in here!</a>
+        <div class="formbox">
+            <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Log In</h3>
+            <form class="login" action="" method="post">
+                <label for="">Email</label>
+                <input type="email" name="email" class="asd" />
+                <label for="">Password</label>
+                <input type="password" id="" name="password" class="asd" />
+                <a href="../Admin/index.html"></a> <input id="btn" type="submit" name="submit" value="Log In" class="mainbox"></a>
+                <label for="">New customer?</label>
+                <a href="../../html/IndexFunctionallities/register.html" class="mainbox" id="register">Register Now</a>
             </form>
         </div>
     </div>
@@ -110,7 +74,7 @@
             <section class="mb-4 ">
                 <h3>ABOUT US</h3>
                 <p>Our company sells many books by its categories. We make it easy for you to purchase by our products. For more info, contacts with us. </p>
-                <hr class="new4 ">
+                <hr class="new4">
                 <h4>Connect with Pick-A-Book</h4>
                 <!-- Facebook -->
                 <a class="btn btn-primary btn-floating m-1 " style="background-color: #3b5998; " href="#! " role="button "><i class="fa fa-facebook "></i></a>
@@ -125,7 +89,7 @@
                 <a class="btn btn-primary btn-floating m-1 " style="background-color: #55acee; " href="#! " role="button "><i class="fa fa-twitter "></i></a>
 
                 <!-- Youtube -->
-                <a class="btn btn-primary btn-floating m-1 " style="background-color: #dd4b39; " target="blank " href="https://www.youtube.com/watch?v=au61CGsFw0s " role="button "><i class="fa fa-youtube "></i></a>
+                <a class="btn btn-primary btn-floating m-1 " style="background-color: #dd4b39; " href="#! " role="button "><i class="fa fa-youtube "></i></a>
             </section>
             <h6>All Rights Reserved &copy; 2021</h6>
         </div>

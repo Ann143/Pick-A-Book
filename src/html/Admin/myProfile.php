@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,8 +59,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="sellers.html">Sellers</a>
-                        <a class="collapse-item" href="customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -73,8 +73,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.html">Products</a>
-                        <a class="collapse-item" href="order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -88,8 +88,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>

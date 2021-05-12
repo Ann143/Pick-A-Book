@@ -11,7 +11,7 @@
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <title>Customer</title>
+    <title>Rated Books</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -57,8 +57,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="sellers.html">Sellers</a>
-                        <a class="collapse-item" href="customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -71,8 +71,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.html">Products</a>
-                        <a class="collapse-item" href="order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -86,12 +86,11 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
-
 
 
             <!-- Divider -->
@@ -235,73 +234,54 @@
                 </nav>
                 <!-- End of Topbar -->
 
-
-                <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Customers</h5>
+                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 20px;">Most Rated Book</h5>
                 </div>
 
                 <div class="container">
-                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
-                        <thead style="background-color: black; color: white;">
+                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
+                        <thead style="background-color: black;color: white;">
                             <tr>
-                                <th>Customer's Name</th>
-                                <th>Birthdate</th>
-                                <th>Address</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Status</th>
+                                <th>Book</th>
+                                <th>Title</th>
+                                <th>Ratings</th>
                                 <th>Action</th>
 
                             </tr>
                         </thead>
                         <tbody style="color: black;">
                             <tr>
-                                <td>Mery-an Telez</td>
-                                <td>July 31,1999</td>
-                                <td>Talamban</td>
-                                <td>Ann</td>
-                                <td>mtelez138@gmail.com</td>
-                                <td>telez</td>
-                                <td>Active</td>
-                                <td>
-                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
-                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
+                                <td><img src="../../img/fan4.jpg" alt="" style="height: 80px;"></td>
+                                <td>The Unspken Name</td>
+                                <td>5 (Star)</td>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Mery-an Telez</td>
-                                <td>July 31,1999</td>
-                                <td>Talamban</td>
-                                <td>Ann</td>
-                                <td>mtelez138@gmail.com</td>
-                                <td>telez</td>
-                                <td>Active</td>
                                 <td>
                                     <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
                                     <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
-
                                 </td>
                             </tr>
                             <tr>
-                                <td>Mery-an Telez</td>
-                                <td>July 31,1999</td>
-                                <td>Talamban</td>
-                                <td>Ann</td>
-                                <td>mtelez138@gmail.com</td>
-                                <td>telez</td>
-                                <td>Active</td>
+                                <td><img src="../../img/fan4.jpg" alt="" style="height: 80px;"></td>
+                                <td>The Unspken Name</td>
+                                <td>5 (Star)</td>
                                 <td>
                                     <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
                                     <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
-
                                 </td>
                             </tr>
+
+
                         </tbody>
+
                     </table>
                 </div>
+
+
+
+
+
+
+
 
 
             </div>
