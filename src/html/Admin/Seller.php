@@ -244,9 +244,6 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
-
-
                 <div id="content-wrapper" class="d-flex flex-column">
                     <div id="content">
                         </nav>
@@ -258,24 +255,23 @@
                                 <thead style="background-color: black;color: blanchedalmond;">
                                     <tr>
                                         <th>Seller's Name</th>
-                                        <th>Total Books</th>
-                                        <th>Total Sold</th>
+
                                     </tr>
                                 </thead>
+
                                 <tbody style="color: black;">
-                                    <tr data-toggle="modal" data-target="#exampleModal">
+                                    <tr data-toggle="modal" data-target="#exampleModal1">
                                         <td>Mery-an Telez</td>
-                                        <td>5</td>
-                                        <td>Php 900.00</td>
+
                                     </tr>
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-xl">
                                             <div class="modal-content content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title" id="edit">Seller's Information</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
                                                 </div>
                                                 <div class="modal-body main-secction rounded">
                                                     <div class="row" id="upload1">
@@ -293,7 +289,6 @@
                                                         <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
 
                                                             <p>Your Personal Information</p>
-
                                                             <div class="card rounded ">
                                                                 <div class="card-header ">
                                                                     Basic Information
@@ -308,7 +303,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <hr />
-
                                                                     <div class="row ">
                                                                         <div class="col-md-3 ">
                                                                             <label style="font-weight:bold; ">Birth Date</label>
@@ -327,8 +321,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <hr />
-
-
                                                                     <div class="row ">
                                                                         <div class="col-sm-3 col-md-3 col-5 ">
                                                                             <label style="font-weight:bold; ">Email</label>
@@ -341,59 +333,46 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-
-
-
-
-
-                                                    <form method="post ">
+                                                    <form method="post " style="margin-top:30px;">
                                                         <div class="div-table ">
                                                             <div class="tr ">
-                                                                <div class="tc ">Name</div>
-                                                                <div class="tc ">Name</div>
-                                                                <div class="tc ">Address</div>
-
+                                                                <div class="tc ">Book Author</div>
+                                                                <div class="tc ">Book Category</div>
+                                                                <div class="tc ">Total Book Sold</div>
+                                                                <div class="tc ">Total Amount</div>
                                                             </div>
                                                             <div class="tr ">
-                                                                <div class="tc "> Online</div>
-                                                                <div class="tc "> jerome test 1</div>
-                                                                <div class="tc "> bvhvhvh</div>
-
+                                                                <div class="tc "> Liza Jackson</div>
+                                                                <div class="tc "> Suspense <br> Thriller</div>
+                                                                <div class="tc "> 65pcs</div>
+                                                                <div class="tc "> 9750</div>
                                                             </div>
                                                         </div>
                                                     </form>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
+                                    <tr data-toggle="modal" data-target="#exampleModal2">
+                                        <td> Christine Joy Ditchon </td>
 
-                                    <tr data-toggle="modal " data-target="#exampleModal ">
-                                        <td>Christine Joy Ditchon</td>
-                                        <td>6</td>
-                                        <td>Php 500.00</td>
                                     </tr>
-
-                                    <div class="modal fade " id="exampleModal1 " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
-                                        <div class="modal-dialog modal-xl ">
-                                            <div class="modal-content ">
-                                                <div class="modal-header ">
-                                                    <h4 class="modal-title " id="edit ">Seller's Information</h4>
-                                                    <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
-                                                                <span aria-hidden="true ">&times;</span>
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body main-secction rounded ">
-                                                    <div class="row " id="upload1 ">
-                                                        <div class="col-md-4 a ">
-                                                            <div id="frame " class="text-center border border-dark rounded " style="margin-top: 26px; ">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px; " class=" avatar img-circle
-                                                        " alt="avatar ">
+                                                <div class="modal-body main-secction rounded">
+                                                    <div class="row" id="upload2">
+                                                        <div class="col-md-4 a">
+                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
+                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
                                                                 <div class="container ">
-                                                                    <h5>Ann</h5>
+                                                                    <h5>Christine Joy Ditchon</h5>
                                                                     <p>Joined Pick-A-Book on</p>
                                                                     <p>April 1(7 days ago)</p>
                                                                 </div>
@@ -403,7 +382,6 @@
                                                         <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
 
                                                             <p>Your Personal Information</p>
-
                                                             <div class="card rounded ">
                                                                 <div class="card-header ">
                                                                     Basic Information
@@ -414,102 +392,10 @@
                                                                             <label style="font-weight:bold; ">Full Name</label>
                                                                         </div>
                                                                         <div class="col-md-8 col-6 ">
-                                                                            Mery-an Telez
+                                                                            Christine Joy Ditchon
                                                                         </div>
                                                                     </div>
                                                                     <hr />
-
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Birth Date</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            March 22, 1994
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Address</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            Nasipit Talamban, Cebu City
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Email</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            ebaritabryan@gmail.com
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr/>
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Birth Date</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            March 22, 1994
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <tr data-toggle="modal " data-target="#exampleModal ">
-                                        <td>David Bryan Pael</td>
-                                        <td>8</td>
-                                        <td>Php 1000.00</td>
-                                    </tr>
-                                    <div class="modal fade " id="exampleModal2 " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
-                                        <div class="modal-dialog modal-xl ">
-                                            <div class="modal-content ">
-                                                <div class="modal-header ">
-                                                    <h4 class="modal-title " id="edit ">Seller's Information</h4>
-                                                    <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
-                                                                <span aria-hidden="true ">&times;</span>
-                                                            </button>
-                                                </div>
-                                                <div class="modal-body main-secction rounded ">
-                                                    <div class="row " id="upload1 ">
-                                                        <div class="col-md-4 a ">
-                                                            <div id="frame " class="text-center border border-dark rounded " style="margin-top: 26px; ">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px; " class=" avatar img-circle
-                                                        " alt="avatar ">
-                                                                <div class="container ">
-                                                                    <h5>Ann</h5>
-                                                                    <p>Joined Pick-A-Book on</p>
-                                                                    <p>April 1(7 days ago)</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
-
-                                                            <p>Your Personal Information</p>
-
-                                                            <div class="card rounded ">
-                                                                <div class="card-header ">
-                                                                    Basic Information
-                                                                </div>
-                                                                <div class="card-body ">
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Full Name</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            Mery-an Telez
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-
                                                                     <div class="row ">
                                                                         <div class="col-md-3 ">
                                                                             <label style="font-weight:bold; ">Birth Date</label>
@@ -540,34 +426,49 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <form method="post " style="margin-top:30px;">
+                                                        <div class="div-table ">
+                                                            <div class="tr ">
+                                                                <div class="tc ">Book Author</div>
+                                                                <div class="tc ">Book Category</div>
+                                                                <div class="tc ">Total Book Sold</div>
+                                                                <div class="tc ">Total Amount</div>
+                                                            </div>
+                                                            <div class="tr ">
+                                                                <div class="tc "> Liza Jackson</div>
+                                                                <div class="tc "> Suspense <br> Thriller</div>
+                                                                <div class="tc "> 65pcs</div>
+                                                                <div class="tc "> 9750</div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <tr data-toggle="modal " data-target="#exampleModal ">
+                                    <tr data-toggle="modal" data-target="#exampleModal3">
                                         <td>Dexter Tampioc</td>
-                                        <td>10</td>
-                                        <td>Php 2000.00</td>
+
                                     </tr>
-                                    <div class="modal fade " id="exampleModal3 " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
-                                        <div class="modal-dialog modal-xl ">
-                                            <div class="modal-content ">
-                                                <div class="modal-header ">
-                                                    <h4 class="modal-title " id="edit ">Seller's Information</h4>
-                                                    <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
-                                                                <span aria-hidden="true ">&times;</span>
+                                    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body main-secction rounded ">
-                                                    <div class="row " id="upload1 ">
-                                                        <div class="col-md-4 a ">
-                                                            <div id="frame " class="text-center border border-dark rounded " style="margin-top: 26px; ">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px; " class=" avatar img-circle
-                                                        " alt="avatar ">
+                                                <div class="modal-body main-secction rounded">
+                                                    <div class="row" id="upload3">
+                                                        <div class="col-md-4 a">
+                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
+                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
                                                                 <div class="container ">
-                                                                    <h5>Ann</h5>
+                                                                    <h5>Mery-an Telez</h5>
                                                                     <p>Joined Pick-A-Book on</p>
                                                                     <p>April 1(7 days ago)</p>
                                                                 </div>
@@ -577,7 +478,6 @@
                                                         <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
 
                                                             <p>Your Personal Information</p>
-
                                                             <div class="card rounded ">
                                                                 <div class="card-header ">
                                                                     Basic Information
@@ -611,8 +511,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <hr />
-
-
                                                                     <div class="row ">
                                                                         <div class="col-sm-3 col-md-3 col-5 ">
                                                                             <label style="font-weight:bold; ">Email</label>
@@ -625,6 +523,118 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <form method="post " style="margin-top:30px;">
+                                                        <div class="div-table ">
+                                                            <div class="tr ">
+                                                                <div class="tc ">Book Author</div>
+                                                                <div class="tc ">Book Category</div>
+                                                                <div class="tc ">Total Book Sold</div>
+                                                                <div class="tc ">Total Amount</div>
+                                                            </div>
+                                                            <div class="tr ">
+                                                                <div class="tc "> Liza Jackson</div>
+                                                                <div class="tc "> Suspense <br> Thriller</div>
+                                                                <div class="tc "> 65pcs</div>
+                                                                <div class="tc "> 9750</div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <tr data-toggle="modal" data-target="#exampleModal4">
+                                        <td>David Bryan Pael</td>
+
+                                    </tr>
+                                    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body main-secction rounded">
+                                                    <div class="row" id="upload4">
+                                                        <div class="col-md-4 a">
+                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
+                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
+                                                                <div class="container ">
+                                                                    <h5>David Bryan Pael</h5>
+                                                                    <p>Joined Pick-A-Book on</p>
+                                                                    <p>April 1(7 days ago)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
+
+                                                            <p>Your Personal Information</p>
+                                                            <div class="card rounded ">
+                                                                <div class="card-header ">
+                                                                    Basic Information
+                                                                </div>
+                                                                <div class="card-body ">
+                                                                    <div class="row ">
+                                                                        <div class="col-sm-3 col-md-3 col-5 ">
+                                                                            <label style="font-weight:bold; ">Full Name</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-6 ">
+                                                                            David Bryan Pael
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr />
+
+                                                                    <div class="row ">
+                                                                        <div class="col-md-3 ">
+                                                                            <label style="font-weight:bold; ">Birth Date</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 col- ">
+                                                                            March 22, 1994
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr />
+                                                                    <div class="row ">
+                                                                        <div class="col-md-3 ">
+                                                                            <label style="font-weight:bold; ">Address</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 col- ">
+                                                                            Nasipit Talamban, Cebu City
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr />
+                                                                    <div class="row ">
+                                                                        <div class="col-sm-3 col-md-3 col-5 ">
+                                                                            <label style="font-weight:bold; ">Email</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-6 ">
+                                                                            ebaritabryan@gmail.com
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <form method="post " style="margin-top:30px;">
+                                                        <div class="div-table ">
+                                                            <div class="tr ">
+                                                                <div class="tc ">Book Author</div>
+                                                                <div class="tc ">Book Category</div>
+                                                                <div class="tc ">Total Book Sold</div>
+                                                                <div class="tc ">Total Amount</div>
+                                                            </div>
+                                                            <div class="tr ">
+                                                                <div class="tc "> Liza Jackson</div>
+                                                                <div class="tc "> Suspense <br> Thriller</div>
+                                                                <div class="tc "> 65pcs</div>
+                                                                <div class="tc "> 9750</div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -635,19 +645,9 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d396eb2400bfcf45214843679cfad4bcf7e85af5
         </div>
-        <!-- End of Main Content -->
     </div>
-    <!-- End of Content Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded " href="#page-top ">
         <i class="fas fa-angle-up "></i>
     </a>
@@ -681,8 +681,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js "></script>
 
-
-<<<<<<< HEAD
 </body>
 
 <!-- Footer -->
@@ -696,9 +694,10 @@
 <!-- End of Footer -->
 
 
-=======
->>>>>>> d396eb2400bfcf45214843679cfad4bcf7e85af5
+
 
 </body>
+
+</html>
 
 </html>
