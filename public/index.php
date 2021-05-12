@@ -34,24 +34,15 @@
     <script>
         $(document).ready(function() {
 
-                $('.nav-item').on('click', function() {
-                    alert('hi');
-                    //Remove any previous active classes
-                    $('#link').removeClass('active');
+            $('.nav-item').on('click', function() {
+                alert('hi');
+                //Remove any previous active classes
+                $('#link').removeClass('active');
 
-                    //Add active class to the clicked item
-                    $(this).addClass('active');
-                })
+                //Add active class to the clicked item
+                $(this).addClass('active');
             })
-            // var header = document.getElementsByClassName("nav-item");
-            // var btns = header.getElementsByClassName("nav-link");
-            // for (var i = 0; i < btns.length; i++) {
-            //     btns[i].addEventListener("click", function () {
-            //         var current = document.getElementsByClassName("active");
-            //         current[0].className = current[0].className.replace(" active", "");
-            //         this.className += " active";
-            //     });
-            // }
+        })
     </script>
 </head>
 
@@ -70,15 +61,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto" style="margin-top:-4%">
                         <li class="navbar-item">
-                            <a id="link" href="../public/index.html" class="nav-link active">Home</a>
+                            <a id="link" href="../public/index.php" class="nav-link active">Home</a>
                         </li>
                         <li class="navbar-item">
-                            <a id="link" href="../src/html/IndexFunctionallities/about.html" class="nav-link">About</a>
+                            <a id="link" href="../src/html/Public/about.php" class="nav-link">About</a>
                         </li>
                         <li class="navbar-item">
-                            <a id="link" href="../src/html/IndexFunctionallities/contact.html" class="nav-link">Contacts</a>
+                            <a id="link" href="../src/html/Public/contact.php" class="nav-link">Contacts</a>
                         </li>
-                        <a href="../src/html/IndexFunctionallities/login.html"><button class="btn btn-primary"
+                        <a href="../src/html/Public/login.php"><button class="btn btn-primary"
                                 id="login">Login</button></a>
                     </ul>
                 </div>
@@ -130,7 +121,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Roommate</a></h6>
+                                            <h6><a href="../src/html/Public/login.php">Roommate</a></h6>
                                             <h6 class="price">Php 350.00</h>
                                         </div>
                                     </div>
@@ -144,7 +135,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">The Hiding
+                                            <h6><a href="../src/html/Public/login.php">The Hiding
                                                     Place</a></h6>
                                             <h6 class="price">Php 200.00</h>
                                         </div>
@@ -159,7 +150,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Not My Match</a>
+                                            <h6><a href="../src/html/Public/login.php">Not My Match</a>
                                             </h6>
                                             <h6 class="price">Php 100.00</h>
                                         </div>
@@ -174,7 +165,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html ">The Missing
+                                            <h6><a href="../src/html/Public/login.php">The Missing
                                                     Girl</a></h6>
                                             <h6 class="price">Php 140.00</h>
                                         </div>
@@ -195,7 +186,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Unfinished</a>
+                                            <h6><a href="../src/html/Public/login.php">Unfinished</a>
                                             </h6>
                                             <h6 class="price">Php 90.00</h>
                                         </div>
@@ -210,7 +201,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html ">A Promised
+                                            <h6><a href="../src/html/Public/login.php">A Promised
                                                     Land</a></h6>
                                             <h6 class="price">Php 50.00</h>
                                         </div>
@@ -225,7 +216,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">The Ever
+                                            <h6><a href="../src/html/Public/login.php">The Ever
                                                     After</a></h6>
                                             <h6 class="price">Php 180.00</h>
                                         </div>
@@ -240,7 +231,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html ">Finding My
+                                            <h6><a href="../src/html/Public/login.php ">Finding My
                                                     Father</a></h6>
                                             <h6 class="price">Php 150.00</h>
                                         </div>
@@ -255,7 +246,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Radio Girl</a>
+                                            <h6><a href="../src/html/Public/login.php">Radio Girl</a>
                                             </h6>
                                             <h6 class="price">Php 240.00</h>
                                         </div>
@@ -276,7 +267,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Maniac</a></h6>
+                                            <h6><a href="../src/html/Public/login.php">Maniac</a></h6>
                                             <h6 class="price">Php 190.00</h>
                                         </div>
                                     </div>
@@ -290,7 +281,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Last Call</a>
+                                            <h6><a href="../src/html/Public/login.php">Last Call</a>
                                             </h6>
                                             <h6 class="price">Php 120.00</h>
                                         </div>
@@ -305,7 +296,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Guilty
+                                            <h6><a href="../src/html/Public/login.php">Guilty
                                                     Admissions</a></h6>
                                             <h6 class="price">Php 220.00</h>
                                         </div>
@@ -320,7 +311,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html">Small Time</a>
+                                            <h6><a href="../src/html/Public/login.php">Small Time</a>
                                             </h6>
                                             <h6 class="price">Php 160.00</h>
                                         </div>
@@ -335,7 +326,7 @@
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
                                             <span class="fa fa-star checked "></span>
-                                            <h6><a href="../src/html/IndexFunctionallities/login.html ">Bad Medicine</a>
+                                            <h6><a href="../src/html/Public/login.php">Bad Medicine</a>
                                             </h6>
                                             <h6 class="price">Php 295.00</h>
                                         </div>
@@ -369,7 +360,7 @@
                             <h5 style="color: black; padding-top: 10px; ">Independent Sellers</h5>
                             <p>We are only selling E-books but if you want to have a hard copy with it, we have a partnered bookstore that will cater with your needs.</p>
                         </a>
-                        <a class="btn btn-primary " href="../src/html/IndexFunctionallities/partner.html " role="button ">Partnered Company</a>
+                        <a class="btn btn-primary " href="../src/html/Public/partner.php" role="button ">Partnered Company</a>
                     </div>
                 </div>
                 <div class="col-sm-4 ">
@@ -379,7 +370,7 @@
                             <p>We sell not just novel, rare, and used e-books but also the informative and collectibles e- books
                             </p>
                         </a>
-                        <a class=" btn btn-primary " href="../src/html/IndexFunctionallities/collective.html" role="button ">Collective
+                        <a class=" btn btn-primary " href="../src/html/Public/collective.php" role="button ">Collective
                             E-books</a>
                     </div>
                 </div>
@@ -390,7 +381,7 @@
                             <h5 style="color:black;padding-top: 10px; ">Feel the Love</h5>
                             <p>We asked customers to tell us why they love shopping on Pick-A-Book and we were overwhelmed their kind words</p>
                         </a>
-                        <a class="btn btn-primary " href="../src/html/IndexFunctionallities/feedback.html" role="button ">Customer's Feedback</a>
+                        <a class="btn btn-primary " href="../src/html/Public/feedback.php" role="button ">Customer's Feedback</a>
                     </div>
                 </div>
             </div>

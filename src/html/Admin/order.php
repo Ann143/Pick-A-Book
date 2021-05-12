@@ -11,7 +11,7 @@
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <title>Customer</title>
+    <title>Order</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,16 +32,16 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Pick-A-Book</h4>
+                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    Pick-A-Book</h4>
 
             </a>
 
             <hr style="border: 1px solid rgb(238, 46, 222); width: 50%;">
 
-
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -57,8 +57,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="sellers.html">Sellers</a>
-                        <a class="collapse-item" href="customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -71,8 +71,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.html">Products</a>
-                        <a class="collapse-item" href="order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -86,13 +86,11 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -235,73 +233,88 @@
                 </nav>
                 <!-- End of Topbar -->
 
-
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Customers</h5>
+                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;color: black;">Order</h5>
                 </div>
-
+                <!-- Table for Order -->
                 <div class="container">
-                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
-                        <thead style="background-color: black; color: white;">
+                    <table class="table text-center" style="box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
+                        <thead style="background-color: black;color: white;font-size: px;">
                             <tr>
-                                <th>Customer's Name</th>
-                                <th>Birthdate</th>
-                                <th>Address</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Password</th>
+                                <th>Customer Name</th>
+                                <th>Book</th>
+                                <th>Book Title</th>
+                                <th>Book Seller</th>
+                                <th>Book Category</th>
+                                <th>Total Amount</th>
+                                <th>Payment</th>
+                                <th>Date Purchased</th>
+                                <th>Date Finished Transaction</th>
                                 <th>Status</th>
                                 <th>Action</th>
-
                             </tr>
                         </thead>
-                        <tbody style="color: black;">
+                        <tbody style="color: black;font-size: 14px;">
                             <tr>
+                                <th>Judy Ann Arquisal</th>
+                                <td><img src="../../img/1.jpg" height="90rem"></td>
+                                <td>SandMan</td>
                                 <td>Mery-an Telez</td>
-                                <td>July 31,1999</td>
-                                <td>Talamban</td>
-                                <td>Ann</td>
-                                <td>mtelez138@gmail.com</td>
-                                <td>telez</td>
-                                <td>Active</td>
+                                <td>Action</td>
+                                <td>P 1000.00</td>
+                                <td>Gcash</td>
+                                <td>May 6, 2021</td>
+                                <td>May 7, 2021</td>
+                                <td>Completed</td>
                                 <td>
-                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
-                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
-
+                                    <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
+                                    <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
                                 </td>
                             </tr>
                             <tr>
+                                <th>Judy Ann Arquisal</th>
+                                <td><img src="../../img/2.jpg" height="90rem"></td>
+                                <td>The Stand</td>
                                 <td>Mery-an Telez</td>
-                                <td>July 31,1999</td>
-                                <td>Talamban</td>
-                                <td>Ann</td>
-                                <td>mtelez138@gmail.com</td>
-                                <td>telez</td>
-                                <td>Active</td>
+                                <td>Action</td>
+                                <td>P 1000.00</td>
+                                <td>Gcash</td>
+                                <td>May 6, 2021</td>
+                                <td>May 7, 2021</td>
+                                <td>Cancelled</td>
                                 <td>
-                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
-                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
-
+                                    <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
+                                    <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
                                 </td>
                             </tr>
                             <tr>
+                                <th>Judy Ann Arquisal</th>
+                                <td><img src="../../img/3.jpg" height="90rem"></td>
+                                <td>Gideon</td>
                                 <td>Mery-an Telez</td>
-                                <td>July 31,1999</td>
-                                <td>Talamban</td>
-                                <td>Ann</td>
-                                <td>mtelez138@gmail.com</td>
-                                <td>telez</td>
-                                <td>Active</td>
+                                <td>Action</td>
+                                <td>P 1000.00</td>
+                                <td>Gcash</td>
+                                <td>May 6, 2021</td>
+                                <td>May 7, 2021</td>
+                                <td>Pending</td>
                                 <td>
-                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
-                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
-
+                                    <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
+                                    <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
+
+
+
+
+
+
+
 
 
             </div>

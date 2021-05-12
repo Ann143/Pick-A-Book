@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../img/logoicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="../../css/cart.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -45,9 +43,9 @@
             <div class="drop-down my-account cursor-pointer">
                 <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
                 <div class="drop-nav-profile container">
-                    <a href="./newAccount.html" style="color: black;text-decoration: none;">My Account</a>
+                    <a href="./newAccount.php " style="color: black;text-decoration: none;">My Account</a>
                     <br>
-                    <a href="../IndexFunctionallities/login.html" style="color: black;text-decoration: none;">Logout</a>
+                    <a href="../IndexFunctionallities/login.php" style="color: black;text-decoration: none;">Logout</a>
                 </div>
             </div>
             <div class="drop-down settings cursor-pointer">
@@ -56,19 +54,19 @@
         </div>
     </div>
     <div class="side-nav">
-        <div onclick="window.location ='./userDashboard.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+        <div onclick="window.location ='./userDashboard.php'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div title="Dashboard" class="slide-show-icon">
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
         </div>
-        <div onclick="window.location = './myLibrary.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+        <div onclick="window.location = './myLibrary.php'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div title="My Library" class="slide-show-icon">
                 <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png" alt="Books">
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-        <div onclick="window.location = './bookmarks.html'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
+        <div onclick="window.location = './bookmarks.php'" class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
             <div title="Bookmarks" class="slide-show-icon">
                 <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png" alt="Watchlist">
             </div>
@@ -76,13 +74,13 @@
                 Bookmark
             </span>
         </div>
-        <div onclick="window.location = './books.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
+        <div onclick="window.location = './books.php'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div title="Books" class="slide-show-icon">
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Books</span>
         </div>
-        <div onclick="window.location = './orders.html'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
+        <div onclick="window.location = './orders.php'" class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div class="slide-show-icon">
                 <img src="https://cdn3.iconfinder.com/data/icons/e-commerce-308/32/document_hourglass_order_history-256.png" alt="Orders">
             </div>
@@ -175,13 +173,8 @@
 
 
                             <h6 class="text-center">Payment</h6>
-                            <hr class="new2" style="color: white;">
-                            <p class="text-center">Accepted Cards</p>
-                            <center>
-                                <li>Credit Card</li>
-                                <li>PayPal</li>
-                            </center><br>
-
+                            <hr class="new2">
+                            <p class="text-center">Accepted Cards</p><br>
 
                             <span>Name on Cards</span><br>
                             <input type="text"><br>
@@ -206,7 +199,6 @@
                 </div>
             </div>
         </div>
-
 </body>
 
 </html>

@@ -11,7 +11,7 @@
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <title>Best Sold Book</title>
+    <title>Rated Books</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,11 +32,12 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    Pick-A-Book</h4>
+                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Pick-A-Book</h4>
+
             </a>
 
             <hr style="border: 1px solid rgb(238, 46, 222); width: 50%;">
+
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
@@ -56,8 +57,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/Seller.html">Sellers</a>
-                        <a class="collapse-item" href="../Admin/customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -70,8 +71,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/product.html">Products</a>
-                        <a class="collapse-item" href="../Admin/order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -85,12 +86,11 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="../Admin/ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="../Admin/bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
-
 
 
             <!-- Divider -->
@@ -234,63 +234,54 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h5 class="h3 mb-0 text-gray-800">Best Sold Books</h5>
+                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 20px;">Most Rated Book</h5>
                 </div>
 
                 <div class="container">
-                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
+                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
                         <thead style="background-color: black;color: white;">
                             <tr>
-                                <th>Book Title <span id="sort">↑</span></th>
-                                <th>Book Category</th>
-                                <th>Seller</th>
-                                <th>Price</th>
-                                <th>Total Sold</th>
-                                <th>Total Amount</th>
+                                <th>Book</th>
+                                <th>Title</th>
+                                <th>Ratings</th>
+                                <th>Action</th>
+
                             </tr>
                         </thead>
                         <tbody style="color: black;">
                             <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>5 pc(s)</td>
-                                <td>Php 2000.00</td>
-                            </tr>
-                            <tr>
-                                <td>A Promised Land</td>
-                                <td>Biography, Autobiography</td>
-                                <td>Barack Obama</td>
-                                <td>Php 50.00</td>
-                                <td>6 6pc(s)</td>
-                                <td>Php 2400.00</td>
-                            </tr>
-                            <tr>
-                                <td>Not My Match</td>
-                                <td>Contemporary, Funny, New Adult, Romance, Sports</td>
-                                <td>Ilsa Madden-Mills</td>
-                                <td>Php 100.00</td>
-                                <td> pc(s)</td>
-                                <td>Php 2400.00</td>
-                            </tr>
-                            <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>7pc(s)</td>
-                                <td>Php 2500.00</td>
-                            </tr>
+                                <td><img src="../../img/fan4.jpg" alt="" style="height: 80px;"></td>
+                                <td>The Unspken Name</td>
+                                <td>5 (Star)</td>
 
+                                <td>
+                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
+                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="../../img/fan4.jpg" alt="" style="height: 80px;"></td>
+                                <td>The Unspken Name</td>
+                                <td>5 (Star)</td>
+                                <td>
+                                    <i class="fas fa-edit" style="font-size: 20px;; color: rgb(255, 217, 0);"></i>&nbsp;
+                                    <i class="fas fa-trash" style="font-size: 20px;; color: rgb(255, 0, 0);"></i>
+                                </td>
+                            </tr>
 
 
                         </tbody>
 
                     </table>
                 </div>
+
+
+
+
+
+
+
 
 
             </div>

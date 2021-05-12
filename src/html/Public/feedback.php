@@ -34,15 +34,15 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto" style="margin-top:-8%;background-color: #55acee;">
                         <li class="navbar-item">
-                            <a id="link" href="../../../public/index.html" class="nav-link active">Home</a>
+                            <a id="link" href="../../../public/index.php" class="nav-link active">Home</a>
                         </li>
                         <li class="navbar-item">
-                            <a id="link" href="../IndexFunctionallities/about.html" class="nav-link">About</a>
+                            <a id="link" href="../Public/about.php" class="nav-link">About</a>
                         </li>
                         <li class="navbar-item">
-                            <a id="link" href="../IndexFunctionallities/contact.html" class="nav-link">Contacts</a>
+                            <a id="link" href="../Public/contact.php" class="nav-link">Contacts</a>
                         </li>
-                        <a href="../IndexFunctionallities/login.html"><button class="btn btn-primary" id="login">Log In</button></a>
+                        <a href="../Public/login.php"><button class="btn btn-primary" id="login">Log In</button></a>
                     </ul>
                 </div>
             </nav>

@@ -12,7 +12,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="../../css/account.css">
 
-    <title>Best Sold Book</title>
+    <title>Profile</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,6 +22,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+
 
 <body id="page-top">
 
@@ -42,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -58,8 +59,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="sellers.html">Sellers</a>
-                        <a class="collapse-item" href="customer.html">Customers</a>
+                        <a class="collapse-item" href="sellers.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -72,8 +73,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.html">Products</a>
-                        <a class="collapse-item" href="order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -87,8 +88,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
@@ -109,7 +110,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="color: black;">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -235,167 +236,225 @@
                 <!-- End of Topbar -->
 
 
-                <div style="width: 100% !important;">
-                    <div style="margin-top: 3%;margin-right: 8%;">
-                        <div id="viewInfo" class="container col-md-8 viewInfo" style="margin-right:7rem ;">
-                            <div class="row" id="upload1">
-                                <div class="col-md-4">
-                                    <div id="frame" class="text-center border border-dark rounded viewInfo">
-                                        <img id="image1" class="img-fluid border border-dark rounded-circle w-100" src="../../img/FB_IMG_16157132375310788.jpg" class="avatar img-circle" alt="avatar">
-                                        <div class="container">
-                                            <h5>Ann</h5>
-                                            <p>Joined Pick-A-Book on</p>
-                                            <p>April 1(7 days ago)</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div id="basicInfo" class="col-md-7 personal-info border border-dark rounded float-center viewInfo">
-                                    <h4>Profile</h4>
-                                    <p>Your Personal Information</p>
-
-                                    <div class="card rounded">
-                                        <div class="card-header">
-                                            Basic Information
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-3 col-md-3 col-5">
-                                                    <label style="font-weight:bold;">Full Name</label>
-                                                </div>
-                                                <div class="col-md-8 col-6">
-                                                    Mery-an Telez
-                                                </div>
-                                            </div>
-                                            <hr />
-
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label style="font-weight:bold;">Birth Date</label>
-                                                </div>
-                                                <div class="col-md-8 col-">
-                                                    March 22, 1994
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label style="font-weight:bold;">Address</label>
-                                                </div>
-                                                <div class="col-md-8 col-">
-                                                    Nasipit Talamban, Cebu City
-                                                </div>
-                                            </div>
-                                            <hr />
-
-
-                                            <div class="row">
-                                                <div class="col-sm-3 col-md-3 col-5">
-                                                    <label style="font-weight:bold;">Email</label>
-                                                </div>
-                                                <div class="col-md-8 col-6">
-                                                    ebaritabryan@gmail.com
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div class="row">
-                                                <div class="col-sm-3 col-md-3 col-5">
-                                                    <label style="font-weight:bold;">Password</label>
-                                                </div>
-                                                <div class="col-md-8 col-6">
-                                                    Not Set
-                                                </div>
-                                            </div>
-                                            <hr />
-                                        </div>
+                <div style="margin-top: 3%; width: 100%; margin-right: 25px;">
+                    <div id="viewInfo" class="container col-md-8 viewInfo" style="margin-right:7rem ; width: 100%;">
+                        <div class="row" id="upload1">
+                            <div class="col-md-4">
+                                <div id="frame" class="text-center border border-dark rounded viewInfo">
+                                    <img id="image1" class="img-fluid border border-dark rounded-circle w-100" src="../../img/FB_IMG_16157132375310788.jpg" class="avatar img-circle" alt="avatar">
+                                    <div class="container">
+                                        <h5>Ann</h5>
+                                        <p>Joined Pick-A-Book on</p>
+                                        <p>April 1(7 days ago)</p>
                                     </div>
 
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit
-                                            Profile</button>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="edit">Edit Profile</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+
+                            <div id="basicInfo" class="col-md-7 personal-info border border-dark rounded float-center viewInfo">
+                                <h4>Profile</h4>
+                                <p>Your Personal Information</p>
+
+                                <div class="card rounded">
+                                    <div class="card-header">
+                                        Basic Information
                                     </div>
-                                    <div class="modal-body main-secction rounded">
-                                        <div class="row" id="upload">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-3 col-5">
+                                                <label style="font-weight:bold;">Full Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Mery-an Telez
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
                                             <div class="col-md-3">
-                                                <div id="frame" class="text-center border border-dark rounded main-secction">
-                                                    <img id="image" class="img-fluid border border-dark rounded-circle w-100" src="../../img/FB_IMG_16157132375310788.jpg" class="avatar img-circle" alt="avatar">
-                                                    <p>Upload a different photo...</p>
+                                                <label style="font-weight:bold;">Birth Date</label>
+                                            </div>
+                                            <div class="col-md-8 col-">
+                                                March 22, 1994
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label style="font-weight:bold;">Address</label>
+                                            </div>
+                                            <div class="col-md-8 col-">
+                                                Nasipit Talamban, Cebu City
+                                            </div>
+                                        </div>
+                                        <hr />
 
-                                                    <input type="file" class="form-control">
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-3 col-5">
+                                                <label style="font-weight:bold;">Email</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                ebaritabryan@gmail.com
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-3 col-5">
+                                                <label style="font-weight:bold;">Password</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Not Set
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit
+                                        Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="edit">Edit Profile</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body main-secction rounded">
+                                    <div class="row" id="upload">
+                                        <div class="col-md-3">
+                                            <div id="frame" class="text-center border border-dark rounded main-secction">
+                                                <img id="image" class="img-fluid border border-dark rounded-circle w-100" src="../../img/FB_IMG_16157132375310788.jpg" class="avatar img-circle" alt="avatar">
+                                                <p>Upload a different photo...</p>
+
+                                                <input type="file" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div id="info" class="col-md-8 personal-info border border-dark rounded float-center main-secction">
+                                            <center>
+                                                <h5>Personal Information</h5>
+                                            </center>
+                                            <form style="margin-left: 90px;">
+                                                <div class="form-row">
+                                                    <div class="col-auto">
+                                                        <label>First Name</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"><i class="fa fa-user" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Firstname">
+                                                        </div>
+                                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <div class="col-auto">
+                                                        <label>Last Name</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"><i class="fa fa-user" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Lastname">
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <div class="form-row">
+                                                    <div class="col-auto">
+                                                        <label>Birthdate</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"><i class="fa fa-birthday-cake" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Birthdate">
+                                                        </div>
+                                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <div class="col-auto">
+                                                        <label>Address</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"><i class="fa fa-map-marker" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-auto">
+                                                        <label>Username</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text" style="color:  #e32467;;">@</div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                                                        </div>
+                                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <div class="col-auto">
+                                                        <label>Email</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"><i class="fa fa-envelope" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-auto">
+                                                        <label>Password</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">
+                                                                    <i class="fa fa-key" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Password">
+                                                        </div>
+                                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <div class="col-auto">
+                                                        <label>New Password</label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"> <i class="fa fa-key" style="color: #e32467;"></i></div>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="New Password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                <button type="button" id="save" class="btn btn-primary ">Save
+                                                    Changes</button>
                                             </div>
 
-                                            <div id="info" class="col-md-8 personal-info border border-dark rounded float-center main-secction">
-                                                <center>
-                                                    <h5>Personal Information</h5>
-                                                </center>
-                                                <form class="form-inline" action="/action_page.php">
-                                                    <label for="fname">First name:</label>&nbsp;&nbsp;
-                                                    <input type="text" id="fn" class="form-control" value=" Mery-an" name="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <label for="lname">Last name:</label>&nbsp;&nbsp;&nbsp;<br><br><br><br>
-                                                    <input type="text" id="ln" value="Telez" class="form-control" name="lname">
-                                                    <label for="birthdate">Birthdate:</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <input type="text" id="birth" id="datepicker" class="form-control" value="July 31, 1999" name="birth">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <label for="address">Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
-                                                    <input type="text" id="add" class="form-control" value="Nasipit Talamban, Cebu City" name="add">
-
-                                                    <label for="username">Username:</label>&nbsp;&nbsp;<br><br><br><br>
-                                                    <input type="text" id="add" class="form-control" value="Ann" name="username">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <input type="email" id="add" class="form-control" value="mtelez138@gmail.com" name="pass">&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <label for="password">Password:</label>&nbsp;&nbsp;
-                                                    <input type="password" id="add" class="form-control" value="Ann" name="username"><br>&nbsp;&nbsp;&nbsp;
-                                                    <label for="newpass">New Password:</label>
-                                                    <input type="password" id="add" class="form-control" value="" name="newpass">&nbsp;&nbsp;&nbsp;&nbsp;
-
-                                                </form>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                    <button type="button" id="save" class="btn btn-primary ">Save
-                                                        Changes</button>
-                                                </div>
-
-                                                </form>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-                    </div>
+                    </div><br>
+                    <script>
+                        $('#datepicker').datepicker({
+                            uiLibrary: 'bootstrap4'
+                        });
+                    </script><br>
                 </div>
-
-
             </div>
-
-
         </div>
         <!-- End of Main Content -->
 
-
     </div>
     <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -433,18 +492,5 @@
 
 
 </body>
-
-<!-- Footer -->
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Pick-A-Book 2021</span>
-        </div>
-    </div>
-</footer>
-<!-- End of Footer -->
-
-
-
 
 </html>

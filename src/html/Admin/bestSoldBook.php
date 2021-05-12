@@ -10,7 +10,8 @@
     <meta name="author" content="">
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <title>Admin Dashboard</title>
+
+    <title>Best Sold Book</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -27,20 +28,19 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: rgb(170, 9, 70); ">
+        <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: rgb(202, 7, 82);">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Pick-A-Book</h4>
-
+                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    Pick-A-Book</h4>
             </a>
+
             <hr style="border: 1px solid rgb(238, 46, 222); width: 50%;">
-
-
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -56,8 +56,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="Seller.html">Sellers</a>
-                        <a class="collapse-item" href="customer.html">Customers</a>
+                        <a class="collapse-item" href="../Admin/Seller.php">Sellers</a>
+                        <a class="collapse-item" href="../Admin/customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -70,8 +70,8 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.html">Products</a>
-                        <a class="collapse-item" href="order.html">Orders</a>
+                        <a class="collapse-item" href="../Admin/product.php">Products</a>
+                        <a class="collapse-item" href="../Admin/order.php">Orders</a>
 
                     </div>
                 </div>
@@ -85,11 +85,12 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="../Admin/ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="../Admin/bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
+
 
 
             <!-- Divider -->
@@ -172,8 +173,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">May 5, 2021</div>
-                                        <span class="font-weight-bold">Maria order 2 books!</span>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
@@ -195,11 +196,11 @@
 
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../Admin/img/adventure.png" alt="">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">A great job!</div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
                                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
@@ -233,210 +234,118 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h5 class="h3 mb-0 text-gray-800">Dashboard</h5>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Sellers</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">4 (Person)</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Earnings</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Php 3000.00</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Books
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">200 (pcs)</div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Seller's Information</h6>
-
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0" style="color: black;">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Quantity of Books</th>
-                                                    <th>Total Amount Sold</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr>
-                                                    <td>Mery-an Telez</td>
-                                                    <td>5</td>
-                                                    <td>Php 900.00</td>
-
-                                                </tr>
-
-                                                <tr>
-                                                    <td>Christine Ditchon</td>
-                                                    <td>6</td>
-                                                    <td>Php 500.00</td>
-
-                                                </tr>
-
-                                                <tr>
-                                                    <td>David Pael</td>
-                                                    <td>8</td>
-                                                    <td>Php 1000.00</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <td>Dexter Tampioc</td>
-                                                    <td>10</td>
-                                                    <td>Php 2000.00</td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Orders</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <ul>
-                                        <li>Neil Armstrong</li>
-                                        <li>Alan Bean</li>
-                                        <li>Peter Conrad</li>
-                                        <li>Edgar Mitchell</li>
-                                        <li>Alan Shepard</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h5 class="h3 mb-0 text-gray-800">Best Sold Books</h5>
                 </div>
-                <!-- End of Main Content -->
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Pick-A-Book 2021</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
+                <div class="container">
+                    <table id="example" class="table table-striped" style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
+                        <thead style="background-color: black;color: white;">
+                            <tr>
+                                <th>Book Title <span id="sort">↑</span></th>
+                                <th>Book Category</th>
+                                <th>Seller</th>
+                                <th>Price</th>
+                                <th>Total Sold</th>
+                                <th>Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: black;">
+                            <tr>
+                                <td>The Invitation</td>
+                                <td>Romance Novel</td>
+                                <td>Vi Keeland</td>
+                                <td>Php 300.00</td>
+                                <td>5 pc(s)</td>
+                                <td>Php 2000.00</td>
+                            </tr>
+                            <tr>
+                                <td>A Promised Land</td>
+                                <td>Biography, Autobiography</td>
+                                <td>Barack Obama</td>
+                                <td>Php 50.00</td>
+                                <td>6 6pc(s)</td>
+                                <td>Php 2400.00</td>
+                            </tr>
+                            <tr>
+                                <td>Not My Match</td>
+                                <td>Contemporary, Funny, New Adult, Romance, Sports</td>
+                                <td>Ilsa Madden-Mills</td>
+                                <td>Php 100.00</td>
+                                <td> pc(s)</td>
+                                <td>Php 2400.00</td>
+                            </tr>
+                            <tr>
+                                <td>The Invitation</td>
+                                <td>Romance Novel</td>
+                                <td>Vi Keeland</td>
+                                <td>Php 300.00</td>
+                                <td>7pc(s)</td>
+                                <td>Php 2500.00</td>
+                            </tr>
+
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+
 
             </div>
-            <!-- End of Content Wrapper -->
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Pick-A-Book 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="../IndexFunctionallities/login.html">Logout</a>
-                    </div>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
 
 </body>
 
