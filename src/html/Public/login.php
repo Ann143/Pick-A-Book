@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,9 +66,9 @@
                 <input type="email" name="email" class="asd" />
                 <label for="">Password</label>
                 <input type="password" id="" name="password" class="asd" />
-                <a href="../Admin/index.html"></a> <input id="btn" type="submit" name="submit" value="Log In" class="mainbox"></a>
+                <a href="../Admin/index.php"></a> <input id="btn" type="submit" name="submit" value="Log In" class="mainbox"></a>
                 <label for="">New customer?</label>
-                <a href="../../html/IndexFunctionallities/register.html" class="mainbox" id="register">Register Now</a>
+                <a href="../../html/Public/register.php" class="mainbox" id="register">Register Now</a>
             </form>
         </div>
     </div>

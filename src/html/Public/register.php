@@ -1,3 +1,138 @@
+<?php
+
+//Include connection file
+require_once "../config.php";
+
+//Define variables and initialize with empty values
+$fname = $lname = $birthdate = $address = $username = $email = $password = $confirmPassword = "";
+$fname_err = $lname_err = $birthdate_err = $address_err = $username_err = $email_err = $password_err = $confirmPassword_err = "";
+
+//Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    //Validate firstname
+    if(empty(trim($_POST["fname"]))){
+        $fname_err = "Please enter your firstname.";
+    }
+
+    //Validate lastname
+    if(empty(trim($_POST["lname"]))){
+        $lname_err = "Please enter your lastname.";
+    }
+
+     //Validate birthdate
+     if(empty(trim($_POST["birthdate"]))){
+        $birthdate_err = "Please enter your birthdate.";
+    }
+
+    //Validate Address
+    if(empty(trim($_POST["address"]))){
+        $address_err = "Please enter your address.";
+    }
+
+    //Validate username
+    if(empty(trim($_POST["username"]))){
+
+        $username_err = "Please enter a username.";
+
+    } else{
+
+        //Prepare a select statement
+        $sql = "SELECT userId FROM users WHERE username = ?";
+
+        if($stmt = mysqli_prepare($conn,$sql)){
+            //Bind varibales to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            //Set parameters
+            $param_username = trim($_POST["username"]);
+
+            //Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                //Store result
+                mysqli_stmt_store_result($stmt);
+
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $username_err = "This username is already taken.";
+                } else{
+                    $username = trim($_POST["username"]);
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again!";
+            }
+
+            //CLose statement
+            mysqli_stmt_close($stmt);
+        }
+
+    }
+
+     //Validate email
+     if(empty(trim($_POST["email"]))){
+        $email_err = "Please enter your email.";
+    }
+
+    //Validate password
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter a password.";
+    } elseif(strlen(trim($_POST["password"])) < 6){
+        $password_err = "Password must have atleast 6 characters.";
+    } else{
+        $password = trim($_POST["password"]);
+    }
+
+    //Validate confirm password
+    if(empty(trim($_POST["confirmPassword"]))){
+        $confirmPassword_err = "Please confirm password.";
+    } else{
+        $confirmPassword = trim($_POST["confirmPassword"]);
+        if(empty($password_err) && ($password != $confirmPassword)){
+            $confirmPassword_err = "Password did not match.";
+        }
+    }
+
+    //Check input errors before inserting in database
+    if(empty($fname_err) && empty($lname_err) 
+    && empty($birthdate_err) && empty($address_err)
+    && empty($email_err) && empty($username_err) 
+    && empty($password_err) && empty($confirmPassword)){
+
+    //Prepare an insert statement
+    $sql = "INSERT INTO users (firstname,lastname,birthdate,address,username,email,password) VALUES (?,?,?,?,?,?,?)";
+
+    if($stmt = mysqli_prepare($conn,$sql)){
+        //Bind variables to the prepared statement as parameters
+        mysqli_stmt_bind_param($stmt, "sssssss", $param_fname, $param_lname, $param_birthdate, $param_address, $param_username, $param_email, $param_password);
+
+        //Set parameters
+        $param_fname = $fname;
+        $param_lname = $lname;
+        $param_birthdate = $birthdate;
+        $param_address = $address;
+        $param_username = $username;
+        $param_email = $email;
+        $param_password = password_hash($password, PASSWORD_DEFAULT); //CreateS a password hash
+
+        //Attempt to execute the prepared statement
+        if(mysqli_stmt_execute($stmt)){
+            //Redirect to login page
+            header("location: ../Public/login.php");
+        } else{
+            echo "Oops! Something went wrong. Please try again";
+        }
+
+        //Close statement
+        mysqli_stmt_close($stmt);
+    }
+ }
+
+ //Close connection
+ mysqli_close($conn);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,18 +225,42 @@
         </div>
         <div class="formbox ">
             <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Register</h3>
-            <form id="form " action=" " method="post ">
+            <form id="form " action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <label for=" ">Firstname</label>
-                <input type="text " name="fname " class="asd " />
+                <input type="text " name="fname" class="form-control asd <?php echo (!empty($fname_err)) ? 'is-invalid' : ''; ?>" 
+                value="<?php echo $fname; ?>" id="fname" required style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $fname_err; ?></span>
                 <label for=" ">Lastname</label>
-                <input type="text " name="lname " class="asd " />
+                <input type="text " name="lname" class=" form-control asd <?php echo (!empty($lname_err)) ? 'is-invalid' : ''; ?>" 
+                value="<?php echo $lname; ?>" id="lname" required  style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $lname_err; ?></span>
+                <label for=" ">Birthdate</label>
+                <input type="text" name="birthdate" placeholder="Ex. May 21, 1999" class="form-control asd <?php echo (!empty($birthdate_err)) ? 'is-invalid' : ''; ?>" 
+                value="<?php echo $birthdate; ?>" id="birthdate" required  style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $birthdate_err; ?></span>
+                <label for=" ">Address</label>
+                <input type="text " name="address" class=" form-control asd <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?> " 
+                value="<?php echo $address; ?>" id="address" required style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $address_err; ?></span>
+                <label for=" ">Username</label>
+                <input type="text " name="username" class="form-control asd <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> " 
+                value="<?php echo $username; ?>" id="username" required style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 <label for=" ">Email</label>
-                <input type="email " name="email " class="asd " />
+                <input type="email" name="email" class="form-control asd <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?> " 
+                value="<?php echo $email; ?>" id="email" required style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $email_err; ?></span>
                 <label for=" ">Password</label>
-                <input type="password " id=" " name="password " class="asd " />
-                <input id="btn " type="submit " name="submit " value="Submit " class="mainbox ">
+                <input type="password" name="password" class="form-control asd <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?> " 
+                value="<?php echo $password; ?>" id="password" required style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                <label for=" ">Confirm Password</label>
+                <input type="password" name="confirmPassword" class=" form-control asd <?php echo (!empty($confirmPassword_err)) ? 'is-invalid' : ''; ?>" 
+                value="<?php echo $confirmPassword; ?>" id="confirmPassword" required style="color:#fc3279"/>
+                <span class="invalid-feedback"><?php echo $confirmPassword_err; ?></span>
+                <button type="submit" class="mainbox ">Submit</button>
                 <label for=" ">Already have an account?</label>
-                <a href="../IndexFunctionallities/login.html " class="mainbox ">Log in here!</a>
+                <a href="../Public/login.php" class="mainbox ">Log in here!</a>
             </form>
         </div>
     </div>
