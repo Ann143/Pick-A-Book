@@ -102,10 +102,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // //Check input errors before inserting in database
-    // if(empty($fname_err) && empty($lname_err) 
-    // && empty($birthdate_err) && empty($address_err)
-    // && empty($email_err) && empty($username_err) 
-    // && empty($password_err) && empty($confirmPassword)){
+    if(empty($fname_err) && empty($lname_err) 
+    && empty($birthdate_err) && empty($address_err)
+    && empty($email_err) && empty($username_err) 
+    && empty($password_err) && empty($confirmPassword_err))
+    {
 
      date_default_timezone_set('Asia/Manila');
      $datecreated = date("Y-m-d h:i:s");
@@ -140,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         //Close statement
         mysqli_stmt_close($stmt);
     }
-//  }
+ }
 
  //Close connection
  mysqli_close($conn);
