@@ -1,33 +1,41 @@
 <?php
 
 //Include connection file
-require_once "../config.php";
+require_once ("../config.php");
 
 //Define variables and initialize with empty values
-$fname = $lname = $birthdate = $address = $username = $email = $password = $confirmPassword = "";
+$fname = $lname = $birthdate = $address = $username = $email = $datecreated = $password = $confirmPassword = "";
 $fname_err = $lname_err = $birthdate_err = $address_err = $username_err = $email_err = $password_err = $confirmPassword_err = "";
 
 //Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+   
     //Validate firstname
     if(empty(trim($_POST["fname"]))){
         $fname_err = "Please enter your firstname.";
+    } else{
+        $fname = trim($_POST["fname"]);
     }
 
     //Validate lastname
     if(empty(trim($_POST["lname"]))){
         $lname_err = "Please enter your lastname.";
+    } else{
+        $lname = trim($_POST["lname"]);
     }
 
      //Validate birthdate
      if(empty(trim($_POST["birthdate"]))){
         $birthdate_err = "Please enter your birthdate.";
+    }else{
+        $birthdate = trim($_POST["birthdate"]);
     }
 
     //Validate Address
     if(empty(trim($_POST["address"]))){
         $address_err = "Please enter your address.";
+    }else{
+        $address = trim($_POST["address"]);
     }
 
     //Validate username
@@ -70,6 +78,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      //Validate email
      if(empty(trim($_POST["email"]))){
         $email_err = "Please enter your email.";
+    }else{
+        $email = trim($_POST["email"]);
     }
 
     //Validate password
@@ -91,18 +101,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 
-    //Check input errors before inserting in database
-    if(empty($fname_err) && empty($lname_err) 
-    && empty($birthdate_err) && empty($address_err)
-    && empty($email_err) && empty($username_err) 
-    && empty($password_err) && empty($confirmPassword)){
+    // //Check input errors before inserting in database
+    // if(empty($fname_err) && empty($lname_err) 
+    // && empty($birthdate_err) && empty($address_err)
+    // && empty($email_err) && empty($username_err) 
+    // && empty($password_err) && empty($confirmPassword)){
+
+     date_default_timezone_set('Asia/Manila');
+     $datecreated = date("Y-m-d h:i:s");
 
     //Prepare an insert statement
-    $sql = "INSERT INTO users (firstname,lastname,birthdate,address,username,email,password) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO users (firstname,lastname,birthdate,address,username,email,password,created_at) VALUES (?,?,?,?,?,?,?,?)";
 
     if($stmt = mysqli_prepare($conn,$sql)){
         //Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "sssssss", $param_fname, $param_lname, $param_birthdate, $param_address, $param_username, $param_email, $param_password);
+        mysqli_stmt_bind_param($stmt, "ssssssss", $param_fname, $param_lname, $param_birthdate, $param_address, $param_username, $param_email, $param_password,$param_datecreated);
 
         //Set parameters
         $param_fname = $fname;
@@ -112,11 +125,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $param_username = $username;
         $param_email = $email;
         $param_password = password_hash($password, PASSWORD_DEFAULT); //CreateS a password hash
+        $param_datecreated =$datecreated;
+     
 
         //Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             //Redirect to login page
             header("location: ../Public/login.php");
+         
         } else{
             echo "Oops! Something went wrong. Please try again";
         }
@@ -124,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         //Close statement
         mysqli_stmt_close($stmt);
     }
- }
+//  }
 
  //Close connection
  mysqli_close($conn);
