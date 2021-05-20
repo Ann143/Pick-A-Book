@@ -253,8 +253,6 @@ require_once ("../config.php");
                   </button>
 
                 </div>
-              
-
 
                     <?php
                     if(isset($_POST['publish']))
