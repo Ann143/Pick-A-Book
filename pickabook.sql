@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2021 at 03:04 AM
+-- Generation Time: May 20, 2021 at 03:58 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -46,6 +46,31 @@ INSERT INTO `admin` (`adminId`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sellbooks`
+--
+
+CREATE TABLE `sellbooks` (
+  `sellerID` int(11) NOT NULL,
+  `sellername` varchar(255) NOT NULL,
+  `booktitle` varchar(255) NOT NULL,
+  `bookprice` int(20) NOT NULL,
+  `bookgenre` varchar(255) NOT NULL,
+  `bookcategory` varchar(255) NOT NULL,
+  `bookpicture` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sellbooks`
+--
+
+INSERT INTO `sellbooks` (`sellerID`, `sellername`, `booktitle`, `bookprice`, `bookgenre`, `bookcategory`, `bookpicture`, `created_at`) VALUES
+(21, 'Ann', 'Love', 300, ' Romance', ' Fiction', ' _20210105_070548.jpg', '2021-05-20 12:35:01'),
+(23, 'Ann', 'Love', 300, ' Romance', ' Fiction', ' 1.png', '2021-05-20 13:06:42');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -79,6 +104,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
+-- Indexes for table `sellbooks`
+--
+ALTER TABLE `sellbooks`
+  ADD PRIMARY KEY (`sellerID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -93,6 +124,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `sellbooks`
+--
+ALTER TABLE `sellbooks`
+  MODIFY `sellerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
