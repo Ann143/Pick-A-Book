@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require_once ("../config.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,18 +42,20 @@
                 <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
             </div>
         </div>
-        <div class="top-nav-drop-down-privacy d-flex justify-content-end">
-            <div class="drop-down my-account cursor-pointer">
-                <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
+       
+        <div class="top-nav-drop-down-privacy d-flex justify-content-end" style="color:#f21142">
+            <div class=" drop-down my-account cursor-pointer">
+                <!-- <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile"> -->
+                <b><?php echo htmlspecialchars($_SESSION["username"]); ?> </a>
                 <div class="drop-nav-profile container">
                     <a href="./newAccount.php" style="color: black;text-decoration: none;">My Account</a>
                     <br>
                     <a href="../IndexFunctionallities/login.php" style="color: black;text-decoration: none;">Logout</a>
                 </div>
             </div>
-            <div class="drop-down settings cursor-pointer">
+            <!-- <div class="drop-down settings cursor-pointer">
                 <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png" alt="Settings">
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="side-nav">

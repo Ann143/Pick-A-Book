@@ -1,3 +1,42 @@
+<?php
+session_start();
+
+require_once ("../config.php");
+
+if(isset($_POST['publish']))
+{
+    $name = $_POST['sellerName'];
+    $bookTitle =$_POST['bookTitle'];
+    $bookPrice =$_POST['bookPrice'];
+    $bookGenre =$_POST['bookGenre'];
+    $bookCategory =$_POST['bookCategory'];
+    $bookPicture=$_FILES["bookPicture"]["name"];
+
+    $sql = mysqli_query($conn,"SELECT * FROM `sellbooks` WHERE bookpicture='bookPicture'");
+
+    if(mysqli_num_rows($sql)>0)
+    {
+      
+       echo "Book is already exist!";
+
+    }else{
+
+        $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
+            $query_run = mysqli_query($conn,$query);
+
+            if( $query_run)
+            {
+                // move_upload_file($_FILES['bookPicture']['tmp_name'], "upload/".$_FILES['file']["name"]);
+                $_SESSION['success'] = "You publish successfully!";
+                header('Location: sell.php');
+            } else{
+                $_SESSION['success'] = "You didn't publish your book!";
+                header('Location: sell.php');
+            }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,7 +133,7 @@
         <div class="p-3 mt-5">
             <div class="row d-flex justify-content-around">
                 <div class="col-sm-5 border p-4" style="margin-left: 70px;">
-                    <form action="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label style="margin-left: 15px;">Seller</label>
                             <div class="col-sm-12 my-1">
@@ -102,7 +141,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fa fa-user" style="color: #e32467;"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Full Name">
+                                    <input type="text" class="form-control" name="sellerName" placeholder="Full Name">
                                 </div>
                             </div>
                         </div>
@@ -113,7 +152,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fa fa-book" style="color: #e32467;"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Title">
+                                    <input type="text" class="form-control" name="bookTitle" placeholder="Title">
                                 </div>
                             </div>
                         </div>
@@ -125,21 +164,33 @@
                                         <div class="input-group-text"><i class="fa fa-money" style="color: #e32467;"></i></i>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Price">
+                                    <input type="text" class="form-control" name="bookPrice" placeholder="Price">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
+                          <label style="margin-left: 15px;">Book Genre</label>
+                            <div class="col-sm-12 my-1">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-book" style="color: #e32467;"></i></i>
+                                        </div>
+                                     </div>
+                              <input type="text" class="form-control" name="bookGenre" placeholder="ex.Romance">
+                           </div>
+                         </div>
+                       </div>
+                        <div class="form-group">
                             <label style="margin-left: 15px;">Book Category:</label>
                             <div class="container">
                                 <div class="form-check" style="margin-left: 20px;">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <input class="form-check-input" type="checkbox" value="Fiction" name="bookCategory" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Fiction
                                     </label>
                                 </div>
                                 <div class="form-check" style="margin-left: 20px;">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                    <input class="form-check-input" type="checkbox" value="Non-Fiction" name="bookCategory"  id="defaultCheck2">
                                     <label class="form-check-label" for="defaultCheck2">
                                         Non-Fiction
                                     </label>
@@ -149,11 +200,11 @@
                         <div class="form-group">
                             <label for="exampleFormControlFile1" style="margin-left: 15px;">Book Picture:</label>
                             <div class="container" style="margin-left: 20px;">
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" name="bookPicture" id="exampleFormControlFile1">
                             </div>
                         </div>
-                        <button class="btn btn-primary" style="margin-left: 150px;">Publish</button>
-                        <button class="btn btn-danger">Cancel</button>
+                        <button class="btn btn-primary" style="margin-left: 150px;" name="publish">Publish</button>
+                        <button class="btn btn-danger" name="cancel">Cancel</button>
 
                     </form>
                 </div>

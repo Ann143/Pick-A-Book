@@ -149,11 +149,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <div class="formbox">
             <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Log In</h3>
-            <form class="login" action="" method="post">
+            <form class="login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <label for="">Username</label>
-                <input type="text" name="username" class="asd" />
+                <input type="text" name="username" class="form-control asd  <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" 
+                value="<?php echo $username; ?>" placeholder="Username" id="username" required/>
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 <label for="">Password</label>
-                <input type="password" id="" name="password" class="asd" />
+                <input type="password" id="" name="password" class="form-control asd <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" 
+                placeholder="Password" id="password" required/>
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
                 <a href="../Admin/index.php"></a> <input id="btn" type="submit" name="submit" value="Log In" class="mainbox"></a>
                 <label for="">New customer?</label>
                 <a href="../../html/Public/register.php" class="mainbox" id="register">Register Now</a>

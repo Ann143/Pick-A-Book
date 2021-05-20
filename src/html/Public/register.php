@@ -245,7 +245,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <form id="form " action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <label for=" ">Firstname</label>
                 <input type="text " name="fname" class="form-control asd <?php echo (!empty($fname_err)) ? 'is-invalid' : ''; ?>" 
-                value="<?php echo $fname; ?>" id="fname" required style="color:#fc3279"/>
+                value="<?php echo $fname; ?>" id="fname" required style="color:"/>
                 <span class="invalid-feedback"><?php echo $fname_err; ?></span>
                 <label for=" ">Lastname</label>
                 <input type="text " name="lname" class=" form-control asd <?php echo (!empty($lname_err)) ? 'is-invalid' : ''; ?>" 

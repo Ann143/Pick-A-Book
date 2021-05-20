@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require_once ("../config.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +21,7 @@
     <title>Product</title>
 
     <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -240,56 +248,143 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Products</h5>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success" style="margin-right: 26px;" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-success" style="margin-right: 26px;" data-toggle="modal" data-target="#addProduct">
                         Add Product
                   </button>
 
                 </div>
 
+                    <?php
+                    if(isset($_POST['publish']))
+                    {
+                        $name = $_POST['sellerName'];
+                        $bookTitle =$_POST['bookTitle'];
+                        $bookPrice =$_POST['bookPrice'];
+                        $bookGenre =$_POST['bookGenre'];
+                        $bookCategory =$_POST['bookCategory'];
+                        $bookPicture=$_FILES["bookPicture"]["name"];
+                    
+                        $sql =("SELECT * FROM `sellbooks` WHERE bookpicture='bookPicture'");
+                        $query_run = mysqli_query($conn,$sql);
+                    
+                        if(mysqli_num_rows($query_run) > 0)
+                        {
+                          
+                           echo "Book is already exist!";
+                    
+                        }else{
+                    
+                                $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
+                                $query_run = mysqli_query($conn,$query);
+                    
+                                if( $query_run)
+                                {
+                                    $_SESSION['success'] = "You publish successfully!";
+                                    
+                                } else{
+                                    $_SESSION['success'] = "Book did not publish!";
+                                  
+                                }
+                        }
+                    }
+                    
+                    ?>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog ">
                         <div class="modal-content">
-                            <div class="modal-header" style="color: black;">Add Product</h5>
+                            <div class="modal-header" style="color: black;font-size:20px">Add Product</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                      <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="card" style="width: 25rem;margin-left: 30px;">
-                                    <div class="card-body">
-                                        <form>
+                                </button>
+                             </div>
+                                <div class="modal-body">
+                                    <div class="card" style="width: 29rem;color:black">
+                                        <div class="card-body">
+                                        <form action="" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <label style="color: black;">Product Seller</label>
-                                                <input type="text" class="form-control" id="seller" name="seller" aria-describedby="emailHelp">
+                                                <label style="margin-left: 15px;">Seller</label>
+                                                <div class="col-sm-12 my-1">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fa fa-user" style="color: #e32467;"></i></div>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="sellerName" placeholder="Full Name">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <label style="color: black;">Book Title</label>
-                                                <input type="text" class="form-control" id="btitle" name="btitle" aria-describedby="emailHelp">
-                                                <br>
-                                                <input type="file" id="myFile" name="filename">
+                                                <label style="margin-left: 15px;">Book Title</label>
+                                                <div class="col-sm-12 my-1">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fa fa-book" style="color: #e32467;"></i></div>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="bookTitle" placeholder="Title">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <label style="color: black;">Genre</label>
-                                                <input type="text" class="form-control" id="price" name="price" aria-describedby="emailHel p">
+                                                <label style="margin-left: 15px;">Book Price</label>
+                                                <div class="col-sm-12 my-1">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fa fa-money" style="color: #e32467;"></i></i>
+                                                            </div>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="bookPrice" placeholder="Price">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="form-group ">
-                                                <label style="color: black;">Price</label>
-                                                <input type="text " class="form-control " id="seller " name="seller " aria-describedby="emailHelp ">
+                                            <div class="form-group">
+                                                <label style="margin-left: 15px;">Book Genre</label>
+                                                <div class="col-sm-12 my-1">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fa fa-book" style="color: #e32467;"></i></i>
+                                                            </div>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="bookGenre" placeholder="ex.Romance">
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label style="margin-left: 15px;">Book Category:</label>
+                                                <div class="container">
+                                                    <div class="form-check" style="margin-left: 20px;">
+                                                        <input class="form-check-input" type="checkbox" value="Fiction" name="bookCategory" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            Fiction
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check" style="margin-left: 20px;">
+                                                        <input class="form-check-input" type="checkbox" value="Non-Fiction" name="bookCategory"  id="defaultCheck2">
+                                                        <label class="form-check-label" for="defaultCheck2">
+                                                            Non-Fiction
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1" style="margin-left: 15px;">Book Picture:</label>
+                                                <div class="container" style="margin-left: 20px;">
+                                                    <input type="file" class="form-control-file" name="bookPicture" id="exampleFormControlFile1">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer ">
+                                                <button class="btn btn-primary" style="margin-left: 150px;" name="publish">Publish</button>
+                                                <button class="btn btn-danger" name="cancel">Cancel</button>
+                                             </div>
                                         </form>
-                                    </div>
-                                </div>
+                                  </div>
+                             </div>
 
-                            </div>
-                            <div class="modal-footer ">
-                                <button type="button " class="btn btn-primary " data-dismiss="modal ">Publish</button>
-                                <button type="button " class="btn btn-secondary ">Cancel</button>
-                            </div>
                         </div>
-                    </div>
+                                           
                 </div>
+            </div>
+        </div>
 
 
 
