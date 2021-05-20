@@ -3,6 +3,7 @@ session_start();
 
 require_once ("../config.php");
 
+
 if(isset($_POST['publish']))
 {
     $name = $_POST['sellerName'];
@@ -12,13 +13,22 @@ if(isset($_POST['publish']))
     $bookCategory =$_POST['bookCategory'];
     $bookPicture=$_FILES["bookPicture"]["name"];
 
-    $sql = mysqli_query($conn,"SELECT * FROM `sellbooks` WHERE bookpicture='bookPicture'");
+    $sql = mysqli_query($conn,"SELECT * FROM `sellbooks` WHERE bookpicture='$bookPicture'");
 
-    if(mysqli_num_rows($sql)>0)
+    if(mysqli_num_rows($sql) > 0)
     {
       
-       echo "Book is already exist!";
-
+        // echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+        //                        <strong>Book Already Exists!</strong> Try Again.
+        //                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        //                          <span aria-hidden="true">&times;</span>
+        //                         </button>
+        //                        </div>';
+        echo '<script type="text/javascript">';
+        echo '$(document).ready(function() {';
+        echo '$("#alertDuplicate").modal("show");';
+        echo '});';
+        echo '</script>';
     }else{
 
         $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
@@ -28,10 +38,8 @@ if(isset($_POST['publish']))
             {
                 // move_upload_file($_FILES['bookPicture']['tmp_name'], "upload/".$_FILES['file']["name"]);
                 $_SESSION['success'] = "You publish successfully!";
-                header('Location: sell.php');
             } else{
                 $_SESSION['success'] = "You didn't publish your book!";
-                header('Location: sell.php');
             }
     }
 }
@@ -44,9 +52,8 @@ if(isset($_POST['publish']))
     <title>Sell</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>t6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="../../jquery/navigators.js"></script>
     <link rel="stylesheet" href="../../css/navigators.css">
@@ -126,9 +133,6 @@ if(isset($_POST['publish']))
     </div>
 
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
-
-
-
     <div id="main" style="margin-top: 7%;margin-left: 90px;">
         <div class="p-3 mt-5">
             <div class="row d-flex justify-content-around">
@@ -215,6 +219,24 @@ if(isset($_POST['publish']))
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="alertDuplicate">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Erro</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Essa função já existe!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 
         <script>
             $(document).on("click", ".browse", function() {

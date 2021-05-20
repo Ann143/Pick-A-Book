@@ -253,6 +253,8 @@ require_once ("../config.php");
                   </button>
 
                 </div>
+              
+
 
                     <?php
                     if(isset($_POST['publish']))
@@ -264,13 +266,19 @@ require_once ("../config.php");
                         $bookCategory =$_POST['bookCategory'];
                         $bookPicture=$_FILES["bookPicture"]["name"];
                     
-                        $sql =("SELECT * FROM `sellbooks` WHERE bookpicture='bookPicture'");
+                        $sql =("SELECT * FROM `sellbooks` WHERE bookpicture=' $bookPicture'");
                         $query_run = mysqli_query($conn,$sql);
                     
                         if(mysqli_num_rows($query_run) > 0)
                         {
-                          
-                           echo "Book is already exist!";
+                           
+                           echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+                               <strong>Book Already Exists!</strong> Try Again.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                                </button>
+                               </div>';
+                     
                     
                         }else{
                     
@@ -279,10 +287,19 @@ require_once ("../config.php");
                     
                                 if( $query_run)
                                 {
-                                    $_SESSION['success'] = "You publish successfully!";
-                                    
+                                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+                                    <strong>Book Published Successfully!</strong>
+                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                     </button>
+                                    </div>';
                                 } else{
-                                    $_SESSION['success'] = "Book did not publish!";
+                                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+                                    <strong>Book did not publish!</strong> Try Again.
+                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                     </button>
+                                    </div>';
                                   
                                 }
                         }
@@ -385,8 +402,6 @@ require_once ("../config.php");
                 </div>
             </div>
         </div>
-
-
 
 
                 <div class="container ">
