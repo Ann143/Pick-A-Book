@@ -4,45 +4,6 @@ session_start();
 require_once ("../config.php");
 
 
-if(isset($_POST['publish']))
-{
-    $name = $_POST['sellerName'];
-    $bookTitle =$_POST['bookTitle'];
-    $bookPrice =$_POST['bookPrice'];
-    $bookGenre =$_POST['bookGenre'];
-    $bookCategory =$_POST['bookCategory'];
-    $bookPicture=$_FILES["bookPicture"]["name"];
-
-    $sql = mysqli_query($conn,"SELECT * FROM `sellbooks` WHERE bookpicture='$bookPicture'");
-
-    if(mysqli_num_rows($sql) > 0)
-    {
-      
-        // echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
-        //                        <strong>Book Already Exists!</strong> Try Again.
-        //                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        //                          <span aria-hidden="true">&times;</span>
-        //                         </button>
-        //                        </div>';
-        echo '<script type="text/javascript">';
-        echo '$(document).ready(function() {';
-        echo '$("#alertDuplicate").modal("show");';
-        echo '});';
-        echo '</script>';
-    }else{
-
-        $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
-            $query_run = mysqli_query($conn,$query);
-
-            if( $query_run)
-            {
-                // move_upload_file($_FILES['bookPicture']['tmp_name'], "upload/".$_FILES['file']["name"]);
-                $_SESSION['success'] = "You publish successfully!";
-            } else{
-                $_SESSION['success'] = "You didn't publish your book!";
-            }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -133,7 +94,52 @@ if(isset($_POST['publish']))
     </div>
 
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+    
     <div id="main" style="margin-top: 7%;margin-left: 90px;">
+    <?php
+    
+    if(isset($_POST['publish']))
+    {
+        $name = $_POST['sellerName'];
+        $bookTitle =$_POST['bookTitle'];
+        $bookPrice =$_POST['bookPrice'];
+        $bookGenre =$_POST['bookGenre'];
+        $bookCategory =$_POST['bookCategory'];
+        $bookPicture=$_FILES["bookPicture"]["name"];
+    
+        $sql =("SELECT * FROM `sellbooks` WHERE bookpicture=' $bookPicture'");
+        $query_run = mysqli_query($conn,$sql);
+    
+        if(mysqli_num_rows($query_run) > 0)
+        {
+          
+            echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+                                   <strong>Book Already Exists!</strong> Try Again.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                    </button>
+                                   </div>';
+            // echo '<script type="text/javascript">';
+            // echo '$(document).ready(function() {';
+            // echo '$("#alertDuplicate").modal("show");';
+            // echo '});';
+            // echo '</script>';
+        }else{
+    
+            $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
+                $query_run = mysqli_query($conn,$query);
+    
+                if( $query_run)
+                {
+                    // move_upload_file($_FILES['bookPicture']['tmp_name'], "upload/".$_FILES['file']["name"]);
+                    $_SESSION['success'] = "You publish successfully!";
+                } else{
+                    $_SESSION['success'] = "You didn't publish your book!";
+                }
+        }
+    }
+        
+        ?>
         <div class="p-3 mt-5">
             <div class="row d-flex justify-content-around">
                 <div class="col-sm-5 border p-4" style="margin-left: 70px;">
@@ -219,24 +225,6 @@ if(isset($_POST['publish']))
                 </div>
             </div>
         </div>
-
-        <div class="modal fade" id="alertDuplicate">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Erro</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Essa função já existe!</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
 
         <script>
             $(document).on("click", ".browse", function() {
