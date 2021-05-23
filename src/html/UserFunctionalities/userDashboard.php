@@ -45,17 +45,14 @@ require_once ("../config.php");
        
         <div class="top-nav-drop-down-privacy d-flex justify-content-end" style="color:#f21142">
             <div class=" drop-down my-account cursor-pointer">
-                <!-- <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile"> -->
-                <b><?php echo htmlspecialchars($_SESSION["username"]); ?> </a>
+            <b><?php echo htmlspecialchars($_SESSION["username"]); ?> </b>
                 <div class="drop-nav-profile container">
                     <a href="./newAccount.php" style="color: black;text-decoration: none;">My Account</a>
                     <br>
                     <a href="../IndexFunctionallities/login.php" style="color: black;text-decoration: none;">Logout</a>
                 </div>
             </div>
-            <!-- <div class="drop-down settings cursor-pointer">
-                <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png" alt="Settings">
-            </div> -->
+          
         </div>
     </div>
     <div class="side-nav">
@@ -194,12 +191,11 @@ require_once ("../config.php");
 
                     </ul>
 
-
-                    <ol class="carousel-indicators">
+                    <!-- <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
+                    </ol> -->
 
                 </section>
 
@@ -223,7 +219,7 @@ require_once ("../config.php");
                                 <br>
                                 <span class="product-genre color"> <?php echo $row['bookgenre']; ?>
                                 <br>
-                                <span class="product-price color">&#8369; <?php echo $row['bookprice']; ?>.00</span>
+                                <span class="product-price color">&#8369;<?php echo $row['bookprice']; ?>.00</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />

@@ -249,6 +249,7 @@ require_once ("../config.php");
                     <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Products</h5>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success" style="margin-right: 26px;" data-toggle="modal" data-target="#addProduct">
+                
                         Add Product
                   </button>
 
@@ -307,7 +308,7 @@ require_once ("../config.php");
                     ?>
 
                 <!-- Modal -->
-                <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="addProduct" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog ">
                         <div class="modal-content">
                             <div class="modal-header" style="color: black;font-size:20px">Add Product</h5>
@@ -395,12 +396,11 @@ require_once ("../config.php");
                                         </form>
                                   </div>
                              </div>
-
-                        </div>
-                                           
+                           </div> 
+                       </div>                       
+                   </div>
                 </div>
-            </div>
-        </div>
+            
 
 
                 <div class="container ">
@@ -414,7 +414,7 @@ require_once ("../config.php");
                                         <div class="card " style="width: 10rem; ">
                                             <img src="../Admin/img/romance.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                             <div class="card-body text-center ">
-                                                <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Romance ">Romance</button>
+                                                <button type="button " class="btn btn-primary romance " data-toggle="modal" data-target="#Romance">Romance</button>
                                             </div>
                                         </div>
                                     </div>
@@ -426,7 +426,7 @@ require_once ("../config.php");
                                             <div class="card " style="width: 10rem; ">
                                                 <img src="../Admin/img/adventure.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                 <div class="card-body text-center ">
-                                                    <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Adventure ">Adventure</button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Adventure">Adventure</button>
 
                                                 </div>
                                             </div>
@@ -440,7 +440,7 @@ require_once ("../config.php");
                                                 <div class="card " style="width: 10rem; ">
                                                     <img src="../Admin/img/drama.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                     <div class="card-body text-center ">
-                                                        <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Drama ">Drama</button>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Drama">Drama</button>
 
                                                     </div>
                                                 </div>
@@ -457,7 +457,7 @@ require_once ("../config.php");
                                                         <img src="../Admin/img/fantasy.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                         <div class="card-body text-center ">
 
-                                                            <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Fantasy ">Fantasy</button>
+                                                            <button type="button " class="btn btn-primary" data-toggle="modal" data-target="#Fantasy">Fantasy</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -483,7 +483,7 @@ require_once ("../config.php");
                                         <div class="card " style="width: 10rem; ">
                                             <img src="../Admin/img/essay.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                             <div class="card-body text-center ">
-                                                <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Essay ">Essay</button>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Essay" >Essay</button>
                                             </div>
                                         </div>
                                     </div>
@@ -495,7 +495,7 @@ require_once ("../config.php");
                                             <div class="card " style="width: 10rem; ">
                                                 <img src="../Admin/img/poetry.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                 <div class="card-body text-center ">
-                                                    <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Poetry ">Poetry</button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Poetry">Poetry</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -508,7 +508,7 @@ require_once ("../config.php");
                                                 <div class="card " style="width: 10rem; ">
                                                     <img src="../Admin/img/history.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                     <div class="card-body text-center ">
-                                                        <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Romance ">History</button>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Romance">History</button>
 
                                                     </div>
                                                 </div>
@@ -525,7 +525,7 @@ require_once ("../config.php");
                                                         <img src="../Admin/img/biography.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                         <div class="card-body text-center ">
 
-                                                            <button type="button " class="btn btn-primary " data-toggle="modal " data-target="#Romance ">Biography</button>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Romance">Biography</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -541,16 +541,17 @@ require_once ("../config.php");
 
                 <!-- Modal For Books -->
                 <!-- Romance -->
-                <div class="modal fade " id="Romance " tabindex="-1 " aria-labelledby="RomanceText " aria-hidden="true ">
+                <div class="modal fade " id="Romance" tabindex="-1 " aria-labelledby="RomanceText " aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
                             <div class="modal-header ">
                                 <h5 class="modal-title " id="RomanceText " style="color: black; ">Romance</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                                <button type="button " class="close " data-dismiss="modal"  aria-label="Close">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body ">
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 <table class="table table-sm " style="color: black;text-align: center; ">
                                     <thead>
                                         <tr>
@@ -564,46 +565,50 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    
+                                    $query = "SELECT * FROM sellbooks";
+                                    $query_run = mysqli_query($conn,$query);
+
+                                    while($row = mysqli_fetch_array($query_run))
+                                    {
+                                        ?>
+
                                         <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
+                                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($row['bookpicture']).'" alt="Image" style="width:100px; height:100px">'; ?></td>
+                                        <td> <?php echo $row['booktitle']?></td>
+                                        <td> <?php echo $row['sellername']?></td>
+                                        <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                        <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                              <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                        
+                                        </td>
+                                         
                                         </tr>
 
+                                        <?php
+                                        
+                                    }
+
+                                    ?>
                                     </tbody>
                                 </table>
-
-
+                            </form>
                             </div>
-                            <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
-                            </div>
+                                <div class="modal-footer ">
+                                    <button type="button " class="btn btn-warning" data-dismiss="modal">Close</button>
+                                </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Adventure Modal -->
-                <div class="modal fade " id="Adventure " tabindex="-1 " aria-labelledby="AdventureText " aria-hidden="true ">
+                <div class="modal fade " id="Adventure" tabindex="-1 " aria-labelledby="AdventureText" aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
                             <div class="modal-header ">
-                                <h5 class="modal-title " id="AdventureText " style="color: black; ">Adventure</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                                <h5 class="modal-title" id="AdventureText" style="color: black; ">Adventure</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
@@ -637,8 +642,8 @@ require_once ("../config.php");
                                             <td>Christine Joy Ditchon</td>
                                             <td>Php 100.00</td>
                                             <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
+                                                <button type="button" class="btn btn-primary ">Edit</button>
+                                                <button type="button" class="btn btn-danger ">Delete</button>
                                             </td>
                                         </tr>
 
@@ -646,19 +651,19 @@ require_once ("../config.php");
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Drama Modal -->
-                <div class="modal fade " id="Drama " tabindex="-1 " aria-labelledby="DramaText " aria-hidden="true ">
-                    <div class="modal-dialog modal-xl modal-dialog-centered ">
-                        <div class="modal-content ">
-                            <div class="modal-header ">
-                                <h5 class="modal-title " id="DramaText " style="color: black; ">Drama</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                <div class="modal fade" id="Drama" tabindex="-1" aria-labelledby="DramaText" aria-hidden="true ">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="DramaText" style="color: black; ">Drama</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
@@ -682,8 +687,8 @@ require_once ("../config.php");
                                             <td>Mery-an Telez</td>
                                             <td>Php 100.00</td>
                                             <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
+                                                <button type="button" class="btn btn-primary">Edit</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -701,19 +706,19 @@ require_once ("../config.php");
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Fantasy Modal -->
-                <div class="modal fade " id="Fantasy " tabindex="-1 " aria-labelledby="FantasyText " aria-hidden="true ">
+                <div class="modal fade" id="Fantasy" tabindex="-1 " aria-labelledby="FantasyText" aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
-                        <div class="modal-content ">
-                            <div class="modal-header ">
-                                <h5 class="modal-title " id="FantasyText " style="color: black; ">Fantasy</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="FantasyText" style="color: black; ">Fantasy</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
@@ -755,19 +760,19 @@ require_once ("../config.php");
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Essay Modal -->
-                <div class="modal fade " id="Essay " tabindex="-1 " aria-labelledby="EssayText " aria-hidden="true ">
+                <div class="modal fade" id="Essay" tabindex="-1 " aria-labelledby="EssayText" aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
                             <div class="modal-header ">
-                                <h5 class="modal-title " id="EssayText " style="color: black; ">Essay</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                                <h5 class="modal-title " id="EssayText" style="color: black; ">Essay</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
@@ -809,19 +814,19 @@ require_once ("../config.php");
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Poetry Modal -->
-                <div class="modal fade " id="Poetry " tabindex="-1 " aria-labelledby="PoetryText " aria-hidden="true ">
+                <div class="modal fade" id="Poetry" tabindex="-1 " aria-labelledby="PoetryText" aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
-                            <div class="modal-header ">
-                                <h5 class="modal-title " id="PoetryText " style="color: black; ">Poetry</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="PoetryText " style="color: black; ">Poetry</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
@@ -863,19 +868,19 @@ require_once ("../config.php");
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- History Modal -->
-                <div class="modal fade " id="History " tabindex="-1 " aria-labelledby="HistoryText " aria-hidden="true ">
+                <div class="modal fade" id="History" tabindex="-1 " aria-labelledby="HistoryText" aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
                             <div class="modal-header ">
                                 <h5 class="modal-title " id="HistoryText " style="color: black; ">History</h5>
-                                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                                <button type="button " class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
                             </div>
@@ -899,8 +904,8 @@ require_once ("../config.php");
                                             <td>Mery-an Telez</td>
                                             <td>Php 100.00</td>
                                             <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
+                                                <button type="button" class="btn btn-primary ">Edit</button>
+                                                <button type="button" class="btn btn-danger ">Delete</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -917,18 +922,18 @@ require_once ("../config.php");
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                                <button type="button" class="btn btn-warnin " data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Biography Modal -->
-                <div class="modal fade " id="Biography " tabindex="-1 " aria-labelledby="BiographyText " aria-hidden="true ">
+                <div class="modal fade" id="Biography" tabindex="-1 " aria-labelledby="BiographyText " aria-hidden="true ">
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
                             <div class="modal-header ">
-                                <h5 class="modal-title " id="BoigraphyText " style="color: black; ">Fantasy</h5>
+                                <h5 class="modal-title " id="BoigraphyText" style="color: black; ">Fantasy</h5>
                                 <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
@@ -970,15 +975,12 @@ require_once ("../config.php");
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="modal-footer ">
-                                <button type="button " class="btn btn-warning " data-dismiss="modal ">Close</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
 
             </div>
             <!-- End of Main Content -->
@@ -1033,6 +1035,7 @@ require_once ("../config.php");
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js "></script>
+
 
 
 </body>

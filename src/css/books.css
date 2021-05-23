@@ -118,7 +118,7 @@ form.example::after {
   color: black;
 }
 .product {
-  max-width: 23%;
+  max-width: 15%;
   margin: 1% 1% 1% 1%;
   height: fit-content;
   border-radius: 2.5px;
