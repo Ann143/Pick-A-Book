@@ -107,10 +107,12 @@ require_once ("../config.php");
         $bookCategory =$_POST['bookCategory'];
         $bookPicture=$_FILES["bookPicture"]["name"];
     
-        $sql =("SELECT * FROM `sellbooks` WHERE bookpicture=' $bookPicture'");
-        $query_run = mysqli_query($conn,$sql);
-    
-        if(mysqli_num_rows($query_run) > 0)
+        // $sql =("SELECT * FROM `sellbooks` WHERE bookpicture=' $bookPicture'");
+        // $query_run = mysqli_query($conn,$sql);
+        // mysqli_num_rows($query_run) > 0
+
+        $uploads_dir = '../Products/';
+        if(file_exists($uploads_dir.$bookPicture))
         {
           
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
@@ -119,22 +121,27 @@ require_once ("../config.php");
                                      <span aria-hidden="true">&times;</span>
                                     </button>
                                    </div>';
-            // echo '<script type="text/javascript">';
-            // echo '$(document).ready(function() {';
-            // echo '$("#alertDuplicate").modal("show");';
-            // echo '});';
-            // echo '</script>';
         }else{
     
-            $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
+               $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
                 $query_run = mysqli_query($conn,$query);
     
-                if( $query_run)
+                if($query_run)
                 {
-                    // move_upload_file($_FILES['bookPicture']['tmp_name'], "upload/".$_FILES['file']["name"]);
-                    $_SESSION['success'] = "You publish successfully!";
+                    move_uploaded_file($_FILES["bookPicture"]["tmp_name"],$uploads_dir.$bookPicture);
+                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+                                    <strong>Book Published Successfully!</strong>
+                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                     </button>
+                                    </div>';
                 } else{
-                    $_SESSION['success'] = "You didn't publish your book!";
+                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
+                                    <strong>Book did not publish!</strong> Try Again.
+                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                     </button>
+                                    </div>';
                 }
         }
     }
@@ -210,7 +217,7 @@ require_once ("../config.php");
                         <div class="form-group">
                             <label for="exampleFormControlFile1" style="margin-left: 15px;">Book Picture:</label>
                             <div class="container" style="margin-left: 20px;">
-                                <input type="file" class="form-control-file" name="bookPicture" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" name="bookPicture" id="bookPicture">
                             </div>
                         </div>
                         <button class="btn btn-primary" style="margin-left: 150px;" name="publish">Publish</button>

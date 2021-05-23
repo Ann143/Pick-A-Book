@@ -264,10 +264,10 @@ require_once ("../config.php");
                         $bookCategory =$_POST['bookCategory'];
                         $bookPicture=$_FILES["bookPicture"]["name"];
                     
-                        $sql =("SELECT * FROM `sellbooks` WHERE bookpicture=' $bookPicture'");
-                        $query_run = mysqli_query($conn,$sql);
+                       
+                        $uploads_dir = '../Products/';
                     
-                        if(mysqli_num_rows($query_run) > 0)
+                        if(file_exists($uploads_dir.$bookPicture))
                         {
                            
                            echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
@@ -283,8 +283,9 @@ require_once ("../config.php");
                                 $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
                                 $query_run = mysqli_query($conn,$query);
                     
-                                if( $query_run)
+                                if($query_run)
                                 {
+                                    move_uploaded_file($_FILES["bookPicture"]["tmp_name"],$uploads_dir.$bookPicture);
                                     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width:30%;margin-left:380px;text-align:center">
                                     <strong>Book Published Successfully!</strong>
                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">

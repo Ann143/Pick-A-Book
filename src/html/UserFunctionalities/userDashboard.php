@@ -216,7 +216,7 @@ require_once ("../config.php");
                         {
                             ?>
                             <div class="product">
-                                <img src=" <?php echo $row['bookpicture']; ?>" alt="" class="product-img">
+                                <img src="src/html/Products/<?php echo $row['bookpicture']; ?>" alt="" class="product-img">
                                 <br>
                                 <span class="product-name color"> <?php echo $row['booktitle']; ?>
                                 </span>
