@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require_once ("../config.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,8 +59,8 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="index.php">
+                <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -63,13 +70,13 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <i class="fas fa-users" style="color: chartreuse;"></i>
                     <span style="font-size: 18px;">Users</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="Seller.html">Sellers</a>
-                        <a class="collapse-item" href="customer.html">Customers</a>
+                        <a class="collapse-item" href="Seller.php">Sellers</a>
+                        <a class="collapse-item" href="customer.php">Customers</a>
                     </div>
                 </div>
             </li>
@@ -77,13 +84,13 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-book" style="color: rgb(0, 68, 255);"></i>
                     <span style="font-size: 15px;">Products</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.html">Products</a>
-                        <a class="collapse-item" href="order.html">Orders</a>
+                        <a class="collapse-item" href="product.php">Products</a>
+                        <a class="collapse-item" href="order.php">Orders</a>
 
                     </div>
                 </div>
@@ -92,13 +99,13 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+                <i class="fas fa-address-book" style="color: rgb(255, 238, 0);"></i>
                     <span style="font-size: 17px;">Category</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.html">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.html">Best Sold Books</a>
+                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
+                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                     </div>
                 </div>
             </li>
@@ -243,29 +250,50 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
-                <div id="content-wrapper" class="d-flex flex-column">
-                    <div id="content">
-                        </nav>
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Sellers</h5>
                         </div>
-                        <div class="container">
-                            <table id="example" class="table table-striped" style="width:90%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
+            <div class="container" style="margin-left:200px;width:70%;"> 
+                <table id="example" class="table table-striped" style="width:90%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
                                 <thead style="background-color: black;color: blanchedalmond;">
                                     <tr>
                                         <th>Seller's Name</th>
+                                        <th>Action</th>
 
                                     </tr>
                                 </thead>
 
                                 <tbody style="color: black;">
-                                    <tr data-toggle="modal" data-target="#exampleModal1">
-                                        <td>Mery-an Telez</td>
+                                <?php
+                                     
+                                     $query = "SELECT sellername FROM sellbooks";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td data-toggle="modal" data-target="#exampleModal1"> <?php echo $row['sellername']?></td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+                                     ?>
 
-                                    </tr>
-                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
+                                </tbody>
+
+               </table>
+               </div>
+
+
+               <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black">
+                              <div class="modal-dialog modal-xl">
                                             <div class="modal-content content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title" id="edit">Seller's Information</h4>
@@ -353,297 +381,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <tr data-toggle="modal" data-target="#exampleModal2">
-                                        <td> Christine Joy Ditchon </td>
-
-                                    </tr>
-                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body main-secction rounded">
-                                                    <div class="row" id="upload2">
-                                                        <div class="col-md-4 a">
-                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
-                                                                <div class="container ">
-                                                                    <h5>Christine Joy Ditchon</h5>
-                                                                    <p>Joined Pick-A-Book on</p>
-                                                                    <p>April 1(7 days ago)</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
-
-                                                            <p>Your Personal Information</p>
-                                                            <div class="card rounded ">
-                                                                <div class="card-header ">
-                                                                    Basic Information
-                                                                </div>
-                                                                <div class="card-body ">
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Full Name</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            Christine Joy Ditchon
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Birth Date</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            March 22, 1994
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Address</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            Nasipit Talamban, Cebu City
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Email</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            ebaritabryan@gmail.com
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <form method="post " style="margin-top:30px;">
-                                                        <div class="div-table ">
-                                                            <div class="tr ">
-                                                                <div class="tc ">Book Author</div>
-                                                                <div class="tc ">Book Category</div>
-                                                                <div class="tc ">Total Book Sold</div>
-                                                                <div class="tc ">Total Amount</div>
-                                                            </div>
-                                                            <div class="tr ">
-                                                                <div class="tc "> Liza Jackson</div>
-                                                                <div class="tc "> Suspense <br> Thriller</div>
-                                                                <div class="tc "> 65pcs</div>
-                                                                <div class="tc "> 9750</div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+                                         <!-- Footer -->
+                                        
+                                        <footer class="sticky-footer bg-white" style="margin-top:160px">
+                                            <div class="container my-auto ">
+                                                <div class="copyright text-center my-auto ">
+                                                    <span>Copyright &copy; Pick-A-Book 2021</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-
-                                    <tr data-toggle="modal" data-target="#exampleModal3">
-                                        <td>Dexter Tampioc</td>
-
-                                    </tr>
-                                    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body main-secction rounded">
-                                                    <div class="row" id="upload3">
-                                                        <div class="col-md-4 a">
-                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
-                                                                <div class="container ">
-                                                                    <h5>Mery-an Telez</h5>
-                                                                    <p>Joined Pick-A-Book on</p>
-                                                                    <p>April 1(7 days ago)</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
-
-                                                            <p>Your Personal Information</p>
-                                                            <div class="card rounded ">
-                                                                <div class="card-header ">
-                                                                    Basic Information
-                                                                </div>
-                                                                <div class="card-body ">
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Full Name</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            Mery-an Telez
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Birth Date</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            March 22, 1994
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Address</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            Nasipit Talamban, Cebu City
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Email</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            ebaritabryan@gmail.com
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <form method="post " style="margin-top:30px;">
-                                                        <div class="div-table ">
-                                                            <div class="tr ">
-                                                                <div class="tc ">Book Author</div>
-                                                                <div class="tc ">Book Category</div>
-                                                                <div class="tc ">Total Book Sold</div>
-                                                                <div class="tc ">Total Amount</div>
-                                                            </div>
-                                                            <div class="tr ">
-                                                                <div class="tc "> Liza Jackson</div>
-                                                                <div class="tc "> Suspense <br> Thriller</div>
-                                                                <div class="tc "> 65pcs</div>
-                                                                <div class="tc "> 9750</div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <tr data-toggle="modal" data-target="#exampleModal4">
-                                        <td>David Bryan Pael</td>
-
-                                    </tr>
-                                    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body main-secction rounded">
-                                                    <div class="row" id="upload4">
-                                                        <div class="col-md-4 a">
-                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
-                                                                <div class="container ">
-                                                                    <h5>David Bryan Pael</h5>
-                                                                    <p>Joined Pick-A-Book on</p>
-                                                                    <p>April 1(7 days ago)</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
-
-                                                            <p>Your Personal Information</p>
-                                                            <div class="card rounded ">
-                                                                <div class="card-header ">
-                                                                    Basic Information
-                                                                </div>
-                                                                <div class="card-body ">
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Full Name</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            David Bryan Pael
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Birth Date</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            March 22, 1994
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Address</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            Nasipit Talamban, Cebu City
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Email</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            ebaritabryan@gmail.com
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <form method="post " style="margin-top:30px;">
-                                                        <div class="div-table ">
-                                                            <div class="tr ">
-                                                                <div class="tc ">Book Author</div>
-                                                                <div class="tc ">Book Category</div>
-                                                                <div class="tc ">Total Book Sold</div>
-                                                                <div class="tc ">Total Amount</div>
-                                                            </div>
-                                                            <div class="tr ">
-                                                                <div class="tc "> Liza Jackson</div>
-                                                                <div class="tc "> Suspense <br> Thriller</div>
-                                                                <div class="tc "> 65pcs</div>
-                                                                <div class="tc "> 9750</div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                                        </footer>
+                                        <!-- End of Footer -->
+                                                
             </div>
         </div>
     </div>
@@ -681,16 +429,9 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js "></script>
 
-</body>
 
-<!-- Footer -->
-<footer class="sticky-footer bg-white ">
-    <div class="container my-auto ">
-        <div class="copyright text-center my-auto ">
-            <span>Copyright &copy; Pick-A-Book 2021</span>
-        </div>
-    </div>
-</footer>
+
+
 <!-- End of Footer -->
 
 
@@ -700,4 +441,3 @@
 
 </html>
 
-</html>
