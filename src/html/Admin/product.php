@@ -508,7 +508,7 @@ require_once ("../config.php");
                                                 <div class="card " style="width: 10rem; ">
                                                     <img src="../Admin/img/history.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                     <div class="card-body text-center ">
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Romance">History</button>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#History">History</button>
 
                                                     </div>
                                                 </div>
@@ -525,7 +525,7 @@ require_once ("../config.php");
                                                         <img src="../Admin/img/biography.png " class="card-img-top " alt="Seller " style="height: 140px; background-color: rgb(250, 175, 200); ">
                                                         <div class="card-body text-center ">
 
-                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Romance">Biography</button>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Biography">Biography</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -566,8 +566,8 @@ require_once ("../config.php");
                                     </thead>
                                     <tbody>
                                     <?php
-                                    
-                                    $query = "SELECT * FROM sellbooks";
+                                     
+                                    $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Romance'";
                                     $query_run = mysqli_query($conn,$query);
 
                                     while($row = mysqli_fetch_array($query_run))
@@ -575,7 +575,7 @@ require_once ("../config.php");
                                         ?>
 
                                         <tr>
-                                        <td> <?php echo '<img src="data:image;base64,'.base64_encode($row['bookpicture']).'" alt="Image" style="width:100px; height:100px">'; ?></td>
+                                        <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
                                         <td> <?php echo $row['booktitle']?></td>
                                         <td> <?php echo $row['sellername']?></td>
                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
@@ -626,26 +626,32 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary ">Edit</button>
-                                                <button type="button" class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Adventure'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
 
                                     </tbody>
                                 </table>
@@ -681,26 +687,32 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary">Edit</button>
-                                                <button type="button" class="btn btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Drama'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
 
                                     </tbody>
                                 </table>
@@ -736,26 +748,32 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Fantasy'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -790,26 +808,32 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Essay'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -844,26 +868,32 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Poetry'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -898,31 +928,37 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary ">Edit</button>
-                                                <button type="button" class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='History'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button" class="btn btn-warnin " data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-warning " data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -933,7 +969,7 @@ require_once ("../config.php");
                     <div class="modal-dialog modal-xl modal-dialog-centered ">
                         <div class="modal-content ">
                             <div class="modal-header ">
-                                <h5 class="modal-title " id="BoigraphyText" style="color: black; ">Fantasy</h5>
+                                <h5 class="modal-title " id="BoigraphyText" style="color: black; ">Biography</h5>
                                 <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
                                     <span aria-hidden="true ">&times;</span>
                                 </button>
@@ -952,26 +988,32 @@ require_once ("../config.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th><img src="../../img/fan3.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Mery-an Telez</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><img src="../../img/fan4.jpg " alt=" " style="height: 80px; "></th>
-                                            <td>The Memory Of Souls</td>
-                                            <td>Christine Joy Ditchon</td>
-                                            <td>Php 100.00</td>
-                                            <td>
-                                                <button type="button " class="btn btn-primary ">Edit</button>
-                                                <button type="button " class="btn btn-danger ">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                     
+                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Biography'";
+                                     $query_run = mysqli_query($conn,$query);
+ 
+                                     while($row = mysqli_fetch_array($query_run))
+                                     {
+                                         ?>
+ 
+                                         <tr>
+                                         <td> <img src="../Products/<?php echo $row['img']; ?>" alt="" class="product-img" height="100px" width="100px" ></td>
+                                         <td> <?php echo $row['booktitle']?></td>
+                                         <td> <?php echo $row['sellername']?></td>
+                                         <td> &#8369;  <?php echo $row['bookprice']?>.00</td>
+                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                         
+                                         </td>
+                                          
+                                         </tr>
+ 
+                                         <?php
+                                         
+                                     }
+ 
+                                     ?>
                                     </tbody>
                                 </table>
                             </div>
