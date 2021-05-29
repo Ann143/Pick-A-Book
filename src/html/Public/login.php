@@ -1,7 +1,6 @@
 <?php
 //starts of session
 session_start();
-
 //Include connection file
 require_once ("../config.php");
 
@@ -11,6 +10,8 @@ $username_err = $password_err = $login_err = "";
 
 //Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    echo($_POST["username"]);
+    echo($_POST["password"]);
 
     //Check if username is empty
     if(empty(trim($_POST["username"]))){
@@ -29,59 +30,97 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //Validate credentials
     if(empty($username_err) && empty($password_err)){
         //Prepare a statement
-        $sql = "SELECT userId, username, password FROM users WHERE username = ?";
-
-        if($stmt = mysqli_prepare($conn,$sql)){
-            //Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-
-            //Set parameters
-            $param_username = $username;
-
-            //Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                //Store result
-                mysqli_stmt_store_result($stmt);
-
-                //Check if username exists, if yes then verify password
-
-                if(mysqli_stmt_num_rows($stmt) == 1){
-                    //Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username,$hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
-                            //Password is incorrect, so start a new session
-                            session_start();
-
-                            //Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;
-
-                            //Redirect user to userDashboard page
-                            header("location: ../UserFunctionalities/userDashboard.php");
-                        } else{
-                            //Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password";
-                        }
+        if ($_POST["username"] == "Dexter" || $_POST["username"] == "Mery-an" || $_POST["username"] == "ChristineJoy" || $_POST["username"] == "David") {
+            $sql = "SELECT `adminId`, `username`, `password` FROM `admin` WHERE username = ?";
+            if($stmt = mysqli_prepare($conn,$sql)){
+                //Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_username);
+    
+                //Set parameters
+                $param_username = $username;
+    
+                //Attempt to execute the prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    //Store result
+                    mysqli_stmt_store_result($stmt);
+    
+                    //Check if username exists, if yes then verify password
+    
+                    if(mysqli_stmt_num_rows($stmt) == 1){
+                        //Bind result variables
+                        mysqli_stmt_bind_result($stmt, $id, $username);
+                        
+                                //Password is incorrect, so start a new session
+                                session_start();
+    
+                                //Store data in session variables
+                                $_SESSION["loggedin"] = true;
+                                $_SESSION["id"] = $id;
+                                $_SESSION["username"] = $username;
+    
+                                //Redirect user to userDashboard page
+                                header("location: ../Admin/index.php");
+                    } else{
+                        //username doesn't exist, display a generic error message
+                        $login_err = "Invalid username or password.";
                     }
                 } else{
-                    //username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
+                    echo "Oops! Somehting went wrong. Please try again.";
+    
                 }
-            } else{
-                echo "Oops! Somehting went wrong. Please try again.";
-
+                //Close statement
+                mysqli_stmt_close($stmt);
             }
+        } else {
+            $sql = "SELECT `userId`, `username`, `password` FROM `users` WHERE username = ?";
 
-            //Close statement
-            mysqli_stmt_close($stmt);
-
+            if($stmt = mysqli_prepare($conn,$sql)){
+                //Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_username);
+    
+                //Set parameters
+                $param_username = $username;
+    
+                //Attempt to execute the prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    //Store result
+                    mysqli_stmt_store_result($stmt);
+    
+                    //Check if username exists, if yes then verify password
+    
+                    if(mysqli_stmt_num_rows($stmt) == 1){
+                        //Bind result variables
+                        mysqli_stmt_bind_result($stmt, $id, $username,$hashed_password);
+                        if(mysqli_stmt_fetch($stmt)){
+                            if(password_verify($password, $hashed_password)){
+                                //Password is incorrect, so start a new session
+                                session_start();
+    
+                                //Store data in session variables
+                                $_SESSION["loggedin"] = true;
+                                $_SESSION["id"] = $id;
+                                $_SESSION["username"] = $username;
+    
+                                //Redirect user to userDashboard page
+                                header("location: ../UserFunctionalities/userDashboard.php");
+                            } else{
+                                //Password is not valid, display a generic error message
+                                $login_err = "Invalid username or password";
+                            }
+                        }
+                    } else{
+                        //username doesn't exist, display a generic error message
+                        $login_err = "Invalid username or password.";
+                    }
+                } else{
+                    echo "Oops! Somehting went wrong. Please try again.";
+    
+                }
+                //Close statement
+                mysqli_stmt_close($stmt);
+            }
         }
-
-
     }
-
     //Close connection
     mysqli_close($conn);
 }
@@ -157,18 +196,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <h2 style="font-size: 40px; text-align: center;">Your Online E-Book Store</h2>
             <h3 style="font-size: 40px;color: #dd5589;">A collection you will love!</h3>
         </div>
+
         <div class="formbox">
             <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Log In</h3>
             <form class="login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <label for="">Username</label>
                 <input type="text" name="username"
                     class="form-control asd  <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                    value="<?php echo $username; ?>" placeholder="Username" id="username" required />
+                    value="<?php echo $username; ?>" placeholder="Username" id="username" />
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 <label for="">Password</label>
                 <input type="password" id="" name="password"
                     class="form-control asd <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
-                    placeholder="Password" id="password" required />
+                    placeholder="Password" id="password" />
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
                 <a href="../Admin/index.php"></a> <input id="btn" type="submit" name="submit" value="Log In"
                     class="mainbox"></a>

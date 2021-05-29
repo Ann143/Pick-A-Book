@@ -1,10 +1,5 @@
-<?php
-require_once ("../config.php");
-
-
-$cart = new Cart; 
+<?php session_start();
 ?>
-
 <script src="../../jquery/navigators.js"></script>
 <link rel="stylesheet" href="../../css/navigators.css">
 
@@ -31,9 +26,9 @@ $cart = new Cart;
             <div class="drop-down my-account cursor-pointer">
                 <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="Profile">
                 <div class="drop-nav-profile container">
-                    <a href="./newAccount.php" style="color: black;text-decoration: none;">My Account</a>
+                    <a href="./newAccount.php" style="color: black;text-decoration: none;"><?php echo $_SESSION["username"]?></a>
                     <br>
-                    <a href="../IndexFunctionallities/login.php" style="color: black;text-decoration: none;">Logout</a>
+                    <a href="../Public/logout.php" style="color: black;text-decoration: none;">Logout</a>
                 </div>
             </div>
             <div class="drop-down settings cursor-pointer">

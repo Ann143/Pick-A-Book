@@ -1,20 +1,10 @@
 <?php
 session_start();
-
 require_once ("../config.php");
-
+require_once ("./header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="../../css/account.css">
@@ -24,19 +14,21 @@ require_once ("../config.php");
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <style>
-        .btn {
-            background-color: white;
-            color: black;
-        }
-        
-        #frame {
-            margin-bottom: 20px;
-        }
+    .btn {
+        background-color: white;
+        color: black;
+    }
+
+    #frame {
+        margin-bottom: 20px;
+    }
     </style>
 
 </head>
@@ -45,226 +37,27 @@ require_once ("../config.php");
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: rgb(202, 7, 82);">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <h4 style="color: white;text-align: center;margin-top: 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    Pick-A-Book</h4>
-            </a>
-
-            <hr style="border: 1px solid rgb(238, 46, 222); width: 50%;">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">
-                <i class="fas fa-tachometer-alt" style="color: rgb(255, 0, 34);"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-users" style="color: chartreuse;"></i>
-                    <span style="font-size: 18px;">Users</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="Seller.php">Sellers</a>
-                        <a class="collapse-item" href="customer.php">Customers</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-book" style="color: rgb(0, 68, 255);"></i>
-                    <span style="font-size: 15px;">Products</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="product.php">Products</a>
-                        <a class="collapse-item" href="order.php">Orders</a>
-
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-address-book" style="color: rgb(255, 238, 0);"></i>
-                    <span style="font-size: 17px;">Category</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
-                        <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
-                    </div>
-                </div>
-            </li>
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-
-        </ul>
-        <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Notification
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message
-                                </h6>
-
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                            </div>
-                        </li>
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mery-an Telez</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="./myProfile.html">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Sellers</h5>
-                        </div>
-            <div class="container" style="margin-left:200px;width:70%;"> 
-                <table id="example" class="table table-striped" style="width:90%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
-                                <thead style="background-color: black;color: blanchedalmond;">
-                                    <tr>
-                                        <th>Seller's Name</th>
-                                        <th>Action</th>
+                    <h5 class="h3 mb-0 text-gray-800" style="margin-left: 21px;">Sellers</h5>
+                </div>
+                <div class="container" style="margin-left:200px;width:70%;">
+                    <table id="example" class="table table-striped"
+                        style="width:90%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
+                        <thead style="background-color: black;color: blanchedalmond;">
+                            <tr>
+                                <th>Seller's Name</th>
+                                <th>Action</th>
 
-                                    </tr>
-                                </thead>
+                            </tr>
+                        </thead>
 
-                                <tbody style="color: black;">
-                                <?php
+                        <tbody style="color: black;">
+                            <?php
                                      
                                      $query = "SELECT sellername FROM sellbooks";
                                      $query_run = mysqli_query($conn,$query);
@@ -272,126 +65,133 @@ require_once ("../config.php");
                                      while($row = mysqli_fetch_array($query_run))
                                      {
                                          ?>
- 
-                                         <tr>
-                                         <td data-toggle="modal" data-target="#exampleModal1"> <?php echo $row['sellername']?></td>
-                                         <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                               <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-                                         
-                                         </td>
-                                         </tr>
- 
-                                         <?php
+
+                            <tr>
+                                <td data-toggle="modal" data-target="#exampleModal1"> <?php echo $row['sellername']?>
+                                </td>
+                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+
+                                </td>
+                            </tr>
+
+                            <?php
                                          
                                      }
                                      ?>
 
-                                </tbody>
+                        </tbody>
 
-               </table>
-               </div>
+                    </table>
+                </div>
 
 
-               <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black">
-                              <div class="modal-dialog modal-xl">
-                                            <div class="modal-content content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title" id="edit">Seller's Information</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body main-secction rounded">
-                                                    <div class="row" id="upload1">
-                                                        <div class="col-md-4 a">
-                                                            <div id="frame" class="text-center border border-dark rounded " style="margin-top: 20px;">
-                                                                <img id=" image1 " class="border border-dark rounded-circle " src="../../img/FB_IMG_16157132375310788.jpg " style=" height:250px; width:200px;margin-top:20px;" class=" avatar img-circle " alt="avatar ">
-                                                                <div class="container ">
-                                                                    <h5>Mery-an Telez</h5>
-                                                                    <p>Joined Pick-A-Book on</p>
-                                                                    <p>April 1(7 days ago)</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="edit">Seller's Information</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body main-secction rounded">
+                                <div class="row" id="upload1">
+                                    <div class="col-md-4 a">
+                                        <div id="frame" class="text-center border border-dark rounded "
+                                            style="margin-top: 20px;">
+                                            <img id=" image1 " class="border border-dark rounded-circle "
+                                                src="../../img/FB_IMG_16157132375310788.jpg "
+                                                style=" height:250px; width:200px;margin-top:20px;"
+                                                class=" avatar img-circle " alt="avatar ">
+                                            <div class="container ">
+                                                <h5>Mery-an Telez</h5>
+                                                <p>Joined Pick-A-Book on</p>
+                                                <p>April 1(7 days ago)</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                                        <div id="basicInfo " class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
+                                    <div id="basicInfo "
+                                        class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
 
-                                                            <p>Your Personal Information</p>
-                                                            <div class="card rounded ">
-                                                                <div class="card-header ">
-                                                                    Basic Information
-                                                                </div>
-                                                                <div class="card-body ">
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Full Name</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            Mery-an Telez
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Birth Date</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            March 22, 1994
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-md-3 ">
-                                                                            <label style="font-weight:bold; ">Address</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col- ">
-                                                                            Nasipit Talamban, Cebu City
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                    <div class="row ">
-                                                                        <div class="col-sm-3 col-md-3 col-5 ">
-                                                                            <label style="font-weight:bold; ">Email</label>
-                                                                        </div>
-                                                                        <div class="col-md-8 col-6 ">
-                                                                            ebaritabryan@gmail.com
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                        <p>Your Personal Information</p>
+                                        <div class="card rounded ">
+                                            <div class="card-header ">
+                                                Basic Information
+                                            </div>
+                                            <div class="card-body ">
+                                                <div class="row ">
+                                                    <div class="col-sm-3 col-md-3 col-5 ">
+                                                        <label style="font-weight:bold; ">Full Name</label>
                                                     </div>
-                                                    <form method="post " style="margin-top:30px;">
-                                                        <div class="div-table ">
-                                                            <div class="tr ">
-                                                                <div class="tc ">Book Author</div>
-                                                                <div class="tc ">Book Category</div>
-                                                                <div class="tc ">Total Book Sold</div>
-                                                                <div class="tc ">Total Amount</div>
-                                                            </div>
-                                                            <div class="tr ">
-                                                                <div class="tc "> Liza Jackson</div>
-                                                                <div class="tc "> Suspense <br> Thriller</div>
-                                                                <div class="tc "> 65pcs</div>
-                                                                <div class="tc "> 9750</div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+                                                    <div class="col-md-8 col-6 ">
+                                                        Mery-an Telez
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row ">
+                                                    <div class="col-md-3 ">
+                                                        <label style="font-weight:bold; ">Birth Date</label>
+                                                    </div>
+                                                    <div class="col-md-8 col- ">
+                                                        March 22, 1994
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row ">
+                                                    <div class="col-md-3 ">
+                                                        <label style="font-weight:bold; ">Address</label>
+                                                    </div>
+                                                    <div class="col-md-8 col- ">
+                                                        Nasipit Talamban, Cebu City
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row ">
+                                                    <div class="col-sm-3 col-md-3 col-5 ">
+                                                        <label style="font-weight:bold; ">Email</label>
+                                                    </div>
+                                                    <div class="col-md-8 col-6 ">
+                                                        ebaritabryan@gmail.com
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                         <!-- Footer -->
-                                        
-                                        <footer class="sticky-footer bg-white" style="margin-top:160px">
-                                            <div class="container my-auto ">
-                                                <div class="copyright text-center my-auto ">
-                                                    <span>Copyright &copy; Pick-A-Book 2021</span>
-                                                </div>
-                                            </div>
-                                        </footer>
-                                        <!-- End of Footer -->
-                                                
+                                </div>
+                                <form method="post " style="margin-top:30px;">
+                                    <div class="div-table ">
+                                        <div class="tr ">
+                                            <div class="tc ">Book Author</div>
+                                            <div class="tc ">Book Category</div>
+                                            <div class="tc ">Total Book Sold</div>
+                                            <div class="tc ">Total Amount</div>
+                                        </div>
+                                        <div class="tr ">
+                                            <div class="tc "> Liza Jackson</div>
+                                            <div class="tc "> Suspense <br> Thriller</div>
+                                            <div class="tc "> 65pcs</div>
+                                            <div class="tc "> 9750</div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer -->
+
+                <footer class="sticky-footer bg-white" style="margin-top:160px">
+                    <div class="container my-auto ">
+                        <div class="copyright text-center my-auto ">
+                            <span>Copyright &copy; Pick-A-Book 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
             </div>
         </div>
     </div>
@@ -401,7 +201,8 @@ require_once ("../config.php");
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
+    <div class="modal fade " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel "
+        aria-hidden="true ">
         <div class="modal-dialog " role="document ">
             <div class="modal-content ">
                 <div class="modal-header ">
@@ -432,7 +233,7 @@ require_once ("../config.php");
 
 
 
-<!-- End of Footer -->
+    <!-- End of Footer -->
 
 
 
@@ -440,4 +241,3 @@ require_once ("../config.php");
 </body>
 
 </html>
-
