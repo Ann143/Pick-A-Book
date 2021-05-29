@@ -16,7 +16,10 @@
                 <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
             </div>
             <div onclick="window.location = './cart.php'" class="drop-down cart  cursor-pointer">
-                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
+              <a href=""> <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
+           
+              </a> 
+                <!-- <i class="fa fa-shopping-cart"></i> -->
             </div>
         </div>
         <div class="top-nav-drop-down-privacy d-flex justify-content-end">
