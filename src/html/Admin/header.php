@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <body id="page-top">
+
     <?php 
-$name = $_SESSION["username"];
-?>
+   $name = $_SESSION["username"];
+   ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
 

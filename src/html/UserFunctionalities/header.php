@@ -1,8 +1,6 @@
-<?php session_start();
-?>
+
 <script src="../../jquery/navigators.js"></script>
 <link rel="stylesheet" href="../../css/navigators.css">
-
 <div class="top-nav d-flex align-items-center">
         <div class="top-nav-logo ">
             <h3 style="text-align: center;margin-top: 6%;font-family: Georgia, 'Times New Roman', Times, serif;">Pick-A-Book</h3>
