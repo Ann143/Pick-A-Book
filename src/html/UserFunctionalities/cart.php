@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+require_once ("../config.php"); 
+$id=$_SESSION["id"];
 
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +42,7 @@
             <div class="container w-75 float-left">
 
             </div><br>
-            <div class="conatiner float-right w-25" style="background-color: tomato;">
+            <div class="container float-right w-25" style="background-color: tomato;">
 
             </div>
 
@@ -48,51 +53,44 @@
                             <h4 style="color: black;text-align: center;">YOUR CART</h4>
                             <thead>
                                 <tr class="text-center" style="background-color: rgb(219, 43, 102);">
-                                    <th>Product</th>
+                                    <th>Product Image</th>
+                                    <th>Title</th>
                                     <th>Category</th>
                                     <th>Price</th>
                                     <th class="action">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="poduct-list">
-                                <tr class="text-center">
-                                    <td><img src="../img/bio2.jpg" alt="" height="130px"></td>
-                                    <td class="mt-30">Romance</td>
-                                    <td>Php <span class="price-tag">200.89</span></td>
+                            <?php
+
+                                $query ="select * FROM cart";
+                                $query_run = mysqli_query($conn,$query);
+                                $cart = mysqli_num_rows($query_run) > 0;
+
+                                if($cart)
+                                {
+                                    while($row = mysqli_fetch_assoc($query_run))
+                                    {
+                                ?>
+                                    <tr class="text-center">
+                                    <td><img src="../Products/<?php echo $row['productImage']?>" alt="" height="130px"></td>
+                                     <td class="mt-30"><?php echo $row['productName']?></td>
+                                    <td class="mt-30"><?php echo $row['category']?></td>
+                                    <td>Php <span class="price-tag"><?php echo $row['price']?></span></td>
                                     <td class="action">
-                                        <i class="fa fa-trash-o" style="cursor: pointer !important; font-size:25px;color:red;"></i>&nbsp;&nbsp;
-                                        <i class="fa fa-edit" style="cursor: pointer !important;font-size:25px;color:rgb(247, 149, 22);"></i>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $row['cartID']?>">
+                                        <button type="submit" name="delete" class="btn btn-warning">
+                                            <i class="fa fa-trash-o" style="cursor: pointer !important; font-size:25px;color:red;"></i>&nbsp;&nbsp;
+                                        </button>
+                                        </form>
+                                        
                                     </td>
                                 </tr>
-                                <tr class="text-center">
-                                    <td><img src="../img/bio4.jpg" alt="" height="130px"></td>
-                                    <td>Thriller</td>
-                                    <td>Php <span class="price-tag">100.25</span></td>
-                                    <td class="action">
-                                        <i class="fa fa-trash-o" style="cursor: pointer !important; font-size:25px;color:red;"></i>&nbsp;&nbsp;
-                                        <i class="fa fa-edit" style="cursor: pointer !important;font-size:25px;color:rgb(247, 149, 22);"></i>
-                                    </td>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td><img src="../img/bio2.jpg" alt="" height="130px"></td>
-                                    <td class="mt-30">Romance</td>
-                                    <td>Php <span class="price-tag">200.60</span></td>
-                                    <td class="action">
-                                        <i class="fa fa-trash-o" style="cursor: pointer !important; font-size:25px;color:red;"></i>&nbsp;&nbsp;
-                                        <i class="fa fa-edit" style="cursor: pointer !important;font-size:25px;color:rgb(247, 149, 22);"></i>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td><img src="../img/bio4.jpg" alt="" height="130px"></td>
-                                    <td>Thriller</td>
-                                    <td>Php <span class="price-tag">700.12</span></td>
-                                    <td class="action">
-                                        <i class="fa fa-trash-o" style="cursor: pointer !important; font-size:25px;color:red;"></i>&nbsp;&nbsp;
-                                        <i class="fa fa-edit" style="cursor: pointer !important;font-size:25px;color:rgb(247, 149, 22);"></i>
-                                    </td>
-                                    </td>
-                                </tr>
+                                <?php
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -140,6 +138,40 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+<?php
+
+    if (isset($_POST['delete'])){
+        $cartId=$_POST['id'];
+        $query="delete from cart where cartID='".$cartId."' and userId='".$id."'";
+
+        if($conn->query($query)===TRUE){
+            ?>
+
+        <!--fire a successful message using sweet alert -->
+       <script>
+       swal({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Book deleted from cart!',
+         showConfirmButton: false,
+         timer: 1800
+       
+     })
+     setTimeout(() => {
+       location.reload()
+     }, 2000);
+     </script>
+       <?php
+            
+        }
+    }
+?> 
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 </body>
 
 </html>

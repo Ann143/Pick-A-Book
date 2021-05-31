@@ -1,4 +1,9 @@
+<?php
 
+require_once ("../config.php"); 
+session_start();
+$id=$_SESSION['id'];
+?>
 <script src="../../jquery/navigators.js"></script>
 <link rel="stylesheet" href="../../css/navigators.css">
 <div class="top-nav d-flex align-items-center">
@@ -9,14 +14,21 @@
             <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt=Menu>
         </div>
 
+        <?php
+        $query = "SELECT count(cartID) as countCart from cart where userId='".$id."'";
+        
+        $row = mysqli_fetch_assoc(mysqli_query($conn,$query));
+       
+        ?>
+            
         <div class="top-nav-drop-downs d-flex">
             <div class="drop-down notifications cursor-pointer">
                 <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
             </div>
-            <div onclick="window.location = './cart.php'" class="drop-down cart  cursor-pointer">
-              <a href=""> <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
+            <div onclick="window.location = './cart.php'" class="drop-down cart  cursor-pointer ">
+             <span class="badge"> <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart"> <?php echo $row['countCart'] ?></span> 
            
-              </a> 
+              
                 <!-- <i class="fa fa-shopping-cart"></i> -->
             </div>
         </div>

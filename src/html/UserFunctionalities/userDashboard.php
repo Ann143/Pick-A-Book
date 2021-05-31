@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once ("../config.php"); 
-
+$id=$_SESSION["id"];
 ?>
 
 <!DOCTYPE html>
@@ -18,12 +18,14 @@ require_once ("../config.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/books.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../../jquery/books.js"></script>
 
     
 </head>
 
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
 <?php
     require_once("header.php");
     ?>
@@ -149,18 +151,21 @@ require_once ("../config.php");
                         {
                             ?>
                             <div class="product">
-                                <img src="../Products/<?php echo $row['img'];    ?>" alt="" class="product-img" height="180px" >
-                                <br>
-                                <span class="product-name color"> <?php echo $row['booktitle']; ?>
-                                </span>
-                                <br>
-                                <span class="product-genre color"> <?php echo $row['bookgenre']; ?>
-                                <br>
-                                <span class="product-price color">&#8369;<?php echo $row['bookprice']; ?>.00</span>
-                              <a href=""> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                </svg></a>
+                                <form class="" method="post">
+                                <input type="hidden" name="img" value="<?php echo $row['img'];?>">
+                                    <img src="../Products/<?php echo $row['img'];?>" alt="" class="product-img" height="180px" >
+                                    <br>
+                                    <input type="hidden" name="booktitle" value="<?php echo $row['booktitle'];?>">
+                                    <input type="hidden" name="bookGenre" value="<?php echo $row['bookgenre'];?>">
+                                    <input type="hidden" name="bookPrice" value="<?php echo $row['bookprice'];?>">
+                                    <span class="product-name color"> <?php echo $row['booktitle']; ?>
+                                    </span>
+                                    <br>
+                                    <span class="product-genre color"> <?php echo $row['bookgenre']; ?>
+                                    <br>
+                                    <span class="product-price color">&#8369;<?php echo $row['bookprice']; ?>.00</span>
+                                    <button type="submit" class="btn  " name="addToCart"> <i class="fas fa-shopping-cart" style="color:#de094c"></i></button>
+                                </form>
                             </div>
 
                             <?php
@@ -177,9 +182,46 @@ require_once ("../config.php");
 
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+<?php
+if(isset($_POST['addToCart'])){
+    // $userId=$_SESSION['id'];
+    $img=$_POST['img'];
+    $bookTitle=$_POST['booktitle'];
+    $bookGenre=$_POST['bookGenre'];
+    $bookPrice=$_POST['bookPrice'];
+    
+    $query="insert into cart(userId, productImage, productName, category, price)
+    values('".$id."','".$img."', '".$bookTitle."', '".$bookGenre."', '".$bookPrice."')";
+    if($conn->query($query)===TRUE){
+        ?>
 
+        <!--fire a successful message using sweet alert -->
+       <script>
+       swal({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Book added to cart!',
+         showConfirmButton: false,
+         timer: 1800
+       
+     })
+     setTimeout(() => {
+       location.reload()
+     }, 2000);
+     </script>
+       <?php
+ 
+    }
+}
 
+?>
 
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script> 
 
 </body>
 
