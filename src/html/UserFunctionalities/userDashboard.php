@@ -150,7 +150,7 @@ $id=$_SESSION["id"];
                         while($row = mysqli_fetch_assoc($query_run))
                         {
                             ?>
-                            <div class="product">
+                            <div class="product" >
                                 <form class="" method="post">
                                 <input type="hidden" name="img" value="<?php echo $row['img'];?>">
                                     <img src="../Products/<?php echo $row['img'];?>" alt="" class="product-img" height="180px" >

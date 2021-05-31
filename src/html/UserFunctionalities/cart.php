@@ -62,7 +62,7 @@ hr.new3 {
                             <h4 style="color: black;text-align: center;">YOUR CART</h4>
                             <thead>
                                 <tr class="text-center" style="background-color: rgb(219, 43, 102);">
-                                    <th>Product Image</th>
+                                    <th>Book</th>
                                     <th>Title</th>
                                     <th>Category</th>
                                     <th>Price</th>
@@ -81,8 +81,8 @@ hr.new3 {
                                     while($row = mysqli_fetch_assoc($query_run))
                                     {
                                 ?>
-                                    <tr class="text-center">
-                                    <td><img src="../Products/<?php echo $row['productImage']?>" alt="" height="130px"></td>
+                                    <tr class="text-center" >
+                                    <td style="width:20%"><img src="../Products/<?php echo $row['productImage']?>" alt="" height="130px" ></td>
                                      <td class="mt-30"><?php echo $row['productName']?></td>
                                     <td class="mt-30"><?php echo $row['category']?></td>
                                     <td>Php <span class="price-tag"><?php echo $row['price']?></span></td>
@@ -115,7 +115,7 @@ hr.new3 {
                                         <h6>Total:</h6>
                                     </div>
                                     <div class="col-sm">
-                                        <label for="" class="total-payment">Php 0.00</label>
+                                        <label for="" class="total-payment"></label>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +126,6 @@ hr.new3 {
                             <div class="container" style="margin-left:20px">
                             <ul>
                             <li>Credit Card</li>
-                            <li>Debit Card</li>
                             </ul>
                             </div>
                             <hr class="new4">
@@ -145,9 +144,8 @@ hr.new3 {
                             <span>CVV</span>
                             <input type="text" class="w-25">
                             <br><br>
-                            <button type="button" class="btn btn-primary" style="background-color: rgb(221, 33, 111); width: 100%;">Checkout</button><br><br>
-                            <p class="text-center">OR</p>
-                            <button type="button" class="btn btn-primary" style="background-color: rgb(233, 225, 228); width: 100%;color: black;">Checkout with GCash</button><br><br>
+                            <button type="button" class="btn btn-primary" style="background-color: rgb(221, 33, 111); width: 100%;">Checkout</button>
+                          <br><br>
                         </div>
                     </div>
                 </div>
