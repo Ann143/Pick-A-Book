@@ -27,6 +27,15 @@ $id=$_SESSION["id"];
     <link rel="stylesheet" href="../../css/navigators.css">
 
     <title>My Cart</title>
+    <style>
+    hr.new4 {
+  border: 1px solid #f21164;
+}
+hr.new3 {
+  border-top: 1px dotted #f21164;
+  width:60%;
+}
+    </style>
 </head>
 
 <body>
@@ -93,11 +102,13 @@ $id=$_SESSION["id"];
                                 ?>
                             </tbody>
                         </table>
+                       <a href="userDashboard.php"> <button class="btn btn-warning">Continue Shopping</button></a>
                     </div>
+                  
                     <div class="col">
                         <div class="container" style="background-color: rgb(20, 20, 20);box-shadow: 0 6px 10px 0 rgba(128, 2, 50, 0.2), 0 6px 20px 0 rgba(128, 2, 50, 0.19);">
                             <h5>SUMMARY</h5>
-                            <hr class="new1">
+                               <hr class="new4">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm">
@@ -108,13 +119,17 @@ $id=$_SESSION["id"];
                                     </div>
                                 </div>
                             </div>
-                            <hr class="new1">
-
-
-                            <h6 class="text-center">Payment</h6>
-                            <hr class="new2">
-                            <p class="text-center">Accepted Cards</p><br>
-
+                            <hr class="new4">
+                            <h6 class="text-center">Payment Method</h6>
+                            <hr class="new3">
+                            <p class="text-center">Accepted Cards</p>
+                            <div class="container" style="margin-left:20px">
+                            <ul>
+                            <li>Credit Card</li>
+                            <li>Debit Card</li>
+                            </ul>
+                            </div>
+                            <hr class="new4">
                             <span>Name on Cards</span><br>
                             <input type="text"><br>
 
