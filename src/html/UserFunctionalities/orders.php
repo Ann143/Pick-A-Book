@@ -26,6 +26,7 @@
 
 <?php
     require_once("header.php");
+    session_start();
     ?>
 
     <div id="main" class="container" style="margin-top: 8%;">
@@ -49,52 +50,104 @@
                 </tr>
             </thead>
             <tbody class="text-center">
-                <tr>
-                    <td><img src="../../img/1.jpg" alt="" height="90rem"> </td>
-                    <td><b>SandMan</b> </td>
-                    <td>Action: Pirated</td>
-                    <td>Mery-an Telez</td>
-                    <td>Php 200.00</td>
-                    <td>May 06, 2021</td>
-                    <td>May 07, 2021</td>
-                    <td>Completed</td>
-                    <td>
-                        <i class="fa fa-close" style="font-size:25px;color:blue"></i>&nbsp;&nbsp;
-                        <i class="fa fa-trash-o" style="font-size:25px;color:red"></i>
-                    </td>
-                </tr>
+            <?php
 
+                $query ="select * from orders";
+                $query_run = mysqli_query($conn,$query);
+                $cart = mysqli_num_rows($query_run) > 0;
+
+                if($cart)
+                {
+                    while($row = mysqli_fetch_assoc($query_run))
+                    {
+                ?>
                 <tr>
-                    <td><img src="../../img/3.jpg" alt="" height="90rem"> </td>
-                    <td><b>Gideon</b> </td>
-                    <td>Action: Pirated</td>
-                    <td>Mery-an Telez</td>
-                    <td>Php 200.00</td>
-                    <td>May 06, 2021</td>
-                    <td></td>
-                    <td> Cancelled</td>
+                    <td><img src="../Products/<?php echo $row['pic']?>" alt="" height="90rem"> </td>
+                    <td><b><?php echo $row['title']?></b> </td>
+                    <td><?php echo $row['category']?></td>
+                    <td><?php echo $row['seller']?></td>
+                    <td><?php echo "Php ".$row['price']?></td>
+                    <td><?php echo $row['datePurchased']?></td>
+                    <td><?php echo $row['dateRecieved']?></td>
+                    <td><?php echo $row['status']?></td>
                     <td>
-                        <i class="fa fa-close" style="font-size:25px;color:blue"></i>&nbsp;&nbsp;
-                        <i class="fa fa-trash-o" style="font-size:25px;color:red"></i>
+                    <form method="post">
+                        <input type="hidden" name="orderId" value="<?php echo $row['orderID'] ?>">
+                        <button class="btn" type="submit" name="cancelOrder"> <i class="fa fa-close" style="font-size:25px;color:blue"></i></button>
+                        <button class="btn" type="submit" name="deleteOrder"><i class="fa fa-trash-o" style="font-size:25px;color:red"></i></button>
+                    </form>
                     </td>
                 </tr>
-                <tr>
-                    <td><img src="../../img/2.jpg" alt="" height="90rem"> </td>
-                    <td><b>The Stand</b> </td>
-                    <td>Romance</td>
-                    <td>Mery-an Telez</td>
-                    <td>Php 200.00</td>
-                    <td>May 06, 2021</td>
-                    <td></td>
-                    <td> Pending</td>
-                    <td>
-                        <i class="fa fa-close" style="font-size:25px;color:blue"></i>&nbsp;&nbsp;
-                        <i class="fa fa-trash-o" style="font-size:25px;color:red"></i>
-                    </td>
-                </tr>
+            <?php }}?>
+               
             </tbody>
+          
         </table>
+        
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+
+<?php
+    if (isset($_POST['deleteOrder'])){
+        
+        $orderId=$_POST['orderId'];
+        $userId=$_SESSION['id'];
+        $query="delete from orders where orderID='".$orderId."' and userId='".$userId."'";
+
+        if($conn->query($query)===TRUE){
+            ?>
+
+        <!--fire a successful message using sweet alert -->
+       <script>
+       swal({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Order deleted successfully!',
+         button: true,
+         timer: 1800
+       
+     })
+     setTimeout(() => {
+       location.reload()
+     }, 2000);
+     </script>
+       <?php
+            
+        }
+    }
+    if (isset($_POST['cancelOrder'])){
+        
+        $orderId=$_POST['orderId'];
+        $userId=$_SESSION['id'];
+        $query="update orders set status='Cancelled' where orderID='".$orderId."' and userId='".$userId."'";
+
+        if($conn->query($query)===TRUE){
+            ?>
+
+        <!--fire a successful message using sweet alert -->
+       <script>
+       swal({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Order cancelled successfully!',
+         button: true,
+         timer: 1800
+       
+     })
+     setTimeout(() => {
+       location.reload()
+     }, 2000);
+     </script>
+       <?php
+            
+        }
+    }
+?>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 
 </body>
 

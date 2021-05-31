@@ -35,7 +35,7 @@ $id=$_SESSION["id"];
         <div style="width: 95%; margin-left: 5%; margin-top: 5%;">
             <div class="search-product">
                 <form class="example" action="action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
+                    <input type="text" placeholder="Search.." name="search" >
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -141,7 +141,7 @@ $id=$_SESSION["id"];
                 <section class="main">
                     <?php
 
-                    $query = "SELECT sellername,booktitle,bookgenre,bookprice,LTRIM(bookpicture) AS img FROM sellbooks";
+                    $query = "SELECT sellerID, sellername,booktitle,bookgenre,bookprice,LTRIM(bookpicture) AS img FROM sellbooks";
                     $query_run = mysqli_query($conn,$query);
                     $check_product = mysqli_num_rows($query_run) > 0;
 
@@ -152,7 +152,7 @@ $id=$_SESSION["id"];
                             ?>
                             <div class="product" >
                                 <form class="" method="post">
-                                <input type="hidden" name="img" value="<?php echo $row['img'];?>">
+                                <input type="hidden" name="id" value="<?php echo $row['sellerID'];?>">
                                     <img src="../Products/<?php echo $row['img'];?>" alt="" class="product-img" height="180px" >
                                     <br>
                                     <input type="hidden" name="booktitle" value="<?php echo $row['booktitle'];?>">
@@ -185,14 +185,11 @@ $id=$_SESSION["id"];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 <?php
 if(isset($_POST['addToCart'])){
-    // $userId=$_SESSION['id'];
-    $img=$_POST['img'];
-    $bookTitle=$_POST['booktitle'];
-    $bookGenre=$_POST['bookGenre'];
-    $bookPrice=$_POST['bookPrice'];
+    $bookId=$_POST['id'];
     
-    $query="insert into cart(userId, productImage, productName, category, price)
-    values('".$id."','".$img."', '".$bookTitle."', '".$bookGenre."', '".$bookPrice."')";
+    
+    $query="insert into cart(userId, sellerID)
+    values('".$id."','".$bookId."')";
     if($conn->query($query)===TRUE){
         ?>
 

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2021 at 12:04 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.1.33
+-- Generation Time: May 31, 2021 at 03:58 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,18 +35,66 @@ CREATE TABLE `admin` (
   `address` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `profile` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`adminId`, `firstname`, `lastname`, `birthdate`, `address`, `email`, `username`, `password`) VALUES
-(1, 'Mery-an', 'Telez', 'August 10, 2000', 'Cebu City', 'telez@gmail.com', 'Mery-an', 'admin1'),
-(2, 'Christine Joy', 'Ditchon', 'May 22, 2000', 'Cebu City', 'joy@gmail.com', 'ChristineJoy', 'admin2'),
-(3, 'David', 'Pael', 'January 25, 2000', 'Negros Oriental', 'david@gmail.com', 'David', 'admin3'),
-(4, 'Dexter', 'Tampioc', 'November 22, 1999', 'Negros Oriental', 'tampioc@gmail.com', 'Dexter', 'admin4');
+INSERT INTO `admin` (`adminId`, `firstname`, `lastname`, `birthdate`, `address`, `email`, `username`, `password`, `profile`) VALUES
+(1, 'Mery-an', 'Telez', 'August 10, 2000', 'Cebu City', 'telez@gmail.com', 'Mery-an', 'admin1', ''),
+(2, 'Christine Joy', 'Ditchon', 'May 22, 2000', 'Cebu City', 'joy@gmail.com', 'ChristineJoy', 'admin2', ''),
+(3, 'David', 'Pael', 'January 25, 2000', 'Negros Oriental', 'david@gmail.com', 'David', 'admin3', ''),
+(4, 'Dexter', 'Tampioc', 'November 22, 1999', 'Negros Oriental', 'tampioc@gmail.com', 'Dexter', 'admin4', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cartID` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `sellerID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cartID`, `userId`, `sellerID`) VALUES
+(3, 12, 63);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `orderID` int(11) NOT NULL,
+  `pic` varchar(50) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `seller` varchar(50) NOT NULL,
+  `price` float NOT NULL,
+  `datePurchased` timestamp NOT NULL DEFAULT current_timestamp(),
+  `dateRecieved` timestamp NULL DEFAULT current_timestamp(),
+  `status` varchar(200) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `cardNumber` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderID`, `pic`, `title`, `category`, `seller`, `price`, `datePurchased`, `dateRecieved`, `status`, `userId`, `cardNumber`) VALUES
+(1, 'group.png', 'sdf', ' Fiction', 'dcfs', 234, '2021-05-31 01:09:00', NULL, 'Cancelled', 14, '1234567898765432'),
+(2, 'hagakhakan1.jpg', 'Hi', ' Fiction', 'Ann', 200, '2021-05-31 01:09:00', NULL, 'Completed', 14, '1234567898765432');
 
 -- --------------------------------------------------------
 
@@ -75,7 +122,8 @@ INSERT INTO `sellbooks` (`sellerID`, `sellername`, `booktitle`, `bookprice`, `bo
 (64, 'Ann', 'Hi', 200, ' Romance', ' Fiction', ' hagakhakan1.jpg', '2021-05-28 16:31:00'),
 (65, 'Ann', 'I love you', 200, ' Romance', ' Fiction', ' carolinian.PNG', '2021-05-28 16:31:41'),
 (66, 'Dexter', 'love', 200, ' Romance', ' Fiction', ' 1.png', '2021-05-28 20:47:38'),
-(67, 'None', 'none', 350, ' Romance', ' Fiction', ' 3.jpg', '2021-05-29 05:21:04');
+(67, 'None', 'none', 350, ' Romance', ' Fiction', ' 3.jpg', '2021-05-29 05:21:04'),
+(68, 'Annetinitibok', 'Gugma', 150, ' Romance', ' Non-Fiction', ' dangas.jpg', '2021-05-31 13:11:44');
 
 -- --------------------------------------------------------
 
@@ -115,6 +163,21 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cartID`),
+  ADD KEY `id` (`userId`),
+  ADD KEY `books` (`sellerID`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderID`),
+  ADD KEY `user` (`userId`);
+
+--
 -- Indexes for table `sellbooks`
 --
 ALTER TABLE `sellbooks`
@@ -137,16 +200,45 @@ ALTER TABLE `admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `sellbooks`
 --
 ALTER TABLE `sellbooks`
-  MODIFY `sellerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `sellerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `books` FOREIGN KEY (`sellerID`) REFERENCES `sellbooks` (`sellerID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `user` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
+
 require_once ("../config.php"); 
-$id=$_SESSION["id"];
+
 
 ?>
 <head>
@@ -58,12 +58,13 @@ hr.new3 {
             <div class="container" style="color: white;">
                 <div class="row">
                     <div class="w-75">
-                        <table class="table border border-dark" style="background-color: rgb(233, 231, 229);box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
+                        <table class="table border border-dark" id="table1" style="background-color: rgb(233, 231, 229);box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
                             <h4 style="color: black;text-align: center;">YOUR CART</h4>
                             <thead>
                                 <tr class="text-center" style="background-color: rgb(219, 43, 102);">
                                     <th>Book</th>
                                     <th>Title</th>
+                                    <th>Seller Name</th>
                                     <th>Category</th>
                                     <th>Price</th>
                                     <th class="action">Action</th>
@@ -72,7 +73,7 @@ hr.new3 {
                             <tbody class="poduct-list">
                             <?php
 
-                                $query ="select * FROM cart";
+                                $query ="select cart.cartID, cart.userId, sellbooks.sellerID, ltrim(sellbooks.bookpicture) as pic, sellbooks.sellername, sellbooks.booktitle, sellbooks.bookcategory,sellbooks.bookprice FROM cart inner join sellbooks on sellbooks.sellerID=cart.sellerID where userId='".$id."'";
                                 $query_run = mysqli_query($conn,$query);
                                 $cart = mysqli_num_rows($query_run) > 0;
 
@@ -81,14 +82,16 @@ hr.new3 {
                                     while($row = mysqli_fetch_assoc($query_run))
                                     {
                                 ?>
-                                    <tr class="text-center" >
-                                    <td style="width:20%"><img src="../Products/<?php echo $row['productImage']?>" alt="" height="130px" ></td>
-                                     <td class="mt-30"><?php echo $row['productName']?></td>
-                                    <td class="mt-30"><?php echo $row['category']?></td>
-                                    <td>Php <span class="price-tag"><?php echo $row['price']?></span></td>
+                                    <tr class="text-center" id="<?php echo $row['sellerID']?>">
+                                    <td style="width:20%" id="<?php echo $row['pic']?>"><img src="../Products/<?php echo $row['pic']?>" alt="" height="130px" ></td>
+                                     <td class="mt-30"><?php echo $row['booktitle']?></td>
+                                     <td class="mt-30"><?php echo $row['sellername']?></td>
+                                    <td class="mt-30"><?php echo $row['bookcategory']?></td>
+                                    <td>Php <span class="price-tag"><?php echo $row['bookprice']?></span></td>
                                     <td class="action">
                                     <form action="" method="post">
                                         <input type="hidden" name="id" value="<?php echo $row['cartID']?>">
+                                        <input type="hidden" name="userId" value="<?php echo $row['userId']?>">
                                         <button type="submit" name="delete" class="btn btn-warning">
                                             <i class="fa fa-trash-o" style="cursor: pointer !important; font-size:25px;color:red;"></i>&nbsp;&nbsp;
                                         </button>
@@ -107,6 +110,7 @@ hr.new3 {
                   
                     <div class="col">
                         <div class="container" style="background-color: rgb(20, 20, 20);box-shadow: 0 6px 10px 0 rgba(128, 2, 50, 0.2), 0 6px 20px 0 rgba(128, 2, 50, 0.19);">
+                            
                             <h5>SUMMARY</h5>
                                <hr class="new4">
                             <div class="container">
@@ -126,37 +130,87 @@ hr.new3 {
                             <div class="container" style="margin-left:20px">
                             <ul>
                             <li>Credit Card</li>
+                            <li>Debit Card</li>
                             </ul>
                             </div>
                             <hr class="new4">
-                            <span>Name on Cards</span><br>
-                            <input type="text"><br>
-
                             <span>Credit Card Number</span>
-                            <input type="text"><br>
-
-                            <span>Exp Month</span>
-                            <input type="text"><br><br>
-
-                            <span>Exp Year</span>
-                            <input type="text" class="w-25">&nbsp;
-
-                            <span>CVV</span>
-                            <input type="text" class="w-25">
+                            <form method="POST">
+                                <input type="hidden" name="bookId" id="bookId" value="">
+                                <input type="hidden" name="title" id="title" value="">
+                                <input type="hidden" name="photo" id="photo" value="">
+                                <input type="hidden" name="seller" id="seller" value="">
+                                <input type="hidden" name="category" id="category" value="">
+                                <input type="hidden" name="total" id="totalBill" value="">
+                                <input type="hidden" name="price" id="price" value="">
+                                <input type="number"  name="cardNumber" value="">
+                                <br><br>
+                                <button type="submit" class="btn btn-primary" name="checkOut" style="background-color: rgb(221, 33, 111); width: 100%;">Checkout</button>
+                                </form>
                             <br><br>
-                            <button type="button" class="btn btn-primary" style="background-color: rgb(221, 33, 111); width: 100%;">Checkout</button>
-                          <br><br>
+                          
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
-<?php
+    
+    <script>
+    $(document).ready(function(){
+            var table=document.getElementById("table1");
+            var r=1; //start counting rows in table
+            var photo=[];
+            var price=[];
+            var seller=[];
+            var category=[];
+            var title=[];
+            var bookId=[];
+            
+            while(row=table.rows[r++])
+            {           
+                $id=row.id
+                bookId.push($id)
+                // console.log($id)
+                $photo=row.cells[0].id;
+                $title=row.cells[1].innerHTML;
+                $seller=row.cells[2].innerHTML;
+                $category=row.cells[3].innerHTML;
+                $price=row.cells[4].innerText;
+                $price=$price.substring(3);
+                console.log($price+$photo+$title+$seller+$category)
+
+                photo.push($photo);
+                price.push($price);
+                seller.push($seller);
+                category.push($category);
+                title.push($title);
+
+
+
+          //start counting columns in row
+            
+            }
+            // alert(bookId)
+        document.getElementById('bookId').value= bookId;
+        document.getElementById('title').value= title;
+        document.getElementById('photo').value= photo;
+        document.getElementById('seller').value= seller;
+        document.getElementById('category').value= category;
+        document.getElementById('price').value= price;
+       
+       
+    })
+
+    </script>
+    
+    <?php
 
     if (isset($_POST['delete'])){
+        
         $cartId=$_POST['id'];
-        $query="delete from cart where cartID='".$cartId."' and userId='".$id."'";
+        $userId=$_POST['userId'];
+        $query="delete from cart where cartID='".$cartId."' and userId='".$userId."'";
 
         if($conn->query($query)===TRUE){
             ?>
@@ -167,7 +221,7 @@ hr.new3 {
          position: 'top-end',
          icon: 'success',
          title: 'Book deleted from cart!',
-         showConfirmButton: false,
+         button: true,
          timer: 1800
        
      })
@@ -179,7 +233,144 @@ hr.new3 {
             
         }
     }
+
+   
+    if (isset($_POST['checkOut'])){
+        $cardNumber=strval($_POST['cardNumber']);
+        if(strlen($cardNumber)!==16){
+            ?>
+
+            <!--fire a successful message using sweet alert -->
+           <script>
+           swal({
+             position: 'top-end',
+             icon: 'warning',
+             title: 'Card number must be 16 digits!',
+             button: true,
+             timer: 1800
+           
+         })
+         setTimeout(() => {
+           location.reload()
+         }, 2000);
+         </script>
+           <?php
+        }else{
+
+      
+        $done=false;
+        $id=$_SESSION['id'];
+        $bookId=$_POST['bookId'];
+        $title=$_POST['title'];
+        $seller=$_POST['seller'];
+        $category=$_POST['category'];
+        $photo=$_POST['photo'];
+        $price=$_POST['price'];
+
+        if($id!="" && $bookId !="" && $title !="" && $seller !="" && $category !="" && $photo !="" && $price !=""){
+        $bookId=explode(",", $bookId);
+        $title=explode(",", $title);
+        $seller=explode(",", $seller);
+        $category=explode(",", $category);
+        $photo=explode(",", $photo);
+        $price=explode(",", $price);
+        // $book1=$books[0];
+        
+        $total=$_POST['total'];
+        date_default_timezone_set('Asia/Manila');
+        $dateCreated=date("Y-m-d h:i:s");
+       // INSERT INTO `orders` (`orderID`, `Books`, `datePurchased`, `dateRecieved`, `status`, `userId`, `cardNumber`) VALUES (NULL, '66', current_timestamp(), NULL, 'Pending', '14', '12345');
+        // $quer="INSERT INTO `orders` (`orderID`, `Books`, `datePurchased`, `dateRecieved`, `status`, `userId`, `cardNumber`) VALUES ( NULL, '2', '".$dateCreated."',NULL, 'Pending', '".$id."','".$cardNumber."')";
+        
+        $i= 0;
+          while($i<count($title)){
+            $bookID=$bookId[$i];
+            $bookTitle=$title[$i];
+            $bookSeller=$seller[$i];
+            $bookCategory=$category[$i];
+            $bookPhoto=$photo[$i];
+            $bookPrice=$price[$i];
+            // echo "<script>alert('$books[$i]+$cardNumber+$id+$dateCreated+var_dump($book)');</script>";
+           
+            $raven="insert into orders(pic, title, category, seller, price, datePurchased, status, dateRecieved, userId, cardNumber)
+            values('".$bookPhoto."', '".$bookTitle."','".$bookCategory."','".$bookSeller."','".$bookPrice."','".$dateCreated."', 'Pending', NULL, '".$id."', '".$cardNumber."')";
+            if($conn->query($raven)){
+                $done=true;
+               
+            }else{
+                $done=false;
+            }
+           
+           $i++;
+
+        }
+        // $raven="insert into orders(Books, datePurchased, status, dateRecieved, userId, cardNumber)
+        // values('".$book."','".$dateCreated."', 'Pending', NULL, '".$id."', '".$cardNumber."')";
+        
+        if($done===TRUE){
+            $query="delete from cart where userId= '".$id."'";  
+            $conn->query($query);
+            ?>
+
+        <!--fire a successful message using sweet alert -->
+       <script>
+       swal({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Book checked out from cart!',
+         button:true,
+         timer: 1800
+       
+     })
+     setTimeout(() => {
+       location.reload()
+     }, 2000);
+     </script>
+       <?php
+            
+        }else{
+            ?>
+
+            <!--fire a successful message using sweet alert -->
+           <script>
+           swal({
+             position: 'top-end',
+             icon: 'warning',
+             title: 'Book already added to your cart!',
+             button: true,
+             timer: 1800
+           
+         })
+         setTimeout(() => {
+           location.reload()
+         }, 2000);
+         </script>
+           <?php
+        
+        }
+        }else{
+            ?>
+
+            <!--fire a successful message using sweet alert -->
+           <script>
+           swal({
+             position: 'top-end',
+             icon: 'warning',
+             title: 'No item in cart!',
+             button: true,
+             timer: 1800
+           
+         })
+         setTimeout(() => {
+           location.reload()
+         }, 2000);
+         </script>
+           <?php
+        }
+    }
+    }
 ?> 
+
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
