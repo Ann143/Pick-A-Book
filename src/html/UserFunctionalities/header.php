@@ -1,7 +1,7 @@
 <?php
 
 require_once ("../config.php"); 
-session_start();
+session_start()
 $id=$_SESSION['id'];
 ?>
 <script src="../../jquery/navigators.js"></script>
