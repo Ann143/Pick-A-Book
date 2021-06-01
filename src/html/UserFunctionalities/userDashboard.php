@@ -1,10 +1,7 @@
 <?php
 session_start();
 require_once ("../config.php"); 
-<<<<<<< HEAD
-=======
 $id=$_SESSION["id"];
->>>>>>> 40e26ffb6f88214b2b4f6e7334c6a4f3fe62b543
 ?>
 
 <!DOCTYPE html>

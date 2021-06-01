@@ -7,6 +7,7 @@
     if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 ?>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <div id="wrapper">
 
     <!-- Sidebar -->

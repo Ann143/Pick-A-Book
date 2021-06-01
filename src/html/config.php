@@ -1,6 +1,6 @@
 <?php
     // //this is for the connection
-    $conn = new mysqli("localhost","root", "","pickabook");
+    $conn = new mysqli("localhost","root", "","book");
 
     //check the connection
     if($conn->connect_error)

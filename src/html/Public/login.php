@@ -6,7 +6,7 @@ session_start();
 //Include connection file
 require_once ("../config.php");
         //Define variables and initialize with empty values
-        $username = $password = "";
+        $username =  $adminName=$password = "";
         $username_err = $password_err = $login_err = "";
 
         //Processing form data when form is submitted

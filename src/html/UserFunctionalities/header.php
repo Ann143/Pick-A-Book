@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
     require_once ("../config.php");
     session_start();
@@ -10,13 +9,11 @@
     if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
     ?>
-=======
 <?php
 
 require_once ("../config.php"); 
 session_start()
 $id=$_SESSION['id'];
->>>>>>> 40e26ffb6f88214b2b4f6e7334c6a4f3fe62b543
 ?>
 <script src="../../jquery/navigators.js"></script>
 <link rel="stylesheet" href="../../css/navigators.css">
@@ -36,9 +33,7 @@ $id=$_SESSION['id'];
         <div onclick="window.location = './cart.php'" class="drop-down cart  cursor-pointer">
             <a href=""> <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/shopping-cart-256.png" alt="Cart">
 
-<<<<<<< HEAD
             </a>
-=======
         <?php
         $query = "SELECT count(cartID) as countCart from cart where userId='".$id."'";
         
@@ -56,7 +51,6 @@ $id=$_SESSION['id'];
               
                 <!-- <i class="fa fa-shopping-cart"></i> -->
             </div>
->>>>>>> 40e26ffb6f88214b2b4f6e7334c6a4f3fe62b543
         </div>
     </div>
     <div class="top-nav-drop-down-privacy d-flex justify-content-end">
