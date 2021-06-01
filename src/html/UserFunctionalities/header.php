@@ -10,10 +10,6 @@
     if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
     ?>
-<?php
-
-      echo "<script>alert($id)</script>";
-?>
 
 <!DOCTYPE html>
 <html lang="en">

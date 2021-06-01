@@ -27,7 +27,6 @@
     require_once("../config.php");
     require_once("header.php");
     $id=$_SESSION["id"];
-    echo "<script>alert('$id')</script>";
 
     ?>
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->

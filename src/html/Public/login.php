@@ -49,7 +49,11 @@ require_once ("../config.php");
                         if(mysqli_stmt_execute($stmt)){
                                 //Store result
                             mysqli_stmt_store_result($stmt);
-                
+                            // $count = mysqli_stmt_num_rows($stmt);
+                            // echo '<div class="alert alert-primary" role="alert">'.$count.'</div> <br>';
+                            
+                            
+
                                 //Check if username exists, if yes then verify password
                 
                             if(mysqli_stmt_num_rows($stmt) == 1){
@@ -65,7 +69,7 @@ require_once ("../config.php");
                                     $_SESSION["username"] = $username;
                 
                                             //Redirect user to userDashboard page
-                                    header("location: ../Admin/index.php");
+                                    // header("location: ../Admin/index.php");
                                             // header("location: ../Admin/myProfile.php");
                                 } else{
                                     //username doesn't exist, display a generic error message
@@ -96,23 +100,23 @@ require_once ("../config.php");
             
                             //Check if username exists, if yes then verify password
             
-                            if(mysqli_stmt_num_rows($stmt) == 1){
+                            if(mysqli_stmt_num_rows($stmt) === 1){
                                
                                 //Bind result variables
-                                mysqli_stmt_bind_result($stmt, $id, $username);
+                                mysqli_stmt_bind_result($stmt, $id, $username, $password);
                                 if(mysqli_stmt_fetch($stmt)){
                                  
                                         //Password is incorrect, so start a new session
-                                        // session_start();
+                                        session_start();
                                        
                                         //Store data in session variables
                                         $_SESSION["loggedin"] = true;
-                                        // $_SESSION["id"] = $id ;
+                                        $_SESSION["id"] = $id ;
                                         $_SESSION["username"] = $username;
 
             
-                                        //Redirect user to userDashboard page
-                                        // header("location: ../UserFunctionalities/userDashboard.php");
+                                        // Redirect user to userDashboard page
+                                        header("location: ../UserFunctionalities/userDashboard.php");
                                     } else{
                                         //Password is not valid, display a generic error message
                                         $login_err = "Invalid username or password";
