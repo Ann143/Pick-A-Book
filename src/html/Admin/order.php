@@ -2,6 +2,7 @@
 session_start();
 require_once ("../config.php");
 require_once ("./header.php");
+
 ?>
 
 
@@ -54,23 +55,40 @@ require_once ("./header.php");
                             </tr>
                         </thead>
                         <tbody style="color: black;font-size: 14px;">
+                        
+                        <?php
+
+                        $sql = "SELECT users.firstname, users.lastname, orders.* FROM `orders`,`users` WHERE orders.userId = users.userId";
+                        $result = $conn -> query($sql);
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()):?>
                             <tr>
-                                <th>Judy Ann Arquisal</th>
-                                <td><img src="../../img/1.jpg" height="90rem"></td>
-                                <td>SandMan</td>
-                                <td>Mery-an Telez</td>
-                                <td>Action</td>
-                                <td>P 1000.00</td>
+                                <th><?php echo $row['firstname']." ".$row['lastname'];?></th>
+                                <td><img src="../Products/<?php echo $row['pic']?>" height="90rem"></td>
+                                <td><?php echo $row['title']?></td>
+                                <td><?php echo $row['seller']?></td>
+                                <td><?php echo $row['category']?></td>
+                                <td>P <?php echo $row['price']?>.00</td>
                                 <td>Gcash</td>
-                                <td>May 6, 2021</td>
-                                <td>May 7, 2021</td>
-                                <td>Completed</td>
+                                <td><?php echo $row['datePurchased']?></td>
+                                <td><?php echo $row['dateRecieved']?></td>
+                                <td><?php echo $row['status']?></td>
                                 <td>
-                                    <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
-                                    <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
+
+                                <a href=""></a>
+                                <?php if ($row['status'] == "Pending"){
+                                    echo '<i class="far fa-caret-circle-down" style="font-size: 20px; font-weight:bold; color: cyan;"></i>';
+                                    }else if($row['status'] == "Completed"){
+                                    echo '<i class="fas fa-check-circle" style="font-size: 20px; color: chartreuse;"></i>';
+                                }else{
+                                    echo '<i class="fas fa-check-circle" style="font-size: 20px; color: chartreuse;"></i>';
+                                }?>
+                                <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
                                 </td>
                             </tr>
-                            <tr>
+                            <?php endwhile; 
+                        }?>
+                            <!-- <tr>
                                 <th>Judy Ann Arquisal</th>
                                 <td><img src="../../img/2.jpg" height="90rem"></td>
                                 <td>The Stand</td>
@@ -101,7 +119,7 @@ require_once ("./header.php");
                                     <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
                                     <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -148,7 +166,7 @@ require_once ("./header.php");
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+ 
 
 </body>
 
