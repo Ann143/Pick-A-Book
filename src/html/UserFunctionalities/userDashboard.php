@@ -1,8 +1,4 @@
-<?php
-session_start();
-require_once ("../config.php"); 
-$id=$_SESSION["id"];
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +23,17 @@ $id=$_SESSION["id"];
 <body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
 <?php
+
+    require_once("../config.php");
     require_once("header.php");
+    $id=$_SESSION["id"];
+    echo "<script>alert('$id')</script>";
+
     ?>
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
 
     <div id="main">
-        <div style="width: 95%; margin-left: 5%; margin-top: 5%;">
+        <div style="width: 95%; margin-left: 14%; margin-top: 5%;">
             <div class="search-product">
                 <form class="example" action="action_page.php">
                     <input type="text" placeholder="Search.." name="search" >
@@ -130,11 +131,6 @@ $id=$_SESSION["id"];
 
                     </ul>
 
-                    <!-- <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol> -->
 
                 </section>
 
@@ -164,7 +160,7 @@ $id=$_SESSION["id"];
                                     <span class="product-genre color"> <?php echo $row['bookgenre']; ?>
                                     <br>
                                     <span class="product-price color">&#8369;<?php echo $row['bookprice']; ?>.00</span>
-                                    <button type="submit" class="btn  " name="addToCart"> <i class="fas fa-shopping-cart" style="color:#de094c"></i></button>
+                                    <button type="submit" class="btn" name="addToCart"> <i class="fas fa-shopping-cart" style="color:#de094c"></i></button>
                                 </form>
                             </div>
 
@@ -187,7 +183,7 @@ $id=$_SESSION["id"];
 if(isset($_POST['addToCart'])){
     $bookId=$_POST['id'];
     
-    
+    $id=$_SESSION["id"];
     $query="insert into cart(userId, sellerID)
     values('".$id."','".$bookId."')";
     if($conn->query($query)===TRUE){

@@ -26,12 +26,8 @@
 
 <?php
     require_once("header.php");
-<<<<<<< HEAD
-?>
-=======
     session_start();
     ?>
->>>>>>> 40e26ffb6f88214b2b4f6e7334c6a4f3fe62b543
 
     <div id="main" class="container" style="margin-top: 8%;">
         <div>

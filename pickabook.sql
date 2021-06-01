@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2021 at 03:58 PM
+-- Generation Time: Jun 01, 2021 at 08:35 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -36,18 +36,18 @@ CREATE TABLE `admin` (
   `email` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `profile` varchar(255) NOT NULL
+  `adminPic` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`adminId`, `firstname`, `lastname`, `birthdate`, `address`, `email`, `username`, `password`, `profile`) VALUES
-(1, 'Mery-an', 'Telez', 'August 10, 2000', 'Cebu City', 'telez@gmail.com', 'Mery-an', 'admin1', ''),
+INSERT INTO `admin` (`adminId`, `firstname`, `lastname`, `birthdate`, `address`, `email`, `username`, `password`, `adminPic`) VALUES
 (2, 'Christine Joy', 'Ditchon', 'May 22, 2000', 'Cebu City', 'joy@gmail.com', 'ChristineJoy', 'admin2', ''),
 (3, 'David', 'Pael', 'January 25, 2000', 'Negros Oriental', 'david@gmail.com', 'David', 'admin3', ''),
-(4, 'Dexter', 'Tampioc', 'November 22, 1999', 'Negros Oriental', 'tampioc@gmail.com', 'Dexter', 'admin4', '');
+(4, 'Dexter', 'Tampioc', 'November 22, 1999', 'Negros Oriental', 'tampioc@gmail.com', 'Dexter', 'admin4', ''),
+(6, 'Mery-an', 'Telez', 'August 10, 2000', 'Cebu City', 'telez@gmail.com', 'Mery-an', 'admin1', 'antonnete5.jpg');
 
 -- --------------------------------------------------------
 
@@ -140,17 +140,18 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `userPic` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userId`, `firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `password`, `created_at`) VALUES
-(12, 'Mery-an', 'Telez', 'July 31, 1999', 'Talamban', 'Ann', 'mtelez138@gmail.com', '$2y$10$WRCzWzipiv2zCyVvA5MmLe.sR63MTwE55qRJMFWj7LDY2PG4vOLHu', '2021-05-14 08:57:56'),
-(13, 'Dexter', 'Tampioc', 'May 22, 2000', 'Cebu', 'None', 'none@gmail.com', '$2y$10$2QzD0OpjhtI0v1lrBMIfgeK0QpO5.2Bh.MD9z/GZHfHu//gFH4IVq', '2021-05-29 01:19:52'),
-(14, 'Papang', 'Tampioc', 'May 22, 2000', 'Cebu', 'Papang', 'dexter@test', '$2y$10$.v4cOMtDW3wgdMEeZiW5ZeygkubjnpBMUBbf8Lm2pFwL48SSRWoBK', '2021-05-29 01:58:36');
+INSERT INTO `users` (`userId`, `firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `password`, `created_at`, `userPic`) VALUES
+(12, 'Mery-an', 'Telez', 'July 31, 1999', 'Talamban', 'Ann', 'mtelez138@gmail.com', '$2y$10$WRCzWzipiv2zCyVvA5MmLe.sR63MTwE55qRJMFWj7LDY2PG4vOLHu', '2021-05-14 08:57:56', ''),
+(13, 'Dexter', 'Tampioc', 'May 22, 2000', 'Cebu', 'None', 'none@gmail.com', '$2y$10$2QzD0OpjhtI0v1lrBMIfgeK0QpO5.2Bh.MD9z/GZHfHu//gFH4IVq', '2021-05-29 01:19:52', ''),
+(14, 'Papang', 'Tampioc', 'May 22, 2000', 'Cebu', 'Papang', 'dexter@test', '$2y$10$.v4cOMtDW3wgdMEeZiW5ZeygkubjnpBMUBbf8Lm2pFwL48SSRWoBK', '2021-05-29 01:58:36', '');
 
 --
 -- Indexes for dumped tables
@@ -197,13 +198,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `orders`

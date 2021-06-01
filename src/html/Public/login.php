@@ -6,7 +6,7 @@ session_start();
 //Include connection file
 require_once ("../config.php");
         //Define variables and initialize with empty values
-        $username =  $adminName=$password = "";
+        $username =$adminName=$password = "";
         $username_err = $password_err = $login_err = "";
 
         //Processing form data when form is submitted
@@ -54,14 +54,14 @@ require_once ("../config.php");
                 
                             if(mysqli_stmt_num_rows($stmt) == 1){
                                     //Bind result variables
-                                mysqli_stmt_bind_result($stmt, $id, $username);
+                                mysqli_stmt_bind_result($stmt, $id);
                                     
                                             //Password is incorrect, so start a new session
-                                    session_start();
+                                    // session_start();
                 
                                             //Store data in session variables
                                     $_SESSION["loggedin"] = true;
-                                    $_SESSION["id"] = $id;
+                                    $_SESSION["id"]= $id;
                                     $_SESSION["username"] = $username;
                 
                                             //Redirect user to userDashboard page
@@ -84,7 +84,7 @@ require_once ("../config.php");
 
                     if($stmt = mysqli_prepare($conn,$sql)){
                         //Bind variables to the prepared statement as parameters
-                        mysqli_stmt_bind_param($stmt, "s", $param_username);
+                        mysqli_stmt_bind_param($stmt,"s", $param_username);
             
                         //Set parameters
                         $param_username = $username;
@@ -97,21 +97,22 @@ require_once ("../config.php");
                             //Check if username exists, if yes then verify password
             
                             if(mysqli_stmt_num_rows($stmt) == 1){
+                               
                                 //Bind result variables
                                 mysqli_stmt_bind_result($stmt, $id, $username);
                                 if(mysqli_stmt_fetch($stmt)){
                                  
                                         //Password is incorrect, so start a new session
-                                        session_start();
-            
+                                        // session_start();
+                                       
                                         //Store data in session variables
                                         $_SESSION["loggedin"] = true;
-                                        $_SESSION["id"] = $id;
+                                        // $_SESSION["id"] = $id ;
                                         $_SESSION["username"] = $username;
 
             
                                         //Redirect user to userDashboard page
-                                        header("location: ../UserFunctionalities/userDashboard.php");
+                                        // header("location: ../UserFunctionalities/userDashboard.php");
                                     } else{
                                         //Password is not valid, display a generic error message
                                         $login_err = "Invalid username or password";

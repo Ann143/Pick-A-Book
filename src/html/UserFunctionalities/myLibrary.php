@@ -64,13 +64,9 @@ h4 {
 </style>
 
 <body>
-<<<<<<< HEAD
     <?php
-=======
-<?php
-    require_once ("../config.php"); 
->>>>>>> 40e26ffb6f88214b2b4f6e7334c6a4f3fe62b543
     require_once("header.php");
+    require("../config.php");
     session_start();
     ?>
 
