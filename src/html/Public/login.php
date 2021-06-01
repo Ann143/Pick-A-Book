@@ -49,8 +49,7 @@ require_once ("../config.php");
                         if(mysqli_stmt_execute($stmt)){
                                 //Store result
                             mysqli_stmt_store_result($stmt);
-                            // $count = mysqli_stmt_num_rows($stmt);
-                            // echo '<div class="alert alert-primary" role="alert">'.$count.'</div> <br>';
+                            
                             
                             
 
@@ -58,7 +57,7 @@ require_once ("../config.php");
                 
                             if(mysqli_stmt_num_rows($stmt) == 1){
                                     //Bind result variables
-                                mysqli_stmt_bind_result($stmt, $id);
+                                mysqli_stmt_bind_result($stmt, $id, $username, $password);
                                     
                                             //Password is incorrect, so start a new session
                                     // session_start();
