@@ -57,31 +57,23 @@ require_once ("./header.php");
                         </thead>
 
                         <tbody style="color: black;">
-                            <?php
-                                     
-                                     $query = "SELECT sellername FROM sellbooks";
-                                     $query_run = mysqli_query($conn,$query);
+                            <?php      
+                                $query = "SELECT DISTINCT sellername FROM sellbooks";
+                                $query_run = mysqli_query($conn,$query);
  
-                                     while($row = mysqli_fetch_array($query_run))
-                                     {
-                                         ?>
+                                while($row = mysqli_fetch_array($query_run)) {
+                            ?>
 
                             <tr>
                                 <td data-toggle="modal" data-target="#exampleModal1"> <?php echo $row['sellername']?>
                                 </td>
-                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                <td>
+                                    <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
                                 </td>
                             </tr>
-
-                            <?php
-                                         
-                                     }
-                                     ?>
-
+                            <?php }?>
                         </tbody>
-
                     </table>
                 </div>
 
@@ -220,6 +212,10 @@ require_once ("./header.php");
         </div>
     </div>
 
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js "></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>

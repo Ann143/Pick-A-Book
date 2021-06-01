@@ -2,6 +2,9 @@
 session_start();
 require_once ("../config.php");
 require_once ("./header.php");
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+while($row = $result->fetch_assoc()) {
 ?>
 
 <head>
@@ -41,7 +44,6 @@ require_once ("./header.php");
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success" style="margin-right: 26px;" data-toggle="modal"
                         data-target="#addProduct">
-
                         Add Product
                     </button>
 
@@ -59,7 +61,6 @@ require_once ("./header.php");
                     
                        
                         $uploads_dir = '../Products/';
-                    
                         if(file_exists($uploads_dir.$bookPicture))
                         {
                            
@@ -121,7 +122,8 @@ require_once ("./header.php");
                                                                     style="color: #e32467;"></i></div>
                                                         </div>
                                                         <input type="text" class="form-control" name="sellerName"
-                                                            placeholder="Full Name">
+                                                            placeholder="Full Name"
+                                                            value="<?php echo $row['firstname'] ?> <?php echo $row['lastname'] ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -189,8 +191,7 @@ require_once ("./header.php");
                                                 <label for="exampleFormControlFile1" style="margin-left: 15px;">Book
                                                     Picture:</label>
                                                 <div class="container" style="margin-left: 20px;">
-                                                    <input type="file" class="form-control-file" name="bookPicture"
-                                                        id="exampleFormControlFile1">
+                                                    <input type="file" class="form-control-file" name="bookPicture" id="exampleFormControlFile1">
                                                 </div>
                                             </div>
                                             <div class="modal-footer ">
@@ -199,13 +200,13 @@ require_once ("./header.php");
                                                 <button class="btn btn-danger" name="cancel">Cancel</button>
                                             </div>
                                         </form>
+                                        <?php }}?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="container ">
@@ -831,7 +832,6 @@ require_once ("./header.php");
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Biography'";
                                      $query_run = mysqli_query($conn,$query);
- 
                                      while($row = mysqli_fetch_array($query_run))
                                      {
                                          ?>
@@ -846,14 +846,8 @@ require_once ("./header.php");
                                                 <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
                                             </td>
-
                                         </tr>
-
-                                        <?php
-                                         
-                                     }
- 
-                                     ?>
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -888,26 +882,6 @@ require_once ("./header.php");
     <a class="scroll-to-top rounded " href="#page-top ">
         <i class="fas fa-angle-up "></i>
     </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel "
-        aria-hidden="true ">
-        <div class="modal-dialog " role="document ">
-            <div class="modal-content ">
-                <div class="modal-header ">
-                    <h5 class="modal-title " id="exampleModalLabel ">Ready to Leave?</h5>
-                    <button class="close " type="button " data-dismiss="modal " aria-label="Close ">
-                        <span aria-hidden="true ">×</span>
-                    </button>
-                </div>
-                <div class="modal-body ">Select "Logout " below if you are ready to end your current session.</div>
-                <div class="modal-footer ">
-                    <button class="btn btn-secondary " type="button " data-dismiss="modal ">Cancel</button>
-                    <a class="btn btn-primary " href="login.html ">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js "></script>

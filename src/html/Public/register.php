@@ -125,7 +125,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $param_address = $address;
         $param_username = $username;
         $param_email = $email;
-        $param_password = password_hash($password, PASSWORD_DEFAULT); //CreateS a password hash
+        $param_password =$password; //CreateS a password hash
         $param_datecreated =$datecreated;
      
 
