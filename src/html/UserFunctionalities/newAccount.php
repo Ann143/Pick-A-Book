@@ -1,9 +1,11 @@
 <?php
-    session_start();
-    require_once("header.php");
+session_start();
+require_once ("../config.php");
+require_once ("./header.php");
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+while($row = $result->fetch_assoc()) {
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <title>My Account</title>
@@ -28,17 +30,7 @@
 </head>
 
 <body>
-    <?php
-    // require_once("header.php");
-    require_once ("../config.php");
-    $username = $_SESSION["username"];
-    $id = $_SESSION["id"];
-    $sql = "SELECT `userId`, `firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `created_at` FROM `users` WHERE `username` = '".$username."'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-    ?>
+
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
 
     <div style="margin-top: 10%;">
@@ -47,8 +39,7 @@
                 <div class="col-md-4">
                     <div id="frame" class="text-center border border-dark rounded viewInfo">
                         <img id="image1" class="img-fluid border border-dark rounded-circle w-100"
-                            src="https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg"
-                            class="avatar img-circle" alt="avatar">
+                            src="../adminPic/<?php echo $row['userPic']; ?>" class="avatar img-circle" alt="avatar">
                         <div class="container">
                             <h5><?php echo $username?></h5>
                             <p>Joined Pick-A-Book on</p>
@@ -72,7 +63,7 @@
                                     <label style="font-weight:bold;">Full Name:</label>
                                 </div>
                                 <div class="col-md-8 col-6">
-                                <?php echo $row['firstname'] ?>  <?php echo $row['lastname'] ?>
+                                    <?php echo $row['firstname'] ?> <?php echo $row['lastname'] ?>
                                 </div>
                             </div>
                             <hr />
@@ -82,7 +73,7 @@
                                     <label style="font-weight:bold;">Birth Date:</label>
                                 </div>
                                 <div class="col-md-8 col-">
-                                <?php echo $row['birthdate'] ?>
+                                    <?php echo $row['birthdate'] ?>
                                 </div>
                             </div>
                             <hr />
@@ -91,7 +82,7 @@
                                     <label style="font-weight:bold;">Address:</label>
                                 </div>
                                 <div class="col-md-8 col-">
-                                <?php echo $row['address'] ?>
+                                    <?php echo $row['address'] ?>
                                 </div>
                             </div>
                             <hr />
@@ -102,18 +93,9 @@
                                     <label style="font-weight:bold;">Email:</label>
                                 </div>
                                 <div class="col-md-8 col-6">
-                                <?php echo $row['email'] ?>
+                                    <?php echo $row['email'] ?>
                                 </div>
                             </div>
-                            <hr />
-                            <!-- <div class="row">
-                                <div class="col-sm-3 col-md-3 col-5">
-                                    <label style="font-weight:bold;">Password</label>
-                                </div>
-                                <div class="col-md-8 col-6">
-                                    Not Set
-                                </div>
-                            </div> -->
                             <hr />
                         </div>
                     </div>
@@ -126,7 +108,183 @@
                 </div>
             </div>
         </div>
+
+        <?php
+                    if(isset($_POST['publish'])){
+                        
+                        $userId = $row['userId'];
+                        $fName = $_POST['fname'];
+                        $lName =$_POST['lname'];
+                        $birthDate =$_POST['birthdate'];
+                        $address =$_POST['address'];
+                        $username =$_POST['username'];
+                        $email =$_POST['email'];
+                        $newPass =$_POST['newPass'];
+                        $created_at = $row['created_at'];
+                        $userPic=$_FILES['userPic']["name"];   
+
+                        $uploads_dir = '../adminPic/';
+                        $uploads_dir . basename($_FILES['userPic']["name"]);
+                        if(empty($_FILES['userPic']["name"])) {
+                            $query = "UPDATE `users` SET `firstname`='$fName',`lastname`='$lName',`birthdate`='$birthDate',`address`='$address',`username`='$username',`email`='$email',`password`='$newPass',`created_at`= '$created_at' WHERE `userId`= $userId";
+                            $query_run = mysqli_query($conn,$query);
+                        } else {
+                                $query1 = "DELETE FROM `users` WHERE `userId` = $userId";
+                                $query="INSERT INTO `users` (`firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `password`, `created_at`, `userPic`) VALUES ('$fName','$lName','$birthDate','$address','$username','$email','$newPass','$created_at','$userPic')";
+                                $query_run = mysqli_query($conn,$query);
+                                $query_run = mysqli_query($conn,$query1);
+                                move_uploaded_file($_FILES["userPic"]["tmp_name"],$uploads_dir.$userPic);
+                                
+                        }
+                    }
+                    ?>
         <!-- Modal -->
+        <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body main-secction rounded">
+                        <form style="margin-left: 40px;" action="" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div id="frame"
+                                        class="text-center border border-dark rounded main-secction p-3 pl-3 pr-3">
+                                        <img id="preview" style="height: 200px;"
+                                            class="img-fluid border border-dark rounded-circle w-100"
+                                            src="../adminPic/<?php echo $row['userPic']; ?>" class="avatar img-circle"
+                                            alt="avatar">
+
+                                        <p>Upload a different photo...</p>
+
+                                        <input type="file" name="userPic" id="exampleFormControlFile1">
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-8 personal-info border border-dark rounded float-center main-secction pl-5 pr-5 ml-5">
+                                    <center>
+                                        <h5 class="mt-4 mb-3" id="name">Personal Information</h5>
+                                    </center>
+
+                                    <div class="form-row d-flex justify-content-around d-flex justify-content-around">
+                                        <div class="col-auto">
+                                            <label>First Name</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-user"
+                                                            style="color: #e32467;"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control" name="fname"
+                                                    placeholder="Firstname" value="<?php echo $row['firstname'] ?>">
+                                            </div>
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <div class="col-auto">
+                                            <label>Last Name</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-user"
+                                                            style="color: #e32467;"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control" name="lname"
+                                                    placeholder="Lastname" value="<?php echo $row['lastname'] ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row d-flex justify-content-around">
+                                        <div class="col-auto">
+                                            <label>Birthdate</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-birthday-cake"
+                                                            style="color: #e32467;"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control" name="birthdate"
+                                                    placeholder="Birthdate" value="<?php echo $row['birthdate'] ?>">
+                                            </div>
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <div class="col-auto">
+                                            <label>Address</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-map-marker"
+                                                            style="color: #e32467;"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control" name="address"
+                                                    placeholder="Address" value="<?php echo $row['address'] ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row d-flex justify-content-around">
+                                        <div class="col-auto">
+                                            <label>Username</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text" style="color:  #e32467;;">
+                                                        @</div>
+                                                </div>
+                                                <input type="text" class="form-control" name="username"
+                                                    placeholder="Username" value="<?php echo $row['username'] ?>">
+                                            </div>
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <div class="col-auto">
+                                            <label>Email</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-envelope"
+                                                            style="color: #e32467;"></i></div>
+                                                </div>
+                                                <input type="text" class="form-control" name="email" placeholder="Email"
+                                                    value="<?php echo $row['email'] ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row d-flex justify-content-around">
+                                        <div class="col-auto">
+                                            <label>Current Password</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fa fa-key" style="color: #e32467;"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="password" class="form-control" placeholder="Password"
+                                                    value="<?php echo $row['password'] ?>">
+                                            </div>
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        <div class="col-auto">
+                                            <label>New Password</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"> <i class="fa fa-key"
+                                                            style="color: #e32467;"></i></div>
+                                                </div>
+                                                <input type="password" name="newPass" class="form-control"
+                                                    value="<?php echo $row['password'] ?>" placeholder="New Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer ">
+                                        <button class="btn btn-outline-primary" style="margin-left: 150px;"
+                                            name="publish">Save Changes</button>
+                                        <button class="btn btn-outline-danger" name="cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <?php } }?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--         
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-xl">
@@ -141,9 +299,10 @@
                         <div class="row" id="upload">
                             <div class="col-md-3">
                                 <div id="frame" class="text-center border border-dark rounded main-secction">
-                                    <img id="image" class="img-fluid border border-dark rounded-circle w-100"
-                                    src="https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg" class="avatar img-circle"
-                                        alt="avatar">
+                                    <img id="preview" style="height: 200px;"
+                                        class="img-fluid border border-dark rounded-circle w-100"
+                                        src="https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg"
+                                        class="avatar img-circle" alt="avatar">
                                     <p>Upload a different photo...</p>
 
                                     <input type="file" class="form-control">
@@ -155,7 +314,7 @@
                                 <center>
                                     <h5>Personal Information</h5>
                                 </center>
-                                <form style="margin-left: 90px;">
+                                <form style="margin-left: 90px;" action="" method="post" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <div class="col-auto">
                                             <label>First Name</label>
@@ -261,19 +420,34 @@
                                     <button type="button" id="save" class="btn btn-primary ">Save
                                         Changes</button>
                                 </div>
-                                <?php } } ?>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><br>
+        </div><br> -->
         <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
-        </script><br>
+        $(document).on("click", ".browse", function() {
+            var file = $(this).parents().find(".file");
+            file.trigger("click");
+        });
+        $('input[type="file"]').change(function(e) {
+            var fileName = e.target.files[0].name;
+            $("#file").val(fileName);
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                // get loaded data and render thumbnail.
+                document.getElementById("preview").src = e.target.result;
+            };
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        });
+        </script>
     </div>
 
 </body>
