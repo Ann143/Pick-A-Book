@@ -31,6 +31,12 @@ function showDate(){
     $(".date-list").toggle();
 }
 
+$(".bi-cart3").click(function(){
+    console.log('clicked')
+
+
+});
+
 
 /////////////////////////////////////////
 //            DASHBOARD.html
