@@ -36,7 +36,7 @@ require_once ("../config.php");
             if(empty($username_err) && empty($password_err)){
                 //Prepare a statement
                 if ($_POST["username"] == $adminName){
-                    $sql = "SELECT `adminId`, `username`, `password` FROM `admin` WHERE `username` = '".$username."'";
+                    $sql = "SELECT `adminId`, `username`, `password` FROM `admin` WHERE `username` = ?";
                 
                     if($stmt = mysqli_prepare($conn,$sql)){
                             //Bind variables to the prepared statement as parameters
@@ -60,7 +60,7 @@ require_once ("../config.php");
                                 mysqli_stmt_bind_result($stmt, $id, $username, $password);
                                     
                                             //Password is incorrect, so start a new session
-                                    // session_start();
+                                    session_start();
                 
                                             //Store data in session variables
                                     $_SESSION["loggedin"] = true;
@@ -68,7 +68,7 @@ require_once ("../config.php");
                                     $_SESSION["username"] = $username;
                 
                                             //Redirect user to userDashboard page
-                                    // header("location: ../Admin/index.php");
+                                    header("location: ../Admin/index.php");
                                             // header("location: ../Admin/myProfile.php");
                                 } else{
                                     //username doesn't exist, display a generic error message
