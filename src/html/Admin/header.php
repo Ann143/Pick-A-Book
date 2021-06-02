@@ -1,5 +1,6 @@
 <?php 
     require_once ("../config.php");
+    session_start();
     $username = $_SESSION["username"];
     $id = $_SESSION["id"];
     $sql = "SELECT `adminId`, `firstname`, `lastname`, `birthdate`, `address`, `username`, `email`,`password`,`adminPic` FROM `admin` WHERE `username` = '".$username."'";
@@ -147,7 +148,7 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">3+</span>
+                            <span class="badge badge-danger badge-counter"></span>
                         </a>
                         <!-- Dropdown - Alerts -->
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -155,7 +156,7 @@
                             <h6 class="dropdown-header">
                                 Notification
                             </h6>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="mr-3">
                                     <div class="icon-circle bg-primary">
                                         <i class="fas fa-file-alt text-white"></i>
@@ -166,7 +167,7 @@
                                     <span class="font-weight-bold">Maria order 2 books!</span>
                                 </div>
                             </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a> -->
                         </div>
                     </li>
 
@@ -176,7 +177,7 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-envelope fa-fw"></i>
                             <!-- Counter - Messages -->
-                            <span class="badge badge-danger badge-counter">7</span>
+                            <span class="badge badge-danger badge-counter"></span>
                         </a>
                         <!-- Dropdown - Messages -->
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -185,7 +186,7 @@
                                 Message
                             </h6>
 
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
                                     <img class="rounded-circle" src="../Admin/img/adventure.png" alt="">
                                     <div class="status-indicator bg-warning"></div>
@@ -196,7 +197,7 @@
                                 </div>
                             </a>
 
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a> -->
                         </div>
                     </li>
 

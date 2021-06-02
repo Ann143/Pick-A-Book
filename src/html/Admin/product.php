@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once ("../config.php");
 require_once ("./header.php");
 $result = $conn->query($sql);
@@ -431,14 +430,14 @@ while($row = $result->fetch_assoc()) {
 
                                             </tr>
 
-                                            <?php
-                                        
-                                    }
-
-                                    ?>
+                                            <?php }?>
                                         </tbody>
                                     </table>
                                 </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
+
                             </div>
                             <div class="modal-footer ">
                                 <button type="button " class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -459,20 +458,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Adventure'";
                                      $query_run = mysqli_query($conn,$query);
@@ -481,27 +481,31 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
 
-                                        <?php
+                                            <?php
                                          
                                      }
  
                                      ?>
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer ">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -521,20 +525,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Drama'";
                                      $query_run = mysqli_query($conn,$query);
@@ -543,27 +548,31 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
 
-                                        <?php
+                                            <?php
                                          
                                      }
  
                                      ?>
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer ">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -583,20 +592,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Fantasy'";
                                      $query_run = mysqli_query($conn,$query);
@@ -605,26 +615,30 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
 
-                                        <?php
+                                            <?php
                                          
                                      }
  
                                      ?>
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer ">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -644,20 +658,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Essay'";
                                      $query_run = mysqli_query($conn,$query);
@@ -666,26 +681,30 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
 
-                                        <?php
+                                            <?php
                                          
                                      }
  
                                      ?>
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer ">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -705,20 +724,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Poetry'";
                                      $query_run = mysqli_query($conn,$query);
@@ -727,26 +747,30 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
 
-                                        <?php
+                                            <?php
                                          
                                      }
  
                                      ?>
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer ">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -766,20 +790,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='History'";
                                      $query_run = mysqli_query($conn,$query);
@@ -788,26 +813,30 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
 
-                                        <?php
+                                            <?php
                                          
                                      }
  
                                      ?>
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer ">
                                 <button type="button" class="btn btn-warning " data-dismiss="modal">Close</button>
@@ -828,20 +857,21 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <table class="table table-sm " style="color: black;text-align: center; ">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col ">Book</th>
-                                            <th scope="col ">Title</th>
-                                            <th scope="col ">Seller</th>
-                                            <th scope="col ">Price</th>
-                                            <th scope="col ">Action</th>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <table class="table table-sm " style="color: black;text-align: center; ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col ">Book</th>
+                                                <th scope="col ">Title</th>
+                                                <th scope="col ">Seller</th>
+                                                <th scope="col ">Price</th>
+                                                <th scope="col ">Action</th>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                      
                                      $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Biography'";
                                      $query_run = mysqli_query($conn,$query);
@@ -849,20 +879,24 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <tr>
+                                                <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
+                                                        class="product-img" height="100px" width="100px"></td>
+                                                <td> <?php echo $row['booktitle']?></td>
+                                                <td> <?php echo $row['sellername']?></td>
+                                                <td> &#8369; <?php echo $row['bookprice']?>.00</td>
+                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
-                                            </td>
-                                        </tr>
-                                        <?php }?>
-                                    </tbody>
-                                </table>
+                                                </td>
+                                            </tr>
+                                            <?php }?>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <?php if($query_run->num_rows == 0){
+                                    echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
+                                    }?>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

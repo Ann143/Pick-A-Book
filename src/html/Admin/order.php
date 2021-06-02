@@ -1,7 +1,6 @@
 <?php
-session_start();
 require_once ("../config.php");
-require_once ("./header.php");
+require_once ("header.php");
 
 ?>
 
@@ -14,7 +13,9 @@ require_once ("./header.php");
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -38,7 +39,8 @@ require_once ("./header.php");
                 </div>
                 <!-- Table for Order -->
                 <div class="container">
-                    <table class="table text-center" style="box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
+                    <table class="table text-center"
+                        style="box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
                         <thead style="background-color: #b30930; color: white;">
                             <tr>
                                 <th>Customer Name</th>
@@ -55,8 +57,8 @@ require_once ("./header.php");
                             </tr>
                         </thead>
                         <tbody style="color: black;font-size: 14px;">
-                        
-                        <?php
+
+                            <?php
 
                         $sql = "SELECT users.firstname, users.lastname, orders.* FROM `orders`,`users` WHERE orders.userId = users.userId";
                         $result = $conn -> query($sql);
@@ -75,8 +77,8 @@ require_once ("./header.php");
                                 <td><?php echo $row['status']?></td>
                                 <td>
 
-                                
-                                <?php 
+
+                                    <?php 
                                 
                                 if ($row['status'] != "Canceled" && $row['status'] != "Completed"){
                                 
@@ -112,12 +114,26 @@ require_once ("./header.php");
                                 
                                 ?>
 
-                                
+
                                 </td>
                             </tr>
                             <?php endwhile; 
-                        }?>
-                           
+                        }else {?>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+                                integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+                                crossorigin="anonymous"></script>
+                            <script>
+                            swal({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'No Orders Yet!',
+                                button: true,
+                                timer: 1800
+
+                            })
+                            </script>
+                            <?php }?>
+
                         </tbody>
                     </table>
                 </div>
@@ -155,7 +171,7 @@ require_once ("./header.php");
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
- 
+
 
 </body>
 
