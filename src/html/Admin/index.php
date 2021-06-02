@@ -125,8 +125,8 @@ require_once ("./header.php");
         <div class="col-xl-8 col-lg-7">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Seller's Information</h6>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between"  style="background-color:#f0184a;color: black;">
+                    <h6 class="m-0 font-weight-bold text-light">Seller's Information</h6>
 
                 </div>
                 <!-- Card Body -->
@@ -134,7 +134,7 @@ require_once ("./header.php");
                     <div class="table-responsive">
                         <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0"
                             style="color: black;">
-                            <thead>
+                            <thead style="background-color:#fc426d;color: black;">
                                 <tr>
                                     <th>Name</th>
                                     <th>Quantity of Books</th>
@@ -160,11 +160,11 @@ require_once ("./header.php");
         <div class="col-xl-4 col-lg-5">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Orders</h6>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style="background-color:#f0184a;color: black;">
+                    <h6 class="m-0 font-weight-bold text-light">Orders</h6>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
+                <div class="card-body" style="color:black">
                     <?php
                         $query = "SELECT DISTINCT users.firstname as userFname, users.lastname as userLname FROM users INNER JOIN orders ON users.userId = orders.userId";
                         $query_run = mysqli_query($conn,$query);
@@ -185,7 +185,7 @@ require_once ("./header.php");
 <!-- End of Main Content -->
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<footer class="sticky-footer bg-white" style="margin-top:60px">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright &copy; Pick-A-Book 2021</span>

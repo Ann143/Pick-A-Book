@@ -73,7 +73,6 @@
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="ratedBook.php">Most Rated Books</a>
                     <a class="collapse-item" href="bestSoldBook.php">Best Sold Books</a>
                 </div>
             </div>

@@ -48,7 +48,7 @@ require_once ("./header.php");
                 <div class="container" style="margin-left:200px;width:70%;">
                     <table id="example" class="table table-striped"
                         style="width:90%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);text-align: center;">
-                        <thead style="background-color: black;color: blanchedalmond;">
+                        <thead style="background-color: #d40d3b; color: white;">
                             <tr>
                                 <th>Seller's Name</th>
                                 <th>Action</th>
@@ -175,7 +175,7 @@ require_once ("./header.php");
                 </div>
                 <!-- Footer -->
 
-                <footer class="sticky-footer bg-white" style="margin-top:160px">
+                <footer class="sticky-footer bg-white" style="margin-top:80px">
                     <div class="container my-auto ">
                         <div class="copyright text-center my-auto ">
                             <span>Copyright &copy; Pick-A-Book 2021</span>

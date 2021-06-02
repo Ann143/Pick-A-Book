@@ -36,7 +36,7 @@ require_once ("./header.php");
                 <div class="container">
                     <table id="example" class="table table-striped"
                         style="width:100%;box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19);">
-                        <thead style="background-color: black;color: white;">
+                        <thead style="background-color: #b30930;color: white;">
                             <tr>
                                 <th>Book Title <span id="sort">↑</span></th>
                                 <th>Book Category</th>
@@ -92,7 +92,7 @@ require_once ("./header.php");
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white" style="margin-top:200px">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Pick-A-Book 2021</span>

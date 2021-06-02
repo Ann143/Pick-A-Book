@@ -39,7 +39,7 @@ require_once ("./header.php");
                 <!-- Table for Order -->
                 <div class="container">
                     <table class="table text-center" style="box-shadow: 0 6px 10px 0 rgba(8, 8, 8, 0.2), 0 6px 20px 0 rgba(3, 0, 0, 0.19); text-align: center;">
-                        <thead style="background-color: black;color: white;font-size: px;">
+                        <thead style="background-color: #b30930; color: white;">
                             <tr>
                                 <th>Customer Name</th>
                                 <th>Book</th>
@@ -47,7 +47,7 @@ require_once ("./header.php");
                                 <th>Book Seller</th>
                                 <th>Book Category</th>
                                 <th>Total Amount</th>
-                                <th>Payment</th>
+                                <!-- <th>Payment</th> -->
                                 <th>Date Purchased</th>
                                 <th>Date Finished Transaction</th>
                                 <th>Status</th>
@@ -69,69 +69,58 @@ require_once ("./header.php");
                                 <td><?php echo $row['seller']?></td>
                                 <td><?php echo $row['category']?></td>
                                 <td>P <?php echo $row['price']?>.00</td>
-                                <td>Gcash</td>
+                                <!-- <td>Gcash</td> -->
                                 <td><?php echo $row['datePurchased']?></td>
                                 <td><?php echo $row['dateRecieved']?></td>
                                 <td><?php echo $row['status']?></td>
                                 <td>
 
-                                <a href=""></a>
-                                <?php if ($row['status'] == "Pending"){
-                                    echo '<i class="far fa-caret-circle-down" style="font-size: 20px; font-weight:bold; color: cyan;"></i>';
-                                    }else if($row['status'] == "Completed"){
-                                    echo '<i class="fas fa-check-circle" style="font-size: 20px; color: chartreuse;"></i>';
-                                }else{
-                                    echo '<i class="fas fa-check-circle" style="font-size: 20px; color: chartreuse;"></i>';
-                                }?>
-                                <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
+                                
+                                <?php 
+                                
+                                if ($row['status'] != "Canceled" && $row['status'] != "Completed"){
+                                
+                                    if ($row['status'] == "Pending"){
+                                        echo "<a href='./model/order.php?status=".$row['status']."&orderID=".$row['orderID']."' title='Approve'>";
+                                        echo '<i class="fas fa-circle" style="font-size: 20px; font-weight:bold; color: cyan;"></i>';
+                                        echo '</a>';
+                                        echo '&nbsp;&nbsp;';
+                                        echo "<a href='./model/order.php?status=Cancel&orderID=".$row['orderID']."' title='Cancel'>";
+                                        echo '<i class="fas fa-times-circle" style="font-size: 20px; font-weight:bold; color: rgb(255, 0, 21);" "></i>';
+                                        echo '</a>';
+                                    }
+
+                                
+                                
+                                }
+                                
+                                else if($row['status'] == "Completed"){
+                                    echo '<i class="fas fa-check-circle" style="font-size: 20px; color: chartreuse;" title="Completed"></i>';
+                                    echo '&nbsp;&nbsp;';
+                                    echo "<a href='./model/order.php?status=Delete&orderID=".$row['orderID']."' title='Remove'>";
+                                    echo '<i class="fas fa-trash" style="font-size: 20px; font-weight:bold; color: rgb(255, 0, 21);" ></i>';
+                                    echo '</a>';
+                                }
+                                
+                                else{
+                                    echo '<i class="fas fa-times-circle" style="font-size: 20px; font-weight:bold; color: orange;" title="Cancelled"></i>';
+                                    echo '&nbsp;&nbsp;';
+                                    echo "<a href='./model/order.php?status=Delete&orderID=".$row['orderID']."' title='Remove'>";
+                                    echo '<i class="fas fa-trash" style="font-size: 20px; font-weight:bold; color: rgb(255, 0, 21);" ></i>';
+                                    echo '</a>';
+                                }
+                                
+                                ?>
+
+                                
                                 </td>
                             </tr>
                             <?php endwhile; 
                         }?>
-                            <!-- <tr>
-                                <th>Judy Ann Arquisal</th>
-                                <td><img src="../../img/2.jpg" height="90rem"></td>
-                                <td>The Stand</td>
-                                <td>Mery-an Telez</td>
-                                <td>Action</td>
-                                <td>P 1000.00</td>
-                                <td>Gcash</td>
-                                <td>May 6, 2021</td>
-                                <td>May 7, 2021</td>
-                                <td>Cancelled</td>
-                                <td>
-                                    <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
-                                    <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Judy Ann Arquisal</th>
-                                <td><img src="../../img/3.jpg" height="90rem"></td>
-                                <td>Gideon</td>
-                                <td>Mery-an Telez</td>
-                                <td>Action</td>
-                                <td>P 1000.00</td>
-                                <td>Gcash</td>
-                                <td>May 6, 2021</td>
-                                <td>May 7, 2021</td>
-                                <td>Pending</td>
-                                <td>
-                                    <i class="fas fa-check-circle" style="font-size: 20px;; color: chartreuse;"></i>
-                                    <i class="fas fa-times-circle" style="font-size: 20px;; color: rgb(255, 0, 21);"></i>
-                                </td>
-                            </tr> -->
+                           
                         </tbody>
                     </table>
                 </div>
-
-
-
-
-
-
-
-
-
 
             </div>
             <!-- End of Main Content -->
