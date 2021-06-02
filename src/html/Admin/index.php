@@ -4,6 +4,7 @@ require_once ("../config.php");
 require_once ("./header.php");
 
 ?>
+
 <head>
     <link href="../../img/logoicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -31,7 +32,13 @@ require_once ("./header.php");
 
     <!-- Content Row -->
     <div class="row">
+        <?php
+                                     
+            $query = "SELECT DISTINCT count(sellername) as numberOfSellers from sellbooks";
+            $query_run = mysqli_query($conn,$query);
+            $row = mysqli_fetch_array($query_run)
 
+        ?>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -40,7 +47,8 @@ require_once ("./header.php");
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Total Sellers</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">4 (Person)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $row['numberOfSellers']?>
+                                (Person(s))</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -50,6 +58,15 @@ require_once ("./header.php");
             </div>
         </div>
 
+        <?php
+            $totalEarnings = 0;                         
+            $query = "SELECT `price` from orders WHERE `status` = 'Completed'";
+            $query_run = mysqli_query($conn,$query);
+            while($row = mysqli_fetch_array($query_run))
+                $totalEarnings += $row['price'];
+            {
+                         
+        ?>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
@@ -58,7 +75,7 @@ require_once ("./header.php");
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Total Earnings</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Php 3000.00</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Php <?php echo $totalEarnings?>.00</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -67,7 +84,13 @@ require_once ("./header.php");
                 </div>
             </div>
         </div>
+        <?php }?>
 
+        <?php                                    
+            $query = "SELECT count(sellerID) as totalBooks from sellbooks";
+            $query_run = mysqli_query($conn,$query);
+            $row = mysqli_fetch_array($query_run)
+        ?>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
@@ -78,7 +101,8 @@ require_once ("./header.php");
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">200 (pcs)</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                        <?php echo $row['totalBooks']?> (pcs)</div>
                                 </div>
 
                             </div>
@@ -119,33 +143,13 @@ require_once ("./header.php");
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <td>Mery-an Telez</td>
-                                    <td>5</td>
-                                    <td>Php 900.00</td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>Christine Ditchon</td>
-                                    <td>6</td>
-                                    <td>Php 500.00</td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>David Pael</td>
-                                    <td>8</td>
-                                    <td>Php 1000.00</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Dexter Tampioc</td>
-                                    <td>10</td>
-                                    <td>Php 2000.00</td>
-
-                                </tr>
+                                <?php
+                                    $query = "SELECT DISTINCT selle.firstname as userFname, users.lastname as userLname FROM users INNER JOIN orders ON users.userId = orders.userId";
+                                    $query_run = mysqli_query($conn,$query);
+                                    while($row = mysqli_fetch_array($query_run)){
+                                ?>
                             </tbody>
+                            <?php }?>
                         </table>
                     </div>
                 </div>
@@ -161,17 +165,20 @@ require_once ("./header.php");
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
+                    <?php
+                        $query = "SELECT DISTINCT users.firstname as userFname, users.lastname as userLname FROM users INNER JOIN orders ON users.userId = orders.userId";
+                        $query_run = mysqli_query($conn,$query);
+                        while($row = mysqli_fetch_array($query_run)){
+                    ?>
                     <ul>
-                        <li>Neil Armstrong</li>
-                        <li>Alan Bean</li>
-                        <li>Peter Conrad</li>
-                        <li>Edgar Mitchell</li>
-                        <li>Alan Shepard</li>
+                        <li><?php echo $row['userFname']?> <?php echo $row['userLname']?></li>
                     </ul>
+                    <?php }?>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 </div>
