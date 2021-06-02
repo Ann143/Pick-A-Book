@@ -47,7 +47,7 @@ require_once ("./header.php");
                                 <th>Book Seller</th>
                                 <th>Book Category</th>
                                 <th>Total Amount</th>
-                                <!-- <th>Payment</th> -->
+                                <th>Payment</th>
                                 <th>Date Purchased</th>
                                 <th>Date Finished Transaction</th>
                                 <th>Status</th>
@@ -68,8 +68,8 @@ require_once ("./header.php");
                                 <td><?php echo $row['title']?></td>
                                 <td><?php echo $row['seller']?></td>
                                 <td><?php echo $row['category']?></td>
-                                <td>P <?php echo $row['price']?>.00</td>
-                                <!-- <td>Gcash</td> -->
+                                <td>₱ <?php echo $row['price']?>.00</td>
+                                <td> <?php echo $row['payment']?></td>
                                 <td><?php echo $row['datePurchased']?></td>
                                 <td><?php echo $row['dateRecieved']?></td>
                                 <td><?php echo $row['status']?></td>

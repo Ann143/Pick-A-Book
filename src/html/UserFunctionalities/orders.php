@@ -44,6 +44,7 @@
                     <th>Category</th>
                     <th>Seller</th>
                     <th>Price</th>
+                    <th>Payment Method</th>
                     <th>Date Purchased</th>
                     <th>Date Received</th>
                     <th>Status</th>
@@ -68,6 +69,7 @@
                     <td><?php echo $row['category']?></td>
                     <td><?php echo $row['seller']?></td>
                     <td><?php echo "Php ".$row['price']?></td>
+                    <td><?php echo $row['payment']?></td>
                     <td><?php echo $row['datePurchased']?></td>
                     <td><?php echo $row['dateRecieved']?></td>
                     <td><?php echo $row['status']?></td>
