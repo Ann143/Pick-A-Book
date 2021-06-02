@@ -1,7 +1,7 @@
 <?php
         require_once("../config.php");
-    //   session_start();
-    //   $name = $_SESSION["username"];
+        session_start();
+        $name = $_SESSION["username"];
         $id = $_SESSION["id"];
         $username = $_SESSION["username"];
     ?>
