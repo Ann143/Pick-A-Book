@@ -111,7 +111,7 @@ while($row = $result->fetch_assoc()) {
                             <div class="modal-body">
                                 <div class="card" style="width: 29rem;color:black">
                                     <div class="card-body">
-                                        <form action="" method="post" enctype="multipart/form-data">
+                                        <form action="model/product.php" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label style="margin-left: 15px;">Seller</label>
                                                 <div class="col-sm-12 my-1">
@@ -394,7 +394,7 @@ while($row = $result->fetch_assoc()) {
                                 </button>
                             </div>
                             <div class="modal-body ">
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="model/product.php" method="GET" enctype="multipart/form-data">
                                     <table class="table table-sm " style="color: black;text-align: center; ">
                                         <thead>
                                             <tr>
@@ -410,7 +410,7 @@ while($row = $result->fetch_assoc()) {
                                         <tbody>
                                             <?php
                                      
-                                    $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Romance'";
+                                    $query = "SELECT sellerID, booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Romance'";
                                     $query_run = mysqli_query($conn,$query);
 
                                     while($row = mysqli_fetch_array($query_run))
@@ -423,9 +423,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
 
                                             </tr>
@@ -473,7 +474,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Adventure'";
+                                     $query = "SELECT sellerID,booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Adventure'";
                                      $query_run = mysqli_query($conn,$query);
  
                                      while($row = mysqli_fetch_array($query_run))
@@ -486,8 +487,11 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                            <td>
+                                            <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
 
                                             </td>
 
@@ -535,7 +539,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Drama'";
+                                     $query = "SELECT sellerID, booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Drama'";
                                      $query_run = mysqli_query($conn,$query);
  
                                      while($row = mysqli_fetch_array($query_run))
@@ -548,9 +552,11 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                            <td> 
+                                            <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                             </td>
 
                                         </tr>
@@ -597,7 +603,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Fantasy'";
+                                     $query = "SELECT sellerID,booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Fantasy'";
                                      $query_run = mysqli_query($conn,$query);
  
                                      while($row = mysqli_fetch_array($query_run))
@@ -610,9 +616,11 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                            <td> 
+                                            <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                             </td>
 
                                         </tr>
@@ -658,7 +666,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Essay'";
+                                     $query = "SELECT sellerID,booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Essay'";
                                      $query_run = mysqli_query($conn,$query);
  
                                      while($row = mysqli_fetch_array($query_run))
@@ -671,9 +679,11 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                            <td> 
+                                            <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                             </td>
 
                                         </tr>
@@ -719,7 +729,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Poetry'";
+                                     $query = "SELECT sellerID,booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Poetry'";
                                      $query_run = mysqli_query($conn,$query);
  
                                      while($row = mysqli_fetch_array($query_run))
@@ -732,9 +742,10 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                            <td> <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value= class="btn btn-danger">'?>
+                                                </form>
                                             </td>
 
                                         </tr>
@@ -780,7 +791,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='History'";
+                                     $query = "SELECT sellerID,booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='History'";
                                      $query_run = mysqli_query($conn,$query);
  
                                      while($row = mysqli_fetch_array($query_run))
@@ -793,9 +804,11 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                            <td> 
+                                                <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value= class="btn btn-danger">'?>
+                                                </form>
                                             </td>
 
                                         </tr>
@@ -842,7 +855,7 @@ while($row = $result->fetch_assoc()) {
                                     <tbody>
                                         <?php
                                      
-                                     $query = "SELECT booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Biography'";
+                                     $query = "SELECT sellerID,booktitle,sellername,bookprice,LTRIM(bookpicture) AS img FROM sellbooks WHERE LTRIM(bookgenre)='Biography'";
                                      $query_run = mysqli_query($conn,$query);
                                      while($row = mysqli_fetch_array($query_run))
                                      {
@@ -854,9 +867,12 @@ while($row = $result->fetch_assoc()) {
                                             <td> <?php echo $row['booktitle']?></td>
                                             <td> <?php echo $row['sellername']?></td>
                                             <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                            <td> 
+                                           
+                                            <form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                             </td>
                                         </tr>
                                         <?php }?>
@@ -871,6 +887,35 @@ while($row = $result->fetch_assoc()) {
                 </div>
 
             </div>
+                        <?php
+                        if (isset($_GET['deleteProduct'])){
+                    
+                    $sellerID=$_GET['sellerID'];
+                    $query="delete from sellbooks where sellerID='".$sellerID;
+                    
+                    // $result = $conn->query($query);
+                    if($conn->query($query)===TRUE){
+                        ?>
+
+                    <!--fire a successful message using sweet alert -->
+                <script>
+                swal({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Order deleted successfully!',
+                    button: true,
+                    timer: 1800
+                
+                })
+                setTimeout(() => {
+                location.reload()
+                }, 2000);
+                </script>
+                <?php
+                        
+                    }
+                }
+                ?>
             <!-- End of Main Content -->
 
             <!-- Footer -->
