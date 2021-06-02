@@ -27,6 +27,7 @@
 <?php
     require_once("header.php");
     session_start();
+    $id=$_SESSION['id'];
     ?>
 
     <div id="main" class="container" style="margin-top: 8%;">
@@ -52,7 +53,7 @@
             <tbody class="text-center">
             <?php
 
-                $query ="select * from orders";
+                $query ="select * from orders WHERE userId = '$id'";
                 $query_run = mysqli_query($conn,$query);
                 $cart = mysqli_num_rows($query_run) > 0;
 
