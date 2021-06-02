@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        
     <link rel="stylesheet" href="../../css/books.css">
     <script src="../../jquery/books.js"></script>
 
@@ -72,33 +73,28 @@
                     <a href="../Public/logout.php" style="color: black;text-decoration: none;">Logout</a>
                 </div>
             </div>
-            <div class="drop-down settings cursor-pointer">
-                <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-75-256.png"
-                    alt="Settings">
-            </div>
         </div>
     </div>
     <div class="side-nav">
         <div onclick="window.location ='./userDashboard.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
-                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/48.Dashboard-256.png" alt="Dashbaord">
+            <i class="fa fa-dashboard" style="font-size:24px;margin-top:20px;margin-left:16px;color:#f00c45"></i>
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Dashboard</span>
         </div>
         <div onclick="window.location = './myLibrary.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div class="slide-show-icon">
-                <img src="https://cdn3.iconfinder.com/data/icons/education-and-learning-23/32/Education_and_Learning_education_book_library_search-128.png"
-                    alt="Books">
+            <i class="fa fa-book" style="font-size:24px;margin-top:20px;margin-left:16px;color:blue"></i>
+                
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
         <div onclick="window.location = './bookmarks.php'"
             class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
             <div class="slide-show-icon">
-                <img src="https://cdn0.iconfinder.com/data/icons/seo-170/32/SEO_bookmarking_service_services_book-256.png"
-                    alt="Watchlist">
+            <i class="fa fa-bookmark-o" style="font-size:24px;margin-top:20px;margin-left:16px;color:red"></i>
             </div>
             <span id="toggle-span" class="hide-display align-items-center">
                 Bookmark
@@ -107,15 +103,14 @@
         <div onclick="window.location = './sell.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
-                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/05.Tag-256.png" alt="Sales">
+            <i class="fa fa-dollar" style="font-size:24px;margin-top:20px;margin-left:16px;color:violet"></i>
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Sell</span>
         </div>
         <div onclick="window.location = './orders.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-red">
             <div class="slide-show-icon">
-                <img src="https://cdn3.iconfinder.com/data/icons/e-commerce-308/32/document_hourglass_order_history-256.png"
-                    alt="Orders">
+            <i class="fa fa-first-order" style="font-size:24px;margin-top:20px;margin-left:16px;color:#b9d100"></i>
             </div>
             <span id="toggle-span" class="hide-display align-items-center">Orders</span>
         </div>

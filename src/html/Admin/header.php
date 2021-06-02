@@ -1,5 +1,6 @@
 <?php 
     require_once ("../config.php");
+    session_start();
     $username = $_SESSION["username"];
     $id = $_SESSION["id"];
     $sql = "SELECT `adminId`, `firstname`, `lastname`, `birthdate`, `address`, `username`, `email`,`password`,`adminPic` FROM `admin` WHERE `username` = '".$username."'";
