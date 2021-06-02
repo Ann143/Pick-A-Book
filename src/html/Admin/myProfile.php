@@ -35,7 +35,7 @@ while($row = $result->fetch_assoc()) {
 
                 <div id="viewInfo" class="container col-md-10 viewInfo" style=" width: 100%;">
                     <div class="row" id="upload1">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div id="frame" class="text-center border border-dark rounded viewInfo p-3">
                                 <img id="image1" class="img-fluid border border-dark rounded-circle w-100"
                                     src="../adminPic/<?php echo $row['adminPic']; ?>" class="avatar img-circle"
@@ -48,7 +48,7 @@ while($row = $result->fetch_assoc()) {
                         </div>
 
                         <div id="basicInfo"
-                            class="col-md-8 personal-info border border-dark rounded float-center viewInfo p-3 ml-4">
+                            class="col-md-7 personal-info border border-dark rounded float-center viewInfo p-3 ml-4">
                             <h4>Profile</h4>
                             <p>Your Personal Information</p>
 
@@ -109,7 +109,9 @@ while($row = $result->fetch_assoc()) {
                         </div>
                     </div>
                 </div>
-
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+                    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+                    crossorigin="anonymous"></script>
                 <?php
                     if(isset($_POST['publish'])){
                         $adminId = $row['adminId'];
@@ -125,16 +127,24 @@ while($row = $result->fetch_assoc()) {
                         $uploads_dir = '../adminPic/';
                         if(empty($_FILES['adminPic']["name"])) {
                             $query = "UPDATE `admin` SET `firstname`='$fName',`lastname`='$lName',`birthdate`='$birthDate',`address`='$address',`email`='$email',`username`='$username',`password`='$newPass' WHERE `adminId`= $adminId";
-                            $query_run = mysqli_query($conn,$query);
-                        } else {
+                            $query_run = mysqli_query($conn,$query);?>
+                <script>
+                swal("Good job!", "You Updated your Profile Successfully!", "success").then(() => {
+                    location.href = 'myProfile.php'
+                })
+                </script>
+                <?php } else {
                         $query1 = "DELETE FROM `admin` WHERE `adminId` = $adminId";
                         $query="INSERT INTO `admin`(`firstname`, `lastname`, `birthdate`, `address`, `email`, `username`, `password`, `adminPic`) VALUES ('$fName','$lName','$birthDate','$address','$email','$username','$newPass','$adminPic')";
                         $query_run = mysqli_query($conn,$query1);
                         $query_run = mysqli_query($conn,$query);
-                        move_uploaded_file($_FILES["adminPic"]["tmp_name"],$uploads_dir.$adminPic);
-                        }
-                    }
-                    ?>
+                        move_uploaded_file($_FILES["adminPic"]["tmp_name"],$uploads_dir.$adminPic);?>
+                <script>
+                swal("Good job!", "You Updated your Profile Successfully!", "success").then(() => {
+                    location.href = 'myProfile.php'
+                })
+                </script>
+                <?php }}?>
 
                 <!-- Modal -->
                 <div class="modal fade" id="addProduct" aria-labelledby="exampleModalLabel" aria-hidden="true">

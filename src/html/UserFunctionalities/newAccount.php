@@ -33,10 +33,10 @@ while($row = $result->fetch_assoc()) {
 
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
 
-    <div style="margin-top: 10%;">
-        <div id="viewInfo" class="container col-md-8 viewInfo" style="margin-right:7rem ;">
+    <div style="margin-top: 2%;">
+        <div id="viewInfo" class="container col-md-8 viewInfo" style="margin-right:10rem ;">
             <div class="row" id="upload1">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div id="frame" class="text-center border border-dark rounded viewInfo">
                         <img id="image1" class="img-fluid border border-dark rounded-circle w-100"
                             src="../adminPic/<?php echo $row['userPic']; ?>" class="avatar img-circle" alt="avatar">
@@ -49,7 +49,7 @@ while($row = $result->fetch_assoc()) {
                     </div>
                 </div>
 
-                <div id="basicInfo" class="col-md-7 personal-info border border-dark rounded float-center viewInfo">
+                <div id="basicInfo" class="col-lg-7 personal-info border border-dark rounded float-center viewInfo p-4">
                     <h4>Profile</h4>
                     <p>Your Personal Information</p>
 
@@ -59,7 +59,7 @@ while($row = $result->fetch_assoc()) {
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-3 col-md-3 col-5">
+                                <div class="col-md-4">
                                     <label style="font-weight:bold;">Full Name:</label>
                                 </div>
                                 <div class="col-md-8 col-6">
@@ -69,7 +69,7 @@ while($row = $result->fetch_assoc()) {
                             <hr />
 
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <label style="font-weight:bold;">Birth Date:</label>
                                 </div>
                                 <div class="col-md-8 col-">
@@ -78,7 +78,7 @@ while($row = $result->fetch_assoc()) {
                             </div>
                             <hr />
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <label style="font-weight:bold;">Address:</label>
                                 </div>
                                 <div class="col-md-8 col-">
@@ -89,7 +89,7 @@ while($row = $result->fetch_assoc()) {
 
 
                             <div class="row">
-                                <div class="col-sm-3 col-md-3 col-5">
+                                <div class="col-md-4">
                                     <label style="font-weight:bold;">Email:</label>
                                 </div>
                                 <div class="col-md-8 col-6">
@@ -108,7 +108,9 @@ while($row = $result->fetch_assoc()) {
                 </div>
             </div>
         </div>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+            integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+            crossorigin="anonymous"></script>
         <?php
                     if(isset($_POST['publish'])){
                         
@@ -127,17 +129,26 @@ while($row = $result->fetch_assoc()) {
                         $uploads_dir . basename($_FILES['userPic']["name"]);
                         if(empty($_FILES['userPic']["name"])) {
                             $query = "UPDATE `users` SET `firstname`='$fName',`lastname`='$lName',`birthdate`='$birthDate',`address`='$address',`username`='$username',`email`='$email',`password`='$newPass',`created_at`= '$created_at' WHERE `userId`= $userId";
+                            $query_run = mysqli_query($conn,$query);?>
+        <script>
+        swal("Good job!", "You updated your Profile Successfully!", "success").then(() => {
+            location.href = 'newAccount.php'
+        })
+        </script>
+        <?php } else {
+                            $query1 = "DELETE FROM `users` WHERE `userId` = $userId";
+                            $query="INSERT INTO `users` (`firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `password`, `created_at`, `userPic`) VALUES ('$fName','$lName','$birthDate','$address','$username','$email','$newPass','$created_at','$userPic')";
                             $query_run = mysqli_query($conn,$query);
-                        } else {
-                                $query1 = "DELETE FROM `users` WHERE `userId` = $userId";
-                                $query="INSERT INTO `users` (`firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `password`, `created_at`, `userPic`) VALUES ('$fName','$lName','$birthDate','$address','$username','$email','$newPass','$created_at','$userPic')";
-                                $query_run = mysqli_query($conn,$query);
-                                $query_run = mysqli_query($conn,$query1);
-                                move_uploaded_file($_FILES["userPic"]["tmp_name"],$uploads_dir.$userPic);
-                                
-                        }
-                    }
-                    ?>
+                            $query_run = mysqli_query($conn,$query1);
+                            move_uploaded_file($_FILES["userPic"]["tmp_name"],$uploads_dir.$userPic);?>
+
+        <script>
+        swal("Good job!", "You updated your Profile Successfully!", "success").then(() => {
+            location.href = 'newAccount.php'
+        })
+        </script>
+
+        <?php }}?>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
