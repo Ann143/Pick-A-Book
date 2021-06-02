@@ -1,17 +1,12 @@
 <?php
         require_once("../config.php");
-<<<<<<< HEAD
+
       session_start();
       $name = $_SESSION["username"];
-=======
-<<<<<<< HEAD
-        session_start();
-        $name = $_SESSION["username"];
-=======
+
       session_start();
     //   $name = $_SESSION["username"];
->>>>>>> 6351438f930f0690c4b11087a69bee9d46b7190a
->>>>>>> 969b2ae6effb4269d8acc0e4b1780f29a8ee4837
+
         $id = $_SESSION["id"];
         $username = $_SESSION["username"];
     ?>
