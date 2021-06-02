@@ -32,7 +32,7 @@
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
 
     <div id="main">
-        <div style="width: 95%; margin-left: 14%; margin-top: 5%;">
+        <div style="width: 95%; margin-left: 8%; margin-top: 5%;">
             <div class="search-product">
                 <form class="example" action="action_page.php">
                     <input type="text" placeholder="Search.." name="search" >

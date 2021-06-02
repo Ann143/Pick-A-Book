@@ -65,10 +65,10 @@ require_once ("./header.php");
                             ?>
 
                             <tr>
-                                <td data-toggle="modal" data-target="#exampleModal1"> <?php echo $row['sellername']?>
+                                <td data-toggle="modal" data-target="#exampleModal1" class="sellername"> <?php echo $row['sellername']?>
                                 </td>
                                 <td>
-                                    <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
+                                    
                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
                                 </td>
                             </tr>
@@ -226,8 +226,7 @@ require_once ("./header.php");
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js "></script>
 
-
-
+    
 
     <!-- End of Footer -->
 
