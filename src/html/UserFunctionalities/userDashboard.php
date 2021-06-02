@@ -25,6 +25,7 @@
 <?php
 
     require_once("../config.php");
+    require_once("search.php");
     require_once("header.php");
     $id=$_SESSION["id"];
 
@@ -34,11 +35,12 @@
     <div id="main">
         <div style="width: 95%; margin-left: 8%; margin-top: 5%;">
             <div class="search-product">
-                <form class="example" action="action_page.php">
+                <form class="example" action="search.php" method="GET">
                     <input type="text" placeholder="Search.." name="search" >
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
+                   
 
             <div class="browse-main">
 
