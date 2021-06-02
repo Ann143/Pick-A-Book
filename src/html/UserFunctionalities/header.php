@@ -63,7 +63,8 @@
         </div>
         <div class="top-nav-drop-down-privacy d-flex justify-content-end">
             <div class="drop-down my-account cursor-pointer">
-                <img class="img-profile rounded-circle" src="../adminPic/<?php echo $row['userPic']; ?>">
+                <img class="img-profile rounded-circle" src="../adminPic/">
+              
                 <div class="drop-nav-profile container">
                     <a href="./newAccount.php"
                         style="color: black;text-decoration: none;"><?php echo $_SESSION["username"]?></a>
@@ -123,3 +124,4 @@
 
 </html>
 </body>
+
