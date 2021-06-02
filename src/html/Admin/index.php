@@ -31,12 +31,13 @@ require_once ("./header.php");
 
     <!-- Content Row -->
     <div class="row">
-        <?php
-                                     
-            $query = "SELECT DISTINCT count(sellername) as numberOfSellers from sellbooks";
+        <?php 
+            $seller = 0;             
+            $query = "SELECT DISTINCT sellername from sellbooks";
             $query_run = mysqli_query($conn,$query);
-            $row = mysqli_fetch_array($query_run)
-
+            while($row = mysqli_fetch_assoc($query_run)) {
+                $seller += 1;
+            }
         ?>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
@@ -46,7 +47,7 @@ require_once ("./header.php");
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Total Sellers</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $row['numberOfSellers']?>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $seller?>
                                 (Person(s))</div>
                         </div>
                         <div class="col-auto">
@@ -56,7 +57,6 @@ require_once ("./header.php");
                 </div>
             </div>
         </div>
-
         <?php
             $totalEarnings = 0;                         
             $query = "SELECT `price` from orders WHERE `status` = 'Completed'";
