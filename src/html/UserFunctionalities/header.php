@@ -1,7 +1,12 @@
 <?php
         require_once("../config.php");
+<<<<<<< HEAD
         session_start();
         $name = $_SESSION["username"];
+=======
+      session_start();
+    //   $name = $_SESSION["username"];
+>>>>>>> 6351438f930f0690c4b11087a69bee9d46b7190a
         $id = $_SESSION["id"];
         $username = $_SESSION["username"];
     ?>
@@ -56,6 +61,8 @@
                         alt="Cart"><?php echo $row['countCart'] ?></span>
             </div>
         </div>
+
+        
         <div class="top-nav-drop-down-privacy d-flex justify-content-end">
             <div class="drop-down my-account cursor-pointer">
                 <?php
@@ -89,6 +96,9 @@
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
+<<<<<<< HEAD
+    
+=======
         <div onclick="window.location = './bookmarks.php'"
             class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
             <div class="slide-show-icon">
@@ -98,6 +108,7 @@
                 Bookmark
             </span>
         </div>
+>>>>>>> 92bf1d1554116dc1a1d1fcba5c85cb7daff291c3
         <div onclick="window.location = './sell.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
