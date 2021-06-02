@@ -67,7 +67,6 @@ h4 {
     <?php
     require_once("header.php");
     require("../config.php");
-    session_start();
     ?>
 
     <!-- BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
