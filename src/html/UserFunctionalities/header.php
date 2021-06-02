@@ -96,15 +96,6 @@
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-        <div onclick="window.location = './bookmarks.php'"
-            class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
-            <div class="slide-show-icon">
-                <i class="fa fa-bookmark-o" style="font-size:24px;margin-top:20px;margin-left:16px;color:red"></i>
-            </div>
-            <span id="toggle-span" class="hide-display align-items-center">
-                Bookmark
-            </span>
-        </div>
         <div onclick="window.location = './sell.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">

@@ -53,7 +53,7 @@
             <tbody class="text-center">
                 <?php
 
-                $query ="select * from orders WHERE userId = '$id'";
+                $query ="select * from orders WHERE userId = '$id' ";
                 $query_run = mysqli_query($conn,$query);
                 $cart = mysqli_num_rows($query_run) > 0;
 

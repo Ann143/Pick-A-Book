@@ -60,7 +60,7 @@ require_once ("header.php");
 
                             <?php
 
-                        $sql = "SELECT users.firstname, users.lastname, orders.* FROM `orders`,`users` WHERE orders.userId = users.userId";
+                        $sql = "SELECT users.firstname, users.lastname, orders.* FROM `orders`,`users` WHERE orders.userId = users.userId ORDER BY orders.datePurchased DESC";
                         $result = $conn -> query($sql);
                         if($result->num_rows > 0){
                             while($row = $result->fetch_assoc()):?>

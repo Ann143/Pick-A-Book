@@ -47,7 +47,7 @@ require_once ("./header.php");
                         </thead>
                         <tbody style="color: black;">
                         <?php
-                        $sql = "SELECT 
+                        $sql = "SELECT bookgenre, booktitle, sellername, count(booktitle) AS totalSold FROM
                         ?>
                             <tr>
                                 <td>The Invitation</td>
