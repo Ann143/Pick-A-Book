@@ -46,6 +46,9 @@ require_once ("./header.php");
                             </tr>
                         </thead>
                         <tbody style="color: black;">
+                        <?php
+                        $sql = "SELECT 
+                        ?>
                             <tr>
                                 <td>The Invitation</td>
                                 <td>Romance Novel</td>
