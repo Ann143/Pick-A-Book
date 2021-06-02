@@ -128,9 +128,9 @@
 
                         </ul>
 
-                    </ul>
+                    </ul><br>
 
-
+                    <p>Choose your favorite books here! Be knowledgable and learn something new through reading our books.</p>
                 </section>
 
                 <section class="main">

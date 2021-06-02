@@ -62,6 +62,8 @@
                         alt="Cart"><?php echo $row['countCart'] ?></span>
             </div>
         </div>
+
+        
         <div class="top-nav-drop-down-privacy d-flex justify-content-end">
             <div class="drop-down my-account cursor-pointer">
                 <img class="img-profile rounded-circle" src="../adminPic/">
@@ -91,15 +93,7 @@
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-        <div onclick="window.location = './bookmarks.php'"
-            class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
-            <div class="slide-show-icon">
-            <i class="fa fa-bookmark-o" style="font-size:24px;margin-top:20px;margin-left:16px;color:red"></i>
-            </div>
-            <span id="toggle-span" class="hide-display align-items-center">
-                Bookmark
-            </span>
-        </div>
+    
         <div onclick="window.location = './sell.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
