@@ -187,7 +187,6 @@ if(isset($_POST['addToCart'])){
     values('".$id."','".$bookId."')";
     if($conn->query($query)===TRUE){
         ?>
-
         <!--fire a successful message using sweet alert -->
        <script>
        swal({
