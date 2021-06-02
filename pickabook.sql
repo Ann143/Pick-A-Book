@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2021 at 08:35 AM
+-- Generation Time: Jun 02, 2021 at 08:45 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -61,13 +61,6 @@ CREATE TABLE `cart` (
   `sellerID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cartID`, `userId`, `sellerID`) VALUES
-(3, 12, 63);
-
 -- --------------------------------------------------------
 
 --
@@ -87,14 +80,6 @@ CREATE TABLE `orders` (
   `userId` int(11) NOT NULL,
   `cardNumber` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`orderID`, `pic`, `title`, `category`, `seller`, `price`, `datePurchased`, `dateRecieved`, `status`, `userId`, `cardNumber`) VALUES
-(1, 'group.png', 'sdf', ' Fiction', 'dcfs', 234, '2021-05-31 01:09:00', NULL, 'Cancelled', 14, '1234567898765432'),
-(2, 'hagakhakan1.jpg', 'Hi', ' Fiction', 'Ann', 200, '2021-05-31 01:09:00', NULL, 'Completed', 14, '1234567898765432');
 
 -- --------------------------------------------------------
 
@@ -118,12 +103,9 @@ CREATE TABLE `sellbooks` (
 --
 
 INSERT INTO `sellbooks` (`sellerID`, `sellername`, `booktitle`, `bookprice`, `bookgenre`, `bookcategory`, `bookpicture`, `created_at`) VALUES
-(63, 'dcfs', 'sdf', 234, ' fcv', ' Fiction', ' group.png', '2021-05-28 16:28:51'),
-(64, 'Ann', 'Hi', 200, ' Romance', ' Fiction', ' hagakhakan1.jpg', '2021-05-28 16:31:00'),
-(65, 'Ann', 'I love you', 200, ' Romance', ' Fiction', ' carolinian.PNG', '2021-05-28 16:31:41'),
-(66, 'Dexter', 'love', 200, ' Romance', ' Fiction', ' 1.png', '2021-05-28 20:47:38'),
-(67, 'None', 'none', 350, ' Romance', ' Fiction', ' 3.jpg', '2021-05-29 05:21:04'),
-(68, 'Annetinitibok', 'Gugma', 150, ' Romance', ' Non-Fiction', ' dangas.jpg', '2021-05-31 13:11:44');
+(69, 'Kerwien Bengil', 'Stay', 300, ' Romance', ' Fiction', ' stay.jpg', '2021-06-02 06:28:57'),
+(70, 'Kerwien Bengil', 'Dangerous', 250, ' Romance', ' Fiction', ' Dangerous.jpg', '2021-06-02 06:29:59'),
+(71, 'Leslie Marie Reyes', 'Deception and Desire', 400, ' Romance', ' Fiction', ' Deception.jpg', '2021-06-02 06:35:48');
 
 -- --------------------------------------------------------
 
@@ -149,9 +131,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userId`, `firstname`, `lastname`, `birthdate`, `address`, `username`, `email`, `password`, `created_at`, `userPic`) VALUES
-(12, 'Mery-an', 'Telez', 'July 31, 1999', 'Talamban', 'Ann', 'mtelez138@gmail.com', '$2y$10$WRCzWzipiv2zCyVvA5MmLe.sR63MTwE55qRJMFWj7LDY2PG4vOLHu', '2021-05-14 08:57:56', ''),
-(13, 'Dexter', 'Tampioc', 'May 22, 2000', 'Cebu', 'None', 'none@gmail.com', '$2y$10$2QzD0OpjhtI0v1lrBMIfgeK0QpO5.2Bh.MD9z/GZHfHu//gFH4IVq', '2021-05-29 01:19:52', ''),
-(14, 'Papang', 'Tampioc', 'May 22, 2000', 'Cebu', 'Papang', 'dexter@test', '$2y$10$.v4cOMtDW3wgdMEeZiW5ZeygkubjnpBMUBbf8Lm2pFwL48SSRWoBK', '2021-05-29 01:58:36', '');
+(16, 'Kerwien', 'Bengil', 'April 30, 1999', 'Talamban, Cebu City', 'Kerker', 'kerker@gmail.com', '123456', '2021-06-02 02:28:04', ''),
+(17, 'Leslie Marie', 'Reyes', 'August 7, 2000', 'Talamban Cebu City', 'Lesh', 'lesh@gmail.com', '123456', '2021-06-02 02:31:43', '');
 
 --
 -- Indexes for dumped tables
@@ -204,25 +185,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `sellbooks`
 --
 ALTER TABLE `sellbooks`
-  MODIFY `sellerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `sellerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
