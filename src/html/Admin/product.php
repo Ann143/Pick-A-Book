@@ -163,8 +163,20 @@ while($row = $result->fetch_assoc()) {
                                                                     style="color: #e32467;"></i></i>
                                                             </div>
                                                         </div>
-                                                        <input type="text" class="form-control" name="bookGenre"
-                                                            placeholder="ex.Romance">
+                                                        <select class="form-control" name="bookGenre"
+                                                            id="exampleFormControlSelect1">
+                                                            <option selected>Choose Category</option>
+                                                            <option>Romance</option>
+                                                            <option>Adventure</option>
+                                                            <option>Drama</option>
+                                                            <option>Fantasy</option>
+                                                            <option>Essay</option>
+                                                            <option>Poetry</option>
+                                                            <option>History</option>
+                                                            <option>Biography</option>
+                                                        </select>
+                                                        <!-- <input type="text" class="form-control" name="bookGenre"
+                                                            placeholder="ex.Romance"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -191,7 +203,8 @@ while($row = $result->fetch_assoc()) {
                                                 <label for="exampleFormControlFile1" style="margin-left: 15px;">Book
                                                     Picture:</label>
                                                 <div class="container" style="margin-left: 20px;">
-                                                    <input type="file" class="form-control-file" name="bookPicture" id="exampleFormControlFile1">
+                                                    <input type="file" class="form-control-file" name="bookPicture"
+                                                        id="exampleFormControlFile1">
                                                 </div>
                                             </div>
                                             <div class="modal-footer ">
