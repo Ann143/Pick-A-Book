@@ -19,12 +19,12 @@
 
     <script src="../../jquery/dashboard.js"></script>
     <link rel="stylesheet" href="../../css/dashboard.css">
-    
+
 </head>
 
 <body>
 
-<?php
+    <?php
     require_once("header.php");
     session_start();
     $id=$_SESSION['id'];
@@ -33,8 +33,7 @@
     <div id="main" class="container" style="margin-top: 8%;">
         <div>
             <h5>Keep track with your orders!</h5>
-
-            <h4 class="text-center"> My Orders</h4>
+            <h4 class="text-center">My Orders</h4>
         </div>
         <table class="table table-hover table-stripped">
             <thead style="background-color: black;color: white;text-align: center   ;">
@@ -52,7 +51,7 @@
                 </tr>
             </thead>
             <tbody class="text-center">
-            <?php
+                <?php
 
                 $query ="select * from orders WHERE userId = '$id'";
                 $query_run = mysqli_query($conn,$query);
@@ -74,23 +73,41 @@
                     <td><?php echo $row['dateRecieved']?></td>
                     <td><?php echo $row['status']?></td>
                     <td>
-                    <form method="post">
-                        <input type="hidden" name="orderId" value="<?php echo $row['orderID'] ?>">
-                        <button class="btn" type="submit" name="cancelOrder"> <i class="fa fa-close" style="font-size:25px;color:blue"></i></button>
-                        <button class="btn" type="submit" name="deleteOrder"><i class="fa fa-trash-o" style="font-size:25px;color:red"></i></button>
-                    </form>
+                        <form method="post">
+                            <input type="hidden" name="orderId" value="<?php echo $row['orderID'] ?>">
+                            <button class="btn" type="submit" name="cancelOrder"> <i class="fa fa-close"
+                                    style="font-size:25px;color:blue"></i></button>
+                            <button class="btn" type="submit" name="deleteOrder"><i class="fa fa-trash-o"
+                                    style="font-size:25px;color:red"></i></button>
+                        </form>
                     </td>
                 </tr>
-            <?php }}?>
-               
-            </tbody>
-          
-        </table>
-        
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+                <?php } }
+                 if (mysqli_num_rows($query_run) == 0){?>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+                    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+                    crossorigin="anonymous"></script>
+                <script>
+                swal({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'No Orders Yet!',
+                    button: true,
+                    timer: 1800
 
-<?php
+                })
+                </script>
+                <?php }?>
+            </tbody>
+
+        </table>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous"></script>
+
+    <?php
     if (isset($_POST['deleteOrder'])){
         
         $orderId=$_POST['orderId'];
@@ -100,21 +117,21 @@
         if($conn->query($query)===TRUE){
             ?>
 
-        <!--fire a successful message using sweet alert -->
-       <script>
-       swal({
-         position: 'top-end',
-         icon: 'success',
-         title: 'Order deleted successfully!',
-         button: true,
-         timer: 1800
-       
-     })
-     setTimeout(() => {
-       location.reload()
-     }, 2000);
-     </script>
-       <?php
+    <!--fire a successful message using sweet alert -->
+    <script>
+    swal({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Order deleted successfully!',
+        button: true,
+        timer: 1800
+
+    })
+    setTimeout(() => {
+        location.reload()
+    }, 2000);
+    </script>
+    <?php
             
         }
     }
@@ -127,30 +144,30 @@
         if($conn->query($query)===TRUE){
             ?>
 
-        <!--fire a successful message using sweet alert -->
-       <script>
-       swal({
-         position: 'top-end',
-         icon: 'success',
-         title: 'Order cancelled successfully!',
-         button: true,
-         timer: 1800
-       
-     })
-     setTimeout(() => {
-       location.reload()
-     }, 2000);
-     </script>
-       <?php
+    <!--fire a successful message using sweet alert -->
+    <script>
+    swal({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Order cancelled successfully!',
+        button: true,
+        timer: 1800
+
+    })
+    setTimeout(() => {
+        location.reload()
+    }, 2000);
+    </script>
+    <?php
             
         }
     }
 ?>
-<script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
+    <script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
-</script>
+    </script>
 
 </body>
 
