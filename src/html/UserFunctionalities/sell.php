@@ -106,7 +106,8 @@ while($row = $result->fetch_assoc()) {
                                         <div class="input-group-text"><i class="fa fa-user" style="color: #e32467;"></i>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" name="sellerName" value="<?php echo $row['firstname']?> <?php echo $row['lastname']?>">
+                                    <input type="text" class="form-control" name="sellerName"
+                                        value="<?php echo $row['firstname']?> <?php echo $row['lastname']?>">
                                 </div>
                             </div>
                         </div>
@@ -197,7 +198,7 @@ while($row = $result->fetch_assoc()) {
                 </div>
             </div>
         </div>
-<?php }}?>
+        <?php }}?>
         <script>
         $(document).on("click", ".browse", function() {
             var file = $(this).parents().find(".file");
