@@ -482,19 +482,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td>
-                                            <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
-                                                </form>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -503,7 +490,6 @@ while($row = $result->fetch_assoc()) {
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
                                                 <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
                                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
 
                                                 </td>
 
@@ -563,20 +549,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> 
-                                            <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
-                                                </form>
-                                            </td>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -587,7 +559,6 @@ while($row = $result->fetch_assoc()) {
                                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
                                                 </td>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
 
                                             </tr>
 
@@ -645,20 +616,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> 
-                                            <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
-                                                </form>
-                                            </td>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -669,7 +626,6 @@ while($row = $result->fetch_assoc()) {
                                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
                                                 </td>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
 
                                             </tr>
 
@@ -726,20 +682,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> 
-                                            <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
-                                                </form>
-                                            </td>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -750,7 +692,6 @@ while($row = $result->fetch_assoc()) {
                                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
                                                 </td>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
 
                                             </tr>
 
@@ -807,19 +748,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value= class="btn btn-danger">'?>
-                                                </form>
-                                            </td>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -830,7 +758,6 @@ while($row = $result->fetch_assoc()) {
                                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
                                                 </td>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
 
                                             </tr>
 
@@ -887,20 +814,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> 
-                                                <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value= class="btn btn-danger">'?>
-                                                </form>
-                                            </td>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -911,7 +824,6 @@ while($row = $result->fetch_assoc()) {
                                                     <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
 
                                                 </td>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
 
                                             </tr>
 
@@ -968,25 +880,6 @@ while($row = $result->fetch_assoc()) {
                                      {
                                          ?>
 
-<<<<<<< HEAD
-                                        <tr>
-                                            <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
-                                                    class="product-img" height="100px" width="100px"></td>
-                                            <td> <?php echo $row['booktitle']?></td>
-                                            <td> <?php echo $row['sellername']?></td>
-                                            <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                            <td> 
-                                           
-                                            <form action="model/product.php" method="GET">
-                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
-                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <?php }?>
-                                    </tbody>
-                                </table>
-=======
                                             <tr>
                                                 <td> <img src="../Products/<?php echo $row['img']; ?>" alt=""
                                                         class="product-img" height="100px" width="100px"></td>
@@ -1005,7 +898,6 @@ while($row = $result->fetch_assoc()) {
                                 <?php if($query_run->num_rows == 0){
                                     echo ("<h1 class='text-center text-danger'>No Books Available!</h1>");
                                     }?>
->>>>>>> c943f0515100a4c44602e7d2051aaaa3d1ff1b83
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
