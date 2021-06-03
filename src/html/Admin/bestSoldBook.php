@@ -46,9 +46,9 @@ require_once ("./header.php");
                             </tr>
                         </thead>
                         <tbody style="color: black;">
-                        <?php
-                        $sql = "SELECT bookgenre, booktitle, sellername, count(booktitle) AS totalSold FROM
-                        ?>
+                    //    <!-- <?php
+                       // $sql = "SELECT bookgenre, booktitle, sellername, count(booktitle) AS totalSold FROM
+                       // ?> -->
                             <tr>
                                 <td>The Invitation</td>
                                 <td>Romance Novel</td>
@@ -88,7 +88,6 @@ require_once ("./header.php");
 
                     </table>
                 </div>
-
 
             </div>
             <!-- End of Main Content -->
