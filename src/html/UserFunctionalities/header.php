@@ -1,14 +1,9 @@
 <?php
         require_once("../config.php");
-<<<<<<< HEAD
-        session_start();
-=======
 
       session_start();
       $name = $_SESSION["username"];
 
-      session_start();
->>>>>>> 2be51b74e39bc844494196eb028d5469cf2df581
     //   $name = $_SESSION["username"];
 
         $id = $_SESSION["id"];
@@ -100,22 +95,8 @@
             </div>
             <span id="toggle-span" class="hide-display align-items-center">My Library</span>
         </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      
-=======
-        <div onclick="window.location = './bookmarks.php'"
-            class="slide-show-btn d-flex align-items-center bg-sky cursor-pointer">
-            <div class="slide-show-icon">
-                <i class="fa fa-bookmark-o" style="font-size:24px;margin-top:20px;margin-left:16px;color:red"></i>
-            </div>
-            <span id="toggle-span" class="hide-display align-items-center">
-                Bookmark
-            </span>
-        </div>
->>>>>>> 2be51b74e39bc844494196eb028d5469cf2df581
->>>>>>> 69a5ffafc76365ba68aab4c48f45dfea2fc61988
+
+
         <div onclick="window.location = './sell.php'"
             class="slide-show-btn d-flex align-items-center cursor-pointer bg-green unexpand-side-nav">
             <div class="slide-show-icon">
