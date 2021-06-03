@@ -44,9 +44,7 @@
         </div>
 
         <div class="top-nav-drop-downs d-flex">
-            <div class="drop-down notifications cursor-pointer">
-                <img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/bell-256.png" alt="Notifications">
-            </div>
+          
 
 
             <?php
