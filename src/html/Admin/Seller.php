@@ -65,16 +65,13 @@ require_once ("./header.php");
 
                             <tr>
                                 <td>
-                                    <?php echo $row['firstname']?> <?php echo $row['lastname']?>
+                                    <?php echo $row['firstname'];?> <?php echo $row['lastname'];?>
                                 </td>
-                                <td><a href="sellerInfo.php?name=<?php echo $row["firstname"];?>"><button
-                                data-toggle="modal" data-target="#sellerInfo"  class="btn btn-outline-primary">View Info</button></a>
-                                    <a><button class="btn btn-outline-danger">Delete</button></a>
+                                <td><a href="sellerInfo.php?name=<?php echo $row['sellername'].'&lname='.$row['lastname'].'&fname='.$row['firstname'];?>">
+                                <button data-toggle="modal" data-target="#sellerInfo"  class="btn btn-outline-primary">View Info</button></a>
+                                    <a href="model/user.php?sellername=<?php echo $row['sellername']."&status=Delete";?>"><button class="btn btn-outline-danger">Delete</button></a>
                                 </td>
-                                <!-- <td>
-                                    <?php echo '<button data-toggle="modal" data-target="#sellerInfo" type="button" class="btn btn-outline-primary">View Info</button>'?>
-                                    <?php echo '<button type="button" class="btn btn-outline-danger">Delete</button>'?>
-                                </td> -->
+                              
                             </tr>
                             <?php }?>
                         </tbody>

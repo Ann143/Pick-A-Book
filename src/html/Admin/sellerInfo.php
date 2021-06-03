@@ -21,8 +21,11 @@ require_once ("./header.php");
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-<?php      
-$query = "SELECT DISTINCT * FROM users WHERE firstname = '". $_GET['name'] . "'";
+<?php
+$name = $_GET['name'];
+$fname = $_GET['fname'];
+$lname = $_GET['lname'];
+$query = "SELECT DISTINCT * FROM users WHERE firstname = '".$fname. "' AND lastname = '".$lname."'";
 $query_run = mysqli_query($conn,$query);
  
  $row = mysqli_fetch_array($query_run)
@@ -103,17 +106,30 @@ $query_run = mysqli_query($conn,$query);
                 <form method="post " style="margin-top:30px;">
                     <div class="div-table ">
                         <div class="tr ">
-                            <div class="tc ">Book Author</div>
+                            <div class="tc ">Book Title</div>
                             <div class="tc ">Book Category</div>
-                            <div class="tc ">Total Book Sold</div>
-                            <div class="tc ">Total Amount</div>
+                            <div class="tc ">Book Genre</div>
+                            <div class="tc ">Book Price</div>
+                            <div class="tc ">Date Publication</div>
                         </div>
+
+                        <?php 
+                        $sql = 'SELECT booktitle, bookcategory, bookgenre,bookprice, created_at FROM `sellbooks` WHERE sellername = "'.$name.'"';
+                        $result = $conn -> query($sql);
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()):?>
+                        
                         <div class="tr ">
-                            <div class="tc "> Liza Jackson</div>
-                            <div class="tc "> Suspense <br> Thriller</div>
-                            <div class="tc "> 65pcs</div>
-                            <div class="tc "> 9750</div>
+                            <div class="tc "><?php echo $row['booktitle'];?></div>
+                            <div class="tc "><?php echo $row['bookcategory'];?></div>
+                            <div class="tc "><?php echo $row['bookgenre'];?></div>
+                            <div class="tc "><?php echo $row['bookprice'];?></div>
+                            <div class="tc "><?php echo $row['created_at'];?></div>
                         </div>
+                        <?php
+                        endwhile;
+                    }
+                        ?>
                     </div>
                 </form>
             </div>
