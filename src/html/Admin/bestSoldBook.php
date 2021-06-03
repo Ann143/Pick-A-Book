@@ -46,43 +46,32 @@ require_once ("./header.php");
                             </tr>
                         </thead>
                         <tbody style="color: black;">
-                    //    <!-- <?php
-                       // $sql = "SELECT bookgenre, booktitle, sellername, count(booktitle) AS totalSold FROM
-                       // ?> -->
+                        <?php
+                            $sql = 'SELECT `title`,`category`,`seller`,`price`, COUNT(title) AS totalSold, COUNT(title)*price AS totalAmount 
+                            FROM `orders` 
+                            WHERE status = "Completed" 
+                            GROUP BY `title` 
+                            ORDER BY COUNT(title) DESC';
+
+                            $result = $conn -> query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()):
+                       ?>
                             <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>5 pc(s)</td>
-                                <td>Php 2000.00</td>
-                            </tr>
-                            <tr>
-                                <td>A Promised Land</td>
-                                <td>Biography, Autobiography</td>
-                                <td>Barack Obama</td>
-                                <td>Php 50.00</td>
-                                <td>6 6pc(s)</td>
-                                <td>Php 2400.00</td>
-                            </tr>
-                            <tr>
-                                <td>Not My Match</td>
-                                <td>Contemporary, Funny, New Adult, Romance, Sports</td>
-                                <td>Ilsa Madden-Mills</td>
-                                <td>Php 100.00</td>
-                                <td> pc(s)</td>
-                                <td>Php 2400.00</td>
-                            </tr>
-                            <tr>
-                                <td>The Invitation</td>
-                                <td>Romance Novel</td>
-                                <td>Vi Keeland</td>
-                                <td>Php 300.00</td>
-                                <td>7pc(s)</td>
-                                <td>Php 2500.00</td>
+                                <td><?php echo $row['title']?></td>
+                                <td><?php echo $row['category']?></td>
+                                <td><?php echo $row['seller']?></td>
+                                <td>Php <?php echo $row['price']?>.00</td>
+                                <td><?php echo $row['totalSold']?> pc(s)</td>
+                                <td>Php <?php echo $row['totalAmount']?>.00</td>
                             </tr>
 
+                            <?php
+                            endwhile;
+                            }
+                            ?>
 
+                         
 
                         </tbody>
 
