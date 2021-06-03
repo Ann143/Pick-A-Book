@@ -35,7 +35,7 @@
         <div style="width: 95%; margin-left: 8%; margin-top: 5%;">
             <div class="search-product">
                 <form class="example" action="search.php" method="GET">
-                    <input type="text" placeholder="Search.." name="search" >
+                    <input type="text" placeholder="Search.." name="search" class="search-item">
                     <button type="submit" name="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -213,6 +213,14 @@ if(isset($_POST['addToCart'])){
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
+$(document).ready(function(){
+    var $search = $(".search-item").on('input',function(){
+        var matcher = new RegExp($(this).val(), 'gi');
+        $('.product').show().not(function(){
+            return matcher.test($(this).find('.product-name, .product-genre').text())
+        }).hide();
+    })
+})
 </script> 
 
 </body>

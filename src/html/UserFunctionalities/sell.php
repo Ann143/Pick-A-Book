@@ -213,6 +213,8 @@ while($row = $result->fetch_assoc()) {
             };
             // read the image file as a data URL.
             reader.readAsDataURL(this.files[0]);
+
+            
         });
         </script>
     </div>
