@@ -143,12 +143,26 @@ require_once ("./header.php");
 
                             <tbody>
                                 <?php
-                                    $query = "SELECT DISTINCT selle.firstname as userFname, users.lastname as userLname FROM users INNER JOIN orders ON users.userId = orders.userId";
-                                    $query_run = mysqli_query($conn,$query);
-                                    while($row = mysqli_fetch_array($query_run)){
+                                    $sql = 'SELECT sellbooks.sellername, COUNT(orders.seller) AS qtyOfBooks, SUM(orders.price) AS totalAmountSold 
+                                    FROM orders, sellbooks 
+                                    WHERE sellbooks.sellername = orders.seller AND orders.status = "Completed" 
+                                    GROUP BY sellbooks.sellername 
+                                    ORDER BY SUM(orders.price) DESC';
+                                    $result = $conn -> query($sql);
+                            if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()):
+                                ?>
+                                <tr>
+                                        <td><?php echo $row['sellername']?></td>
+                                        <td><?php echo $row['qtyOfBooks']?></td>
+                                        <td><?php echo $row['totalAmountSold']?></td>
+                                </tr>
+                                <?php
+                                endwhile;
+                            }
                                 ?>
                             </tbody>
-                            <?php }?>
+                            <?php //}?>
                         </table>
                     </div>
                 </div>
