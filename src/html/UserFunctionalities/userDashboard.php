@@ -36,7 +36,6 @@
             <div class="search-product">
                 <form class="example" action="search.php" method="GET">
                     <input type="text" placeholder="Search.." name="search" class="search-item">
-                    <button type="submit" name="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
                    
