@@ -34,14 +34,8 @@
     <div id="main">
         <div style="width: 95%; margin-left: 8%; margin-top: 5%;">
             <div class="search-product">
-<<<<<<< HEAD
-                <form class="example" action="search.php" method="GET">
-                    <input type="text" placeholder="Search.." name="search" class="search-item">
-=======
                 <form class="example" action="" method="GET">
                     <input type="text" placeholder="Search.." name="search" >
->>>>>>> 9e7240629af7afc903faddbfbc55b0d62ead4b97
-                    <button type="submit" name="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
                    
