@@ -46,6 +46,8 @@ while($row = $result->fetch_assoc()) {
     if(isset($_POST['publish']))
     {
         $name = $_POST['sellerName'];
+        $fName = $_POST['fName'];
+        $lName = $_POST['lName'];
         $bookTitle =$_POST['bookTitle'];
         $bookPrice =$_POST['bookPrice'];
         $bookGenre =$_POST['bookGenre'];
@@ -68,7 +70,7 @@ while($row = $result->fetch_assoc()) {
                                    </div>';
         }else{
     
-               $query = "INSERT INTO sellBooks (`sellername`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
+               $query = "INSERT INTO sellBooks (`sellername`,`firstname`, `lastname`, `booktitle`, `bookprice`, `bookgenre`,`bookcategory`, `bookpicture`) VALUES('$name','$fName','$lName','$bookTitle','  $bookPrice',' $bookGenre',' $bookCategory',' $bookPicture')";
                 $query_run = mysqli_query($conn,$query);
     
                 if($query_run)
@@ -106,6 +108,10 @@ while($row = $result->fetch_assoc()) {
                                     </div>
                                     <input type="text" class="form-control" name="sellerName"
                                         value="<?php echo $row['firstname']?> <?php echo $row['lastname']?>">
+                                    <input type="hidden" class="form-control" name="fName"
+                                        value="<?php echo $row['firstname']?>">
+                                    <input type="hidden" class="form-control" name="lName"
+                                        value="<?php echo $row['lastname']?>">
                                 </div>
                             </div>
                         </div>
@@ -214,7 +220,7 @@ while($row = $result->fetch_assoc()) {
             // read the image file as a data URL.
             reader.readAsDataURL(this.files[0]);
 
-            
+
         });
         </script>
     </div>

@@ -57,121 +57,30 @@ require_once ("./header.php");
 
                         <tbody style="color: black;">
                             <?php      
-                                $query = "SELECT DISTINCT sellername FROM sellbooks";
+                                $query = "SELECT DISTINCT sellername, firstname, lastname FROM sellbooks";
                                 $query_run = mysqli_query($conn,$query);
- 
+
                                 while($row = mysqli_fetch_array($query_run)) {
                             ?>
 
                             <tr>
-                                <td data-toggle="modal" data-target="#exampleModal1" class="sellername"> <?php echo $row['sellername']?>
-                                </td>
                                 <td>
-                                    
-                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
+                                    <?php echo $row['firstname']?> <?php echo $row['lastname']?>
                                 </td>
+                                <td><a href="sellerInfo.php?name=<?php echo $row["firstname"];?>"><button
+                                data-toggle="modal" data-target="#sellerInfo"  class="btn btn-outline-primary">View Info</button></a>
+                                    <a><button class="btn btn-outline-danger">Delete</button></a>
+                                </td>
+                                <!-- <td>
+                                    <?php echo '<button data-toggle="modal" data-target="#sellerInfo" type="button" class="btn btn-outline-primary">View Info</button>'?>
+                                    <?php echo '<button type="button" class="btn btn-outline-danger">Delete</button>'?>
+                                </td> -->
                             </tr>
                             <?php }?>
                         </tbody>
                     </table>
                 </div>
-
-
-                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black">
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="edit">Seller's Information</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body main-secction rounded">
-                                <div class="row" id="upload1">
-                                    <div class="col-md-4 a">
-                                        <div id="frame" class="text-center border border-dark rounded "
-                                            style="margin-top: 20px;">
-                                            <img id=" image1 " class="border border-dark rounded-circle "
-                                                src="../../img/FB_IMG_16157132375310788.jpg "
-                                                style=" height:250px; width:200px;margin-top:20px;"
-                                                class=" avatar img-circle " alt="avatar ">
-                                            <div class="container ">
-                                                <h5>Mery-an Telez</h5>
-                                                <p>Joined Pick-A-Book on</p>
-                                                <p>April 1(7 days ago)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div id="basicInfo "
-                                        class="col-md-7 personal-info border border-dark rounded float-center viewInfo ">
-
-                                        <p>Your Personal Information</p>
-                                        <div class="card rounded ">
-                                            <div class="card-header ">
-                                                Basic Information
-                                            </div>
-                                            <div class="card-body ">
-                                                <div class="row ">
-                                                    <div class="col-sm-3 col-md-3 col-5 ">
-                                                        <label style="font-weight:bold; ">Full Name</label>
-                                                    </div>
-                                                    <div class="col-md-8 col-6 ">
-                                                        Mery-an Telez
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <div class="row ">
-                                                    <div class="col-md-3 ">
-                                                        <label style="font-weight:bold; ">Birth Date</label>
-                                                    </div>
-                                                    <div class="col-md-8 col- ">
-                                                        March 22, 1994
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <div class="row ">
-                                                    <div class="col-md-3 ">
-                                                        <label style="font-weight:bold; ">Address</label>
-                                                    </div>
-                                                    <div class="col-md-8 col- ">
-                                                        Nasipit Talamban, Cebu City
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <div class="row ">
-                                                    <div class="col-sm-3 col-md-3 col-5 ">
-                                                        <label style="font-weight:bold; ">Email</label>
-                                                    </div>
-                                                    <div class="col-md-8 col-6 ">
-                                                        ebaritabryan@gmail.com
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <form method="post " style="margin-top:30px;">
-                                    <div class="div-table ">
-                                        <div class="tr ">
-                                            <div class="tc ">Book Author</div>
-                                            <div class="tc ">Book Category</div>
-                                            <div class="tc ">Total Book Sold</div>
-                                            <div class="tc ">Total Amount</div>
-                                        </div>
-                                        <div class="tr ">
-                                            <div class="tc "> Liza Jackson</div>
-                                            <div class="tc "> Suspense <br> Thriller</div>
-                                            <div class="tc "> 65pcs</div>
-                                            <div class="tc "> 9750</div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+ 
                 <!-- Footer -->
 
                 <footer class="sticky-footer bg-white" style="margin-top:80px">
@@ -225,7 +134,7 @@ require_once ("./header.php");
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js "></script>
 
-    
+
 
     <!-- End of Footer -->
 
