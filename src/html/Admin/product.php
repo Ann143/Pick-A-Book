@@ -488,9 +488,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
 
                                             </tr>
@@ -555,9 +556,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
 
                                             </tr>
@@ -622,11 +624,11 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
-
                                             </tr>
 
                                             <?php
@@ -688,9 +690,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
 
                                             </tr>
@@ -754,9 +757,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
 
                                             </tr>
@@ -820,9 +824,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
 
                                             </tr>
@@ -886,9 +891,10 @@ while($row = $result->fetch_assoc()) {
                                                 <td> <?php echo $row['booktitle']?></td>
                                                 <td> <?php echo $row['sellername']?></td>
                                                 <td> &#8369; <?php echo $row['bookprice']?>.00</td>
-                                                <td> <?php echo '<button type="button" class="btn btn-primary">Edit</button>'?>
-                                                    <?php echo '<button type="button" class="btn btn-danger">Delete</button>'?>
-
+                                                <td><form action="model/product.php" method="GET">
+                                                <?php echo '<input type="hidden" name="sellerID" value="'.$row['sellerID'].'">'?>
+                                                <?php echo '<input type="submit" name="deleteProduct" value="Remove" class="btn btn-danger">'?>
+                                                </form>
                                                 </td>
                                             </tr>
                                             <?php }?>
